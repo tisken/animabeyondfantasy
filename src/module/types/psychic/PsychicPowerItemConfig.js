@@ -2,44 +2,11 @@ import { ABFItems } from '../../items/ABFItems';
 import { openSimpleInputDialog } from '../../utils/dialogs/openSimpleInputDialog';
 import { NoneWeaponCritic } from '../combat/WeaponItemConfig.js';
 import { ABFItemConfigFactory } from '../ABFItemConfig';
+import { enrichHTML } from '../../utils/foundryCompat';
 
-/**
- * @readonly
- * @enum {string}
- */
-export const PsychicPowerActionTypes = {
-  ACTIVE: 'active',
-  PASSIVE: 'passive'
-};
-/**
- * @readonly
- * @enum {string}
- */
-export const PsychicPowerCombatTypes = {
-  ATTACK: 'attack',
-  DEFENSE: 'defense',
-  NONE: 'none'
-};
-/**
- * @readonly
- * @enum {string}
- */
-export const PsychicPowerDisciplines = {
-  MATRIX_POWERS: 'matrixPowers',
-  TELEPATHY: 'telepathy',
-  TELEKINESIS: 'telekenisis',
-  PYROKINESIS: 'pyrokinesis',
-  CRYOKINESIS: 'cryokinesis',
-  PHYSICAL_INCREASE: 'physicalIncrease',
-  ENERGY: 'energy',
-  TELEMETRY: 'telemetry',
-  SENTIENT: 'sentient',
-  CAUSALITY: 'causality',
-  ELECTROMAGNETISM: 'electromagnetism',
-  TELEPORTATION: 'teleportation',
-  LIGHT: 'light',
-  HYPERSENSITIVITY: 'hypersensitivity'
-};
+// Re-export constants from canonical TS source
+export { PsychicPowerActionTypes, PsychicPowerCombatTypes, PsychicPowerDisciplines } from '../../data/psychic-constants.ts';
+import { PsychicPowerActionTypes, PsychicPowerCombatTypes, PsychicPowerDisciplines } from '../../data/psychic-constants.ts';
 
 /**
  * Initial data for a new psychic power. Used to infer the type of the data inside `power.system`
@@ -156,9 +123,8 @@ export const PsychicPowerItemConfig = ABFItemConfigFactory({
     });
   },
   prepareItem: async psychicPower => {
-    psychicPower.system.enrichedDescription = await (foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor).enrichHTML(
-      psychicPower.system.description?.value ?? '',
-      { async: true }
+    psychicPower.system.enrichedDescription = await enrichHTML(
+      psychicPower.system.description?.value ?? ''
     );
   }
 });

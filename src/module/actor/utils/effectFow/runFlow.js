@@ -1,5 +1,6 @@
 import { buildAllFlowOps } from './ops/buildOps';
 import { orderFlowOps } from './toposort';
+import { Logger } from '../../../../utils';
 
 /**
  * Build -> order -> apply the flow operations.
@@ -16,7 +17,7 @@ export async function runEffectFlow(actor, options = {}) {
     // Debug-friendly hook
     if (options.debug) {
       // eslint-disable-next-line no-console
-      console.log('[effectFlow] apply', op.id, { deps: op.deps, mods: op.mods });
+      Logger.debug('[effectFlow] apply', op.id, { deps: op.deps, mods: op.mods });
     }
 
     await op.apply(actor);

@@ -29,9 +29,9 @@ export function registerKeyBindings() {
     ],
     onDown: () => {
       if (game.user.isGM) {
-        window.Websocket.sendAttack?.();
+        game.animabf.websocket?.sendAttack?.();
       } else {
-        window.Websocket.sendAttackRequest?.();
+        game.animabf.websocket?.sendAttackRequest?.();
       }
       return true;
     },

@@ -3,6 +3,7 @@ import { ABFAttackData } from '../combat/ABFAttackData';
 import ABFFoundryRoll from '../rolls/ABFFoundryRoll.js';
 import { ABFConfig } from '../ABFConfig';
 import { getSnapshotTargets } from '../actor/utils/getSnapshotTargets.js';
+import { NoneWeaponCritic, DamageType } from '../types/combat/WeaponItemConfig.js';
 
 export class SpellAttackConfigurationDialog extends FormApplication {
   constructor(object = {}, options = {}) {
@@ -132,9 +133,9 @@ export class SpellAttackConfigurationDialog extends FormApplication {
         .ignoreArmor(false)
         .reducedArmor(0)
         .armorType(
-          spell.system?.critic?.value ?? game.animabf.weapon.NoneWeaponCritic.NONE
+          spell.system?.critic?.value ?? NoneWeaponCritic.NONE
         )
-        .damageType(game.animabf.combat.DamageType.NONE)
+        .damageType(DamageType.NONE)
         .presence(0)
         .isProjectile(true)
         .automaticCrit(!!attacker.combat?.automaticCrit)

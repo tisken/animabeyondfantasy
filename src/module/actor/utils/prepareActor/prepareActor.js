@@ -63,6 +63,7 @@ import {
 
 import { runEffectFlow } from '../effectFow';
 import { inflateSystemFromTypeMarkers } from '../../types/inflateSystemFromTypeMarkers';
+import { enrichHTML } from '../../utils/foundryCompat';
 
 // Be careful with order of this functions, some derived data functions could be dependent of another
 const DERIVED_DATA_FUNCTIONS = [
@@ -154,9 +155,8 @@ export const prepareActor = async actor => {
     await runEffectFlow(actor, { derivedFns: DERIVED_DATA_FUNCTIONS });
 
     // 4) UI-only derived (AQUÍ VA “LO NUEVO”)
-    actor.system.general.description.enriched = await (foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor).enrichHTML(
-      actor.system.general.description.value,
-      { async: true }
+    actor.system.general.description.enriched = await enrichHTML(
+      actor.system.general.description.value
     );
 
     for (const key of Object.keys(actor.system.ui.contractibleItems ?? {})) {

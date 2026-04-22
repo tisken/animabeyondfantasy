@@ -1,4 +1,4 @@
-export const ABFItems = /** @type {const} */ ({
+export const ABFItems = {
   SECONDARY_SPECIAL_SKILL: 'skill',
   SPELL: 'spell',
   SPELL_MAINTENANCE: 'spellMaintenance',
@@ -36,6 +36,7 @@ export const ABFItems = /** @type {const} */ ({
   SUPERNATURAL_SHIELD: 'supernaturalShield',
   INVENTORY_ITEM: 'inventoryItem',
   EFFECT: 'effect'
-});
+} as const;
 
-/** @typedef {ValueOf<typeof ABFItems>} ABFItemsEnum */
+/** Union of all item type string literals. */
+export type ABFItemsEnum = typeof ABFItems[keyof typeof ABFItems];

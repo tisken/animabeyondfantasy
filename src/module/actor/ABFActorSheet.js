@@ -9,9 +9,11 @@ import { getUpdateObjectFromPath } from './utils/prepareItems/util/getUpdateObje
 import { ABFItems } from '../items/ABFItems';
 import { ABFDialogs } from '../dialogs/ABFDialogs';
 import { Logger } from '../../utils';
+import { Logger } from '../../utils';
 import { ABFSettingsKeys } from '../../utils/registerSettings';
 import { createClickHandlers } from './utils/createClickHandlers';
 import { TypeEditorRegistry } from './types/TypeEditorRegistry.js';
+import { createContextMenu } from '../utils/foundryCompat';
 
 /** @typedef {import('./constants').TActorData} TData */
 /** @typedef {typeof FormApplication<FormApplicationOptions, TData, TData>} TFormApplication */
@@ -169,7 +171,7 @@ export default class ABFActorSheet extends ActorSheetV1 {
     const effectItems = actor.items.filter(i => i && i.type === ABFItems.EFFECT);
     sheet.effects = effectItems;
 
-    console.log('EFFECT ITEMS EN SHEET', sheet.effects);
+    Logger.debug('Effect items in sheet:', sheet.effects);
 
     return sheet;
   }
@@ -191,10 +193,8 @@ export default class ABFActorSheet extends ActorSheetV1 {
   }
 
   _activateBaseTypeContextMenu(html) {
-    const ContextMenuImpl = foundry.applications?.ux?.ContextMenu?.implementation ?? ContextMenu;
-    const isV14 = !!foundry.applications?.ux?.ContextMenu?.implementation;
-    new ContextMenuImpl(
-      html instanceof HTMLElement ? html : html[0],
+    createContextMenu(
+      html,
       '.base-type-row',
       [
         {
@@ -202,8 +202,7 @@ export default class ABFActorSheet extends ActorSheetV1 {
           icon: '<i class="fas fa-edit"></i>',
           callback: target => this._openBaseTypeEditor(target instanceof HTMLElement ? target : target[0])
         }
-      ],
-      ...(isV14 ? [{ jQuery: false }] : [])
+      ]
     );
   }
 
@@ -542,15 +541,12 @@ export default class ABFActorSheet extends ActorSheetV1 {
       });
     }
 
-    const ContextMenuImpl = foundry.applications?.ux?.ContextMenu?.implementation ?? ContextMenu;
-    const isV14 = !!foundry.applications?.ux?.ContextMenu?.implementation;
-    return new ContextMenuImpl(
+    return createContextMenu(
       this.element instanceof HTMLElement
         ? this.element.querySelector(containerSelector)
         : this.element.find(containerSelector)[0],
       rowSelector,
-      [...otherItems],
-      ...(isV14 ? [{ jQuery: false }] : [])
+      [...otherItems]
     );
   };
 

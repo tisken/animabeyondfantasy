@@ -30,7 +30,7 @@ const DEFAULT_USER_MACROS = [
     icon: 'systems/animabf/assets/icons/game-icons.net/ffffff/lorc/sword-clash.svg',
     shortcut: 'ctrl + 2',
     hotkey: e => e.ctrlKey && e.key === '2',
-    fn: () => window.Websocket.sendAttack?.()
+    fn: () => game.animabf.websocket?.sendAttack?.()
   }
 ];
 

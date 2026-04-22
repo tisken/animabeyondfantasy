@@ -6,6 +6,7 @@ import { Templates } from '../../../utils/constants';
 import { openModDialog } from '../../../utils/dialogs/openSimpleInputDialog.js';
 import { SpellAttackConfigurationDialog } from '../../../dialogs/SpellAttackConfigurationDialog.js';
 import { getSnapshotTargets } from '../getSnapshotTargets.js';
+import { NoneWeaponCritic, DamageType } from '../../../types/combat/WeaponItemConfig.js';
 
 function localizeGrade(grade) {
   return game.i18n.localize(`anima.ui.mystic.spell.grade.${grade}.title`);
@@ -108,8 +109,8 @@ export async function castSpellGrade(sheet, event) {
     .damage(baseDamage)
     .ignoreArmor(false)
     .reducedArmor(0)
-    .armorType(spell.system.critic?.value ?? game.animabf.weapon.NoneWeaponCritic.NONE)
-    .damageType(game.animabf.combat.DamageType.NONE)
+    .armorType(spell.system.critic?.value ?? NoneWeaponCritic.NONE)
+    .damageType(DamageType.NONE)
     .presence(0)
     .isProjectile(true)
     .automaticCrit(!!(actor.system.general.modifiers.automaticCrit?.value))

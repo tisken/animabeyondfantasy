@@ -1,5 +1,6 @@
 import { AttackConfigurationDialog } from '../../../dialogs/AttackConfigurationDialog.js';
 import { getSnapshotTargets } from '../getSnapshotTargets.js';
+import { Logger } from '../../../../utils';
 
 /**
  * Open AttackConfigurationDialog with the selected weapon locked.
@@ -21,5 +22,5 @@ export function createWeaponAttack(sheet, e) {
     { allowed: true }
   );
 
-  console.log('Usando arma:', weapon.name);
+  Logger.debug('Usando arma:', weapon.name);
 }

@@ -1,7 +1,4 @@
 import { ABFConfig } from './module/ABFConfig';
-import ABFFoundryRoll from './module/rolls/ABFFoundryRoll';
-import { WSUserCombatManager } from './module/combat/websocket/ws-combat/user/WSUserCombatManager';
-import { WSGMCombatManager } from './module/combat/websocket/ws-combat/gm/WSGMCombatManager';
 import { ABFItemsEnum } from './module/items/ABFItems';
 
 export type ABFItemBaseDataSource<
@@ -17,19 +14,10 @@ export type ABFItemBaseDataSource<
 
   updateSource?: (data: D) => void;
 } & {
-  [key in K]: D[K]; // INFO: (AB) Does this makes sense? (Used in `SpellItemConfig.js:77`)
+  [key in K]: D[K];
 };
 
 declare global {
-  interface Window {
-    ABFFoundryRoll: typeof ABFFoundryRoll;
-
-    Websocket: {
-      sendAttack?: typeof WSGMCombatManager.prototype.sendAttack;
-      sendAttackRequest?: typeof WSUserCombatManager.prototype.sendAttackRequest;
-    };
-  }
-
   interface CONFIG {
     config: typeof ABFConfig;
   }

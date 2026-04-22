@@ -1,6 +1,7 @@
 import { ABFItems } from '../../items/ABFItems';
 import { openSimpleInputDialog } from '../../utils/dialogs/openSimpleInputDialog';
 import { ABFItemConfigFactory } from '../ABFItemConfig';
+import { enrichHTML } from '../../utils/foundryCompat';
 
 /**
  * Initial data for a new technique. Used to infer the type of the data inside `technique.system`
@@ -44,11 +45,8 @@ export const TechniqueItemConfig = ABFItemConfigFactory({
   // TODO: This should go inside prepareItem, as in spellItemConfig. Same for other TextEditors
   // That it's called also when opening the standalone sheet.
   onAttach: async (actor, technique) => {
-    technique.system.enrichedDescription = await (foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor).enrichHTML(
-      technique.system.description?.value ?? '',
-      {
-        async: true
-      }
+    technique.system.enrichedDescription = await enrichHTML(
+      technique.system.description?.value ?? ''
     );
   }
 });

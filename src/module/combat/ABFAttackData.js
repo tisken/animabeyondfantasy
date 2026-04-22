@@ -1,5 +1,6 @@
 import { Templates } from '../utils/constants';
 import { getChatVisibilityOptions } from '../utils/chatVisibility.js';
+import { NoneWeaponCritic, DamageType } from '../types/combat/WeaponItemConfig.js';
 
 export class ABFAttackData {
   /** @param {Partial<ABFAttackData>} p */
@@ -9,10 +10,10 @@ export class ABFAttackData {
     this.damage = p.damage ?? 0;
     this.reducedArmor = p.reducedArmor ?? 0;
     this.ignoreArmor = !!p.ignoreArmor;
-    this.armorType = p.armorType ?? game.animabf.weapon.NoneWeaponCritic.NONE;
+    this.armorType = p.armorType ?? NoneWeaponCritic.NONE;
 
     // Damage typing
-    this.damageType = p.damageType ?? game.animabf.combat.DamageType.NONE;
+    this.damageType = p.damageType ?? DamageType.NONE;
     this.damagesEnergy = !!p.damagesEnergy;
 
     // Targeting / delivery
@@ -215,13 +216,13 @@ export class ABFAttackDataBuilder {
     return this;
   }
   armorType(t) {
-    this._p.armorType = t ?? game.animabf.weapon.NoneWeaponCritic.NONE;
+    this._p.armorType = t ?? NoneWeaponCritic.NONE;
     return this;
   }
 
   // Damage typing
   damageType(t) {
-    this._p.damageType = t ?? game.animabf.combat.DamageType.NONE;
+    this._p.damageType = t ?? DamageType.NONE;
     return this;
   }
   damagesEnergy(b = true) {

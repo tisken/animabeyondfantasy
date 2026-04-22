@@ -4,6 +4,7 @@ import { ABFSupernaturalShieldData } from '../../../combat/ABFSupernaturalShield
 import { shieldValueCheck } from '../../../combat/utils/shieldValueCheck.js';
 import { openModDialog } from '../../../utils/dialogs/openSimpleInputDialog.js';
 import { getSnapshotTargets } from '../getSnapshotTargets.js';
+import { NoneWeaponCritic, DamageType } from '../../../types/combat/WeaponItemConfig.js';
 
 function _getBestEffectKey(effects, rolledValue) {
   if (!effects) return null;
@@ -109,8 +110,8 @@ async function _sendPsychicAttackToChat({
     .damage(Number(baseDamage) || 0)
     .ignoreArmor(false)
     .reducedArmor(0)
-    .armorType(power.system?.critic?.value ?? game.animabf.weapon.NoneWeaponCritic.NONE)
-    .damageType(game.animabf.combat.DamageType.NONE)
+    .armorType(power.system?.critic?.value ?? NoneWeaponCritic.NONE)
+    .damageType(DamageType.NONE)
     .presence(0)
     .isProjectile(true)
     .damagesEnergy(effectData?.affectsInmaterial?.value)

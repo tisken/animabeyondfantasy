@@ -2,6 +2,7 @@ import { ABFItems } from '../../items/ABFItems';
 import { openSimpleInputDialog } from '../../utils/dialogs/openSimpleInputDialog';
 import { NoneWeaponCritic } from '../combat/WeaponItemConfig.js';
 import { ABFItemConfigFactory } from '../ABFItemConfig';
+import { enrichHTML } from '../../utils/foundryCompat';
 
 /**
  * An object that contains information about the zeon points, whether the spell can be cast (prepared or innate), if and how the spell has been casted, and whether the casting rules should be overridden.
@@ -21,22 +22,9 @@ export const INITIAL_SPELL_CASTING_DATA = {
  * @readonly
  * @enum {string}
  */
-export const SpellGrades = {
-  BASE: 'base',
-  INTERMEDIATE: 'intermediate',
-  ADVANCED: 'advanced',
-  ARCANE: 'arcane'
-};
-/**
- * @readonly
- * @enum {string}
- */
-export const SpellGradeNames = {
-  BASE: 'anima.ui.mystic.spell.grade.base.title',
-  INTERMEDIATE: 'anima.ui.mystic.spell.grade.intermediate.title',
-  ADVANCED: 'anima.ui.mystic.spell.grade.advanced.title',
-  ARCANE: 'anima.ui.mystic.spell.grade.arcane.title'
-};
+// Re-export constants from canonical TS source
+export { SpellGrades, SpellGradeNames } from '../../data/mystic-constants.ts';
+import { SpellGradeNames } from '../../data/mystic-constants.ts';
 export const INITIAL_MYSTIC_SPELL_DATA = {
   description: '',
   level: { value: 0 },
@@ -133,9 +121,8 @@ export const SpellItemConfig = ABFItemConfigFactory({
     });
   },
   prepareItem: async item => {
-    item.system.enrichedDescription = await (foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor).enrichHTML(
-      item.system.description?.value ?? '',
-      { async: true }
+    item.system.enrichedDescription = await enrichHTML(
+      item.system.description?.value ?? ''
     );
   }
 });

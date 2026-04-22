@@ -3,94 +3,18 @@ import { openSimpleInputDialog } from '../../utils/dialogs/openSimpleInputDialog
 import { mutateWeapon } from '../../items/utils/prepareItem/items/mutateWeapon';
 import { ABFItemConfigFactory } from '../ABFItemConfig';
 
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponEquippedHandType = /** @type {const} */ ({
-  ONE_HANDED: 'one-handed',
-  TWO_HANDED: 'two-handed'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponKnowledgeType = /** @type {const} */ ({
-  KNOWN: 'known',
-  SIMILAR: 'similar',
-  MIXED: 'mixed',
-  DIFFERENT: 'different'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponCritic = /** @type {const} */ ({
-  CUT: 'cut',
-  IMPACT: 'impact',
-  THRUST: 'thrust',
-  HEAT: 'heat',
-  ELECTRICITY: 'electricity',
-  COLD: 'cold',
-  ENERGY: 'energy'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const NoneWeaponCritic = /** @type {const} */ ({
-  NONE: '-'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const DamageType = /** @type {const} */ ({
-  NONE: '-'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponManageabilityType = /** @type {const} */ ({
-  ONE_HAND: 'one_hand',
-  TWO_HAND: 'two_hands',
-  ONE_OR_TWO_HAND: 'one_or_two_hands'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponShotType = /** @type {const} */ ({
-  SHOT: 'shot',
-  THROW: 'throw'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponSize = /** @type {const} */ ({
-  SMALL: 'small',
-  MEDIUM: 'medium',
-  BIG: 'big'
-});
-
-/**
- * @readonly
- * @enum {string}
- */
-export const WeaponSizeProportion = /** @type {const} */ ({
-  NORMAL: 'normal',
-  ENORMOUS: 'enormous',
-  GIANT: 'giant'
-});
+// Re-export constants from canonical TS source
+export {
+  WeaponEquippedHandType,
+  WeaponKnowledgeType,
+  WeaponCritic,
+  NoneWeaponCritic,
+  DamageType,
+  WeaponManageabilityType,
+  WeaponShotType,
+  WeaponSize,
+  WeaponSizeProportion
+} from '../../data/combat-constants.ts';
 
 /**
  * Initial data for a new weapon. Used to infer the type of the data inside `weapon.system`

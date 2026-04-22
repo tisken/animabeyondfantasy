@@ -1,6 +1,7 @@
 import { Templates } from '../../../utils/constants';
 import { ABFAttackData } from '../../../combat/ABFAttackData';
 import { openModDialog } from '../../../utils/dialogs/openSimpleInputDialog.js';
+import { DamageType } from '../../../types/combat/WeaponItemConfig.js';
 
 export async function createDefaultWeaponAttack(sheet, e) {
   const weaponId = e.currentTarget.dataset.weaponId;
@@ -39,7 +40,7 @@ export async function createDefaultWeaponAttack(sheet, e) {
     .ignoreArmor(weapon.system.ignoreArmor.value)
     .reducedArmor(weapon.system.reducedArmor.final.value)
     .armorType(weapon.system.critic?.primary?.value)
-    .damageType(game.animabf.combat.DamageType.NONE)
+    .damageType(DamageType.NONE)
     .presence(weapon.system.presence?.final?.value)
     //   .aimed(true).aimedWhere("Cabeza")
     .isProjectile(false) //.projectileType("Flecha")

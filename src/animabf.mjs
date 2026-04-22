@@ -13,7 +13,6 @@ import { registerCombatWebsocketRoutes } from './module/combat/websocket/registe
 import { attachCustomMacroBar } from './utils/attachCustomMacroBar';
 import { registerKeyBindings } from './utils/registerKeyBindings';
 import { applyMigrations } from './module/migration/migrate';
-import { registerGlobalTypes } from './utils/registerGlobalTypes';
 import ABFCombatant from './module/combat/ABFCombatant';
 
 import { chatActionHandlers } from './utils/chatActionHandlers.js';
@@ -42,7 +41,7 @@ Hooks.once('init', async () => {
   registerSystemOnGame();
   Logger.log(`Game Id:${System.id}`);
 
-  window.ABFFoundryRoll = ABFFoundryRoll;
+  game.animabf.rolls = { ABFFoundryRoll };
   CONFIG.Dice.rolls = [ABFFoundryRoll, ...CONFIG.Dice.rolls];
 
   // Load Handlebars templates
@@ -115,7 +114,6 @@ Hooks.once('ready', async () => {
   registerCombatWebsocketRoutes();
   // attachCustomMacroBar();
   applyMigrations();
-  registerGlobalTypes();
 
   // --- Expose public API for user macros (ABFAttackData) ---
   game.animabf ??= {};

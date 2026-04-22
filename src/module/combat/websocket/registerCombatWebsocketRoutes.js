@@ -8,7 +8,7 @@ export const registerCombatWebsocketRoutes = () => {
 
     const combatManager = new WSGMCombatManager(game);
 
-    window.Websocket = {
+    game.animabf.websocket = {
       sendAttack: async () => {
         try {
           combatManager.sendAttack();
@@ -23,7 +23,7 @@ export const registerCombatWebsocketRoutes = () => {
 
     const combatManager = new WSUserCombatManager(game);
 
-    window.Websocket = {
+    game.animabf.websocket = {
       sendAttackRequest: async () => {
         try {
           combatManager.sendAttackRequest();

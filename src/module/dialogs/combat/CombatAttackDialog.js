@@ -4,6 +4,7 @@ import { damageCheck } from '../../combat/utils/damageCheck.js';
 import ABFFoundryRoll from '../../rolls/ABFFoundryRoll';
 import { ABFSettingsKeys } from '../../../utils/registerSettings';
 import { ABFConfig } from '../../ABFConfig';
+import { NoneWeaponCritic, WeaponCritic } from '../../types/combat/WeaponItemConfig.js';
 
 const getInitialData = (attacker, defender, options = {}) => {
   const combatDistance = !!game.settings.get(
@@ -82,7 +83,7 @@ const getInitialData = (attacker, defender, options = {}) => {
           override: false
         },
         overrideMysticCast: false,
-        critic: game.animabf.weapon.NoneWeaponCritic.NONE,
+        critic: NoneWeaponCritic.NONE,
         resistanceEffect: { value: 0, type: undefined, check: false },
         visible: false,
         distanceCheck: false,
@@ -106,7 +107,7 @@ const getInitialData = (attacker, defender, options = {}) => {
           final: attackerActor.system.psychic.psychicPotential.final.value
         },
         powerUsed: undefined,
-        critic: game.animabf.weapon.NoneWeaponCritic.NONE,
+        critic: NoneWeaponCritic.NONE,
         eliminateFatigue: false,
         mentalPatternImbalance: false,
         resistanceEffect: { value: 0, type: undefined, check: false },
@@ -172,7 +173,7 @@ export class CombatAttackDialog extends FormApplication {
       }
       const power = psychicPowers.find(w => w._id === psychic.powerUsed);
       psychic.critic =
-        power?.system.critic.value ?? game.animabf.weapon.NoneWeaponCritic.NONE;
+        power?.system.critic.value ?? NoneWeaponCritic.NONE;
     }
 
     if (spells.length > 0) {
@@ -193,7 +194,7 @@ export class CombatAttackDialog extends FormApplication {
       mystic.overrideMysticCast = spellCastingOverride || false;
       const spell = spells.find(w => w._id === mystic.spellUsed);
       mystic.critic =
-        spell?.system.critic.value ?? game.animabf.weapon.NoneWeaponCritic.NONE;
+        spell?.system.critic.value ?? NoneWeaponCritic.NONE;
       if (this.modalData.attacker.mystic.spellCasting.override) {
         this.modalData.attacker.mystic.attainableSpellGrades = [
           'base',
@@ -350,7 +351,7 @@ export class CombatAttackDialog extends FormApplication {
 
         if (
           weapon !== undefined &&
-          criticSelected !== game.animabf.weapon.NoneWeaponCritic.NONE &&
+          criticSelected !== NoneWeaponCritic.NONE &&
           criticSelected == weapon?.system.critic.secondary.value
         ) {
           attackerCombatMod.secondaryCritic = { value: -10, apply: true };
@@ -401,7 +402,7 @@ export class CombatAttackDialog extends FormApplication {
         const weaponName =
           weapon?.name ?? game.i18n.localize('macros.combat.unarmed') ?? 'Unarmed';
 
-        const critic = criticSelected ?? game.animabf.weapon.WeaponCritic.IMPACT;
+        const critic = criticSelected ?? WeaponCritic.IMPACT;
 
         let resistanceEffect = { value: 0, type: undefined, check: false };
         if (weapon) {
@@ -733,7 +734,7 @@ export class CombatAttackDialog extends FormApplication {
 
       ui.weaponHasSecondaryCritic =
         weapon.system.critic.secondary.value !==
-        game.animabf.weapon.NoneWeaponCritic.NONE;
+        NoneWeaponCritic.NONE;
 
       combat.damage.final = combat.damage.special + weapon.system.damage.final.value;
     }
@@ -779,7 +780,7 @@ export class CombatAttackDialog extends FormApplication {
       const { spells } = this.attackerActor.system.mystic;
       const spell = spells.find(w => w._id === this.modalData.attacker.mystic.spellUsed);
       this.modalData.attacker.mystic.critic =
-        spell?.system.critic.value ?? game.animabf.weapon.NoneWeaponCritic.NONE;
+        spell?.system.critic.value ?? NoneWeaponCritic.NONE;
       this.modalData.attacker.mystic.spellGrade = 'base';
       this.modalData.attacker.mystic.attainableSpellGrades = [];
       const intelligence =
@@ -808,7 +809,7 @@ export class CombatAttackDialog extends FormApplication {
         w => w._id === this.modalData.attacker.psychic.powerUsed
       );
       this.modalData.attacker.psychic.critic =
-        power?.system.critic.value ?? game.animabf.weapon.NoneWeaponCritic.NONE;
+        power?.system.critic.value ?? NoneWeaponCritic.NONE;
     }
 
     setTimeout(() => this.render(), 0);

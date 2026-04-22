@@ -1,6 +1,7 @@
 import { ABFItems } from '../../items/ABFItems';
 import { openSimpleInputDialog } from '../../utils/dialogs/openSimpleInputDialog';
 import { ABFItemConfigFactory } from '../ABFItemConfig';
+import { enrichHTML } from '../../utils/foundryCompat';
 
 /** @type {import("../Items").NoteItemConfig} */
 export const NoteItemConfig = ABFItemConfigFactory({
@@ -25,8 +26,6 @@ export const NoteItemConfig = ABFItemConfigFactory({
     });
   },
   onAttach: async (actor, item) => {
-    item.system.enrichedName = await (foundry.applications?.ux?.TextEditor?.implementation ?? TextEditor).enrichHTML(item.name ?? '', {
-      async: true
-    });
+    item.system.enrichedName = await enrichHTML(item.name ?? '');
   }
 });

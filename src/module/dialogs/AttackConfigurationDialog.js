@@ -2,6 +2,7 @@ import { Templates } from '../utils/constants';
 import { ABFConfig } from '../ABFConfig';
 import { ABFAttackData } from '../combat/ABFAttackData';
 import { getSnapshotTargets } from '../actor/utils/getSnapshotTargets.js';
+import { NoneWeaponCritic, DamageType } from '../types/combat/WeaponItemConfig.js';
 ///dialogs/AttackConfigurationDialog.js
 ///actor/utils/getSnapshotTargets.js
 
@@ -125,8 +126,9 @@ export class AttackConfigurationDialog extends FormApplication {
       }
 
       ui.weaponHasSecondaryCritic =
+      ui.weaponHasSecondaryCritic =
         weapon?.system?.critic?.secondary?.value !==
-        game.animabf.weapon.NoneWeaponCritic.NONE;
+        NoneWeaponCritic.NONE;
 
       combat.damage.final =
         (combat.damage.special ?? 0) + (weapon?.system?.damage?.final?.value ?? 0);
@@ -186,7 +188,7 @@ export class AttackConfigurationDialog extends FormApplication {
         .ignoreArmor(!!weapon.system.ignoreArmor?.value)
         .reducedArmor(Number(weapon.system.reducedArmor?.final?.value ?? 0))
         .armorType(combat.criticSelected ?? weapon.system.critic?.primary?.value)
-        .damageType(game.animabf.combat.DamageType.NONE)
+        .damageType(DamageType.NONE)
         .presence(Number(weapon.system.presence?.final?.value ?? 0))
         .isProjectile(!!combat.projectile?.value)
         .automaticCrit(!!combat.automaticCrit)
