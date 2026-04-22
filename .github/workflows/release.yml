@@ -22,7 +22,18 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run build:prod
+      - name: Pack compendia
+        run: npm run compendia:pack || echo "::warning::compendia:pack failed, using source packs"
+
+      - name: Vite build
+        run: npx vite build
+
+      - name: Ensure packs in dist
+        run: |
+          if [ ! -d "dist/packs" ] || [ -z "$(ls -A dist/packs 2>/dev/null)" ]; then
+            echo "Copying source packs to dist..."
+            cp -r src/packs dist/packs
+          fi
 
       - name: Inject version into system.json
         run: |
