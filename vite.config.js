@@ -11,6 +11,7 @@ export default defineConfig({
     }
   },
   resolve: {
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
     alias: {
       '@module': path.resolve(__dirname, './src/module'),
       '@assets': path.resolve(__dirname, './src/assets')

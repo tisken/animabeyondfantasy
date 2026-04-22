@@ -14,7 +14,7 @@ export {
   WeaponShotType,
   WeaponSize,
   WeaponSizeProportion
-} from '../../data/combat-constants.ts';
+} from '../../data/combat-constants';
 
 /**
  * Initial data for a new weapon. Used to infer the type of the data inside `weapon.system`

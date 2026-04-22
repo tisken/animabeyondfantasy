@@ -5,8 +5,8 @@ import { ABFItemConfigFactory } from '../ABFItemConfig';
 import { enrichHTML } from '../../utils/foundryCompat';
 
 // Re-export constants from canonical TS source
-export { PsychicPowerActionTypes, PsychicPowerCombatTypes, PsychicPowerDisciplines } from '../../data/psychic-constants.ts';
-import { PsychicPowerActionTypes, PsychicPowerCombatTypes, PsychicPowerDisciplines } from '../../data/psychic-constants.ts';
+export { PsychicPowerActionTypes, PsychicPowerCombatTypes, PsychicPowerDisciplines } from '../../data/psychic-constants';
+import { PsychicPowerActionTypes, PsychicPowerCombatTypes, PsychicPowerDisciplines } from '../../data/psychic-constants';
 
 /**
  * Initial data for a new psychic power. Used to infer the type of the data inside `power.system`

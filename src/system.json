@@ -79,7 +79,7 @@
       "name": "macros",
       "label": "(ES) Macros",
       "type": "Macro",
-      "path": "packs/macros.db",
+      "path": "./packs/macros",
       "system": "animabf",
       "private": false,
       "flags": {}

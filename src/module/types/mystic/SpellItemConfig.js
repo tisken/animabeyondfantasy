@@ -23,8 +23,8 @@ export const INITIAL_SPELL_CASTING_DATA = {
  * @enum {string}
  */
 // Re-export constants from canonical TS source
-export { SpellGrades, SpellGradeNames } from '../../data/mystic-constants.ts';
-import { SpellGradeNames } from '../../data/mystic-constants.ts';
+export { SpellGrades, SpellGradeNames } from '../../data/mystic-constants';
+import { SpellGradeNames } from '../../data/mystic-constants';
 export const INITIAL_MYSTIC_SPELL_DATA = {
   description: '',
   level: { value: 0 },
