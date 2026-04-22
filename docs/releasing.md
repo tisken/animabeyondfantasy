@@ -19,4 +19,4 @@
    - Create a GitHub Release on the fork with `animabf.zip` and `system.json` attached
 
 The release will be visible at:
-`https://github.com/LarsLTS/AnimaBeyondFoundry/releases`
+`https://github.com/tisken/animabeyondfantasy/releases`

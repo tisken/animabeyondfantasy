@@ -1,9 +1,9 @@
-# Roadmap de mejoras — AnimaBeyondFoundry
+# Roadmap de mejoras — Anima Beyond Fantasy (Foundry VTT)
 
 ## Referencia
 
 Buenas prácticas extraídas de sistemas Foundry VTT maduros, adaptadas
-al contexto y lógica de AnimaBeyondFoundry.
+al contexto y lógica del sistema Anima Beyond Fantasy para Foundry VTT.
 
 ---
 

@@ -107,7 +107,7 @@ En el fichero `animabf.types.ts` se encuentra un tipo compuesto llamado `ABFItem
 
 ### 7. Añadir nuestros items al HTML
 
-Para esto es mejor seguir el ejemplo de otros elementos dinámicos, como por ejemplo el de los hechizos: [https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/blob/develop/src/templates/parts/mystic/parts/spells.hbs](https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/blob/develop/src/templates/parts/mystic/parts/spells.hbs)
+Para esto es mejor seguir el ejemplo de otros elementos dinámicos, como por ejemplo el de los hechizos: [https://github.com/tisken/animabeyondfantasy/blob/develop/src/templates/parts/mystic/parts/spells.hbs](https://github.com/tisken/animabeyondfantasy/blob/develop/src/templates/parts/mystic/parts/spells.hbs)
 
 Existen varios componentes reutilizables, recomiendo hacer una lectura de distintas partes HBS para comprenderlas mejor.
 

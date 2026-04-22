@@ -8,9 +8,19 @@ The system provides character sheet and some game mechanic support such as manag
 
 Right now, we are only supporting the Spanish compendia, but, we love all the community support, so, if you want to translate or create your compendium and propose it to the system, here you can do it.
 
+## Installation
+
+In Foundry VTT, go to **Game Systems** → **Install System** and paste this manifest URL:
+
+```
+https://raw.githubusercontent.com/tisken/animabeyondfantasy/main/src/system.json
+```
+
+Or download the latest release from [Releases](https://github.com/tisken/animabeyondfantasy/releases).
+
 ## Community Contribution
 
-As we said before, we love community support, so if you have some system improvement, bug, idea, or code improvement, we are all ears. Here you can add all of it.
+We love community support. If you have some system improvement, bug, idea, or code improvement, we are all ears. Here you can add all of it.
 
 ## Links
 
@@ -22,3 +32,4 @@ As we said before, we love community support, so if you have some system improve
 
 - [Spanish](docs/develop/es/es.md)
 - [French](docs/develop/fr/fr.md)
+- [Roadmap](docs/develop/IMPROVEMENTS.md)

@@ -24,6 +24,17 @@ jobs:
 
       - run: npm run build:prod
 
+      - name: Inject version into system.json
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          VERSION="${TAG#v}"
+          cd dist
+          jq --arg v "$VERSION" \
+             --arg dl "https://github.com/tisken/animabeyondfantasy/releases/download/${TAG}/animabf.zip" \
+             --arg cl "https://github.com/tisken/animabeyondfantasy/releases/tag/${TAG}" \
+             '.version = $v | .download = $dl | .changelog = $cl' \
+             system.json > system.tmp.json && mv system.tmp.json system.json
+
       - name: Package dist as zip
         run: cd dist && zip -r ../animabf.zip .
 

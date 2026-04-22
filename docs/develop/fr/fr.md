@@ -6,13 +6,13 @@ Ces étapes sont recommandées pour travailler avec Linux. Si vous utilisez Wind
 
 1) Clonez le dépôt dans l'emplacement qui vous convient le mieux. Dans Sourcetree, cela se fait via File -> Clone, et en utilisant la console :
 ```bash
-git clone https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry.git
+git clone https://github.com/tisken/animabeyondfantasy.git
 
 ```
 
 2) Installez Node(18) si ce n'est pas déjà fait : https://nodejs.org/en/download/
 
-3) Dans VSCode, ajoutez le dossier du référentiel à l'espace de travail (clic droit sur le panneau de gauche et "Ajouter un dossier à l'espace de travail", par exemple). Ensuite, faites un clic droit dessus et "Ouvrir dans le terminal intégré". Cela ouvre un terminal de commandes Windows dans ce répertoire (...\FoundryVTT\Data\systems\AnimaBeyondFoundry). Dans ce terminal, exécutez la commande :
+3) Dans VSCode, ajoutez le dossier du référentiel à l'espace de travail (clic droit sur le panneau de gauche et "Ajouter un dossier à l'espace de travail", par exemple). Ensuite, faites un clic droit dessus et "Ouvrir dans le terminal intégré". Cela ouvre un terminal de commandes Windows dans ce répertoire (...\FoundryVTT\Data\systems\animabeyondfantasy). Dans ce terminal, exécutez la commande :
 
 `npm install`
 

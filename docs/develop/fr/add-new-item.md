@@ -107,7 +107,7 @@ Dans le fichier `animabf.types.ts`, vous trouverez un type composite appelé `AB
 
 ### 7. Ajouter nos items HTML
 
-Pour cela, il est préférable de suivre l'exemple d'autres éléments dynamiques, comme les sorts par exemple : [https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/blob/develop/src/templates/parts/mystic/parts/spells.hbs](https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/blob/develop/src/templates/parts/mystic/parts/spells.hbs)
+Pour cela, il est préférable de suivre l'exemple d'autres éléments dynamiques, comme les sorts par exemple : [https://github.com/tisken/animabeyondfantasy/blob/develop/src/templates/parts/mystic/parts/spells.hbs](https://github.com/tisken/animabeyondfantasy/blob/develop/src/templates/parts/mystic/parts/spells.hbs)
 
 Il existe plusieurs composants réutilisables. Je recommande de lire différents morceaux de code HBS pour mieux les comprendre.
 
