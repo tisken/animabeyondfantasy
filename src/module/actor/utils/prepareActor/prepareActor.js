@@ -63,7 +63,7 @@ import {
 
 import { runEffectFlow } from '../effectFow';
 import { inflateSystemFromTypeMarkers } from '../../types/inflateSystemFromTypeMarkers';
-import { enrichHTML } from '../../utils/foundryCompat';
+import { enrichHTML } from '../../../utils/foundryCompat';
 
 // Be careful with order of this functions, some derived data functions could be dependent of another
 const DERIVED_DATA_FUNCTIONS = [

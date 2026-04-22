@@ -2,7 +2,7 @@ import { Templates } from '../module/utils/constants';
 import { ABFDefenseData } from '../module/combat/ABFDefenseData';
 import { computeCombatResult } from '../module/combat/computeCombatResult';
 import { updateAttackTargetsFlag } from './updateAttackTargetsFlag.js';
-import { getChatVisibilityOptions } from '../module/utils/chatVisibility.js';
+import { getChatVisibilityOptions } from '../module/utils/chatVisibility';
 
 export async function sendAccumulationZeroDefense({
   defenderToken,

@@ -1,5 +1,5 @@
 import { Templates } from '../utils/constants';
-import { getChatVisibilityOptions } from '../utils/chatVisibility.js';
+import { getChatVisibilityOptions } from '../utils/chatVisibility';
 import { NoneWeaponCritic, DamageType } from '../types/combat/WeaponItemConfig.js';
 
 export class ABFAttackData {

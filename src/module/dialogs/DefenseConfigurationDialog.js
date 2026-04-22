@@ -4,7 +4,7 @@ import { ABFDefenseData } from '../combat/ABFDefenseData';
 import { AbilityData } from '../types/AbilityData';
 import { computeCombatResult } from '../combat/computeCombatResult';
 import { updateAttackTargetsFlag } from '../../utils/updateAttackTargetsFlag.js';
-import { getChatVisibilityOptions } from '../utils/chatVisibility.js';
+import { getChatVisibilityOptions } from '../utils/chatVisibility';
 import ABFFoundryRoll from '../rolls/ABFFoundryRoll.js';
 import { FormulaEvaluator } from '../../utils/formulaEvaluator.js';
 

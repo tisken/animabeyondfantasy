@@ -9,7 +9,6 @@ import { getUpdateObjectFromPath } from './utils/prepareItems/util/getUpdateObje
 import { ABFItems } from '../items/ABFItems';
 import { ABFDialogs } from '../dialogs/ABFDialogs';
 import { Logger } from '../../utils';
-import { Logger } from '../../utils';
 import { ABFSettingsKeys } from '../../utils/registerSettings';
 import { createClickHandlers } from './utils/createClickHandlers';
 import { TypeEditorRegistry } from './types/TypeEditorRegistry.js';
