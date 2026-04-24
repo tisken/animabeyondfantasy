@@ -59,13 +59,6 @@ export class SecondaryAbility extends Ability {
     return out;
   }
 
-  static normalizeInflateInput(node) {
-    const out = super.normalizeInflateInput(node);
-    if (!out || typeof out !== 'object') return out;
-
-    return out;
-  }
-
   static editorConfig() {
     const base = super.editorConfig();
 
