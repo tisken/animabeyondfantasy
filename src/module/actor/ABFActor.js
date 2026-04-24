@@ -565,21 +565,20 @@ export class ABFActor extends Actor {
    * @returns The method updates the `mystic.preparedSpells` array of the actor.
    */
   deletePreparedSpell(spellName, spellGrade) {
-    let preparedSpellId = this.system.mystic.preparedSpells.find(
+    const match = this.system.mystic.preparedSpells.find(
       ps =>
         ps.name == spellName &&
         ps.system.grade.value == spellGrade &&
         ps.system.prepared.value == true
-    )._id;
-    if (preparedSpellId !== undefined) {
-      let items = this.getPreparedSpells();
-      items = items.filter(item => item._id !== preparedSpellId);
-      const fieldPath = ['mystic', 'preparedSpells'];
-      const dataToUpdate = {
-        system: getUpdateObjectFromPath(items, fieldPath)
-      };
-      return this.update(dataToUpdate);
-    }
+    );
+    if (!match) return;
+    let items = this.getPreparedSpells();
+    items = items.filter(item => item._id !== match._id);
+    const fieldPath = ['mystic', 'preparedSpells'];
+    const dataToUpdate = {
+      system: getUpdateObjectFromPath(items, fieldPath)
+    };
+    return this.update(dataToUpdate);
   }
 
   /**
