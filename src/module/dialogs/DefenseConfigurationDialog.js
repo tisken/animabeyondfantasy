@@ -7,6 +7,7 @@ import { updateAttackTargetsFlag } from '../../utils/updateAttackTargetsFlag.js'
 import { getChatVisibilityOptions } from '../utils/chatVisibility.js';
 import ABFFoundryRoll from '../rolls/ABFFoundryRoll.js';
 import { FormulaEvaluator } from '../../utils/formulaEvaluator.js';
+import { shieldValueCheck } from '../combat/utils/shieldValueCheck.js';
 
 export class DefenseConfigurationDialog extends FormApplication {
   constructor(object = {}, options = {}) {
@@ -21,6 +22,12 @@ export class DefenseConfigurationDialog extends FormApplication {
     this._claimed = false;
     this._resolved = false;
     this._initialState = null;
+
+    // Initialize mystic/psychic defaults (mirrors CombatDefenseDialog constructor)
+    if (base.allowed && base.defender?.actor) {
+      DefenseConfigurationDialog._initMysticDefaults(base);
+      DefenseConfigurationDialog._initPsychicDefaults(base);
+    }
 
     if (this._tabs?.[0]) {
       this._tabs[0].callback = (_event, _tabs, tabName) => {
@@ -100,12 +107,137 @@ export class DefenseConfigurationDialog extends FormApplication {
           unarmed: weapons.length === 0,
 
           supernaturalShieldUsed: firstShieldId
+        },
+        mystic: {
+          modifier: 0,
+          magicProjection: {
+            base:
+              defenderActor.system?.mystic?.magicProjection?.imbalance?.defensive
+                ?.base?.value ?? 0,
+            final:
+              defenderActor.system?.mystic?.magicProjection?.imbalance?.defensive
+                ?.final?.value ?? 0
+          },
+          spellUsed: undefined,
+          spellGrade: 'base',
+          attainableSpellGrades: [],
+          spellCasting: {
+            zeon: { accumulated: 0, cost: 0 },
+            canCast: { prepared: false, innate: false },
+            casted: { prepared: false, innate: false },
+            override: false
+          },
+          overrideMysticCast: false,
+          supernaturalShield: {
+            shieldUsed: undefined,
+            shieldValue: 0,
+            newShield: true
+          }
+        },
+        psychic: {
+          modifier: 0,
+          psychicPotential: {
+            special: 0,
+            base: defenderActor.system?.psychic?.psychicPotential?.base?.value ?? 0,
+            final: defenderActor.system?.psychic?.psychicPotential?.final?.value ?? 0
+          },
+          psychicProjection:
+            defenderActor.system?.psychic?.psychicProjection?.imbalance
+              ?.defensive?.final?.value ?? 0,
+          powerUsed: undefined,
+          supernaturalShield: {
+            shieldUsed: undefined,
+            shieldValue: 0,
+            newShield: true
+          },
+          mentalPatternImbalance: false,
+          eliminateFatigue: false
         }
       },
       defenseSent: false,
       allowed: game.user?.isGM || (options?.allowed ?? true),
       messageId: messageId ?? options?.messageId ?? ''
     };
+  }
+
+  static _initMysticDefaults(base) {
+    const actor = base.defender.actor;
+    const { mystic } = base.defender;
+    const spells = actor.system?.mystic?.spells ?? [];
+    const supernaturalShields = actor.system?.combat?.supernaturalShields ?? [];
+    const mysticSettings = actor.system?.mystic?.mysticSettings ?? {};
+
+    if (spells.length > 0) {
+      const lastUsed = actor.getFlag?.(game.animabf.id, 'lastDefensiveSpellUsed');
+      mystic.spellUsed = spells.find(w => w._id === lastUsed)
+        ? lastUsed
+        : spells.find(w => w.system?.combatType?.value === 'defense')?._id;
+
+      const override = actor.getFlag?.(game.animabf.id, 'spellCastingOverride') || false;
+      mystic.spellCasting.override = override;
+      mystic.overrideMysticCast = override;
+
+      const spell = spells.find(w => w._id === mystic.spellUsed);
+      if (override) {
+        mystic.attainableSpellGrades = ['base', 'intermediate', 'advanced', 'arcane'];
+      } else if (spell) {
+        const intel =
+          actor.system?.characteristics?.primaries?.intelligence?.value ?? 0;
+        const finalIntel = mysticSettings.aptitudeForMagicDevelopment
+          ? intel + 3
+          : intel;
+        for (const grade in spell.system?.grades) {
+          if (finalIntel >= (spell.system.grades[grade]?.intRequired?.value ?? 0)) {
+            mystic.attainableSpellGrades.push(grade);
+          }
+        }
+      }
+    }
+
+    const mysticShield = supernaturalShields.find(
+      w => w.flags?.animabf?.supernaturalShield?.type === 'mystic'
+    );
+    if (mysticShield) {
+      mystic.supernaturalShield = {
+        shieldUsed: mysticShield._id,
+        shieldValue:
+          mysticShield.system?.shieldPoints?.value ??
+          mysticShield.system?.shieldPoints ??
+          0,
+        newShield: false
+      };
+    }
+  }
+
+  static _initPsychicDefaults(base) {
+    const actor = base.defender.actor;
+    const { psychic } = base.defender;
+    const psychicPowers = actor.system?.psychic?.psychicPowers ?? [];
+    const supernaturalShields = actor.system?.combat?.supernaturalShields ?? [];
+
+    if (psychicPowers.length > 0) {
+      const lastUsed = actor.getFlag?.(game.animabf.id, 'lastDefensivePowerUsed');
+      psychic.powerUsed = psychicPowers.find(w => w._id === lastUsed)
+        ? lastUsed
+        : psychicPowers.find(w => w.system?.combatType?.value === 'defense')?._id;
+
+      const power = psychicPowers.find(w => w._id === psychic.powerUsed);
+      psychic.psychicPotential.special = power?.system?.bonus?.value ?? 0;
+    }
+
+    const psychicShield = supernaturalShields.find(
+      w => w.flags?.animabf?.supernaturalShield?.type === 'psychic'
+    );
+    if (psychicShield) {
+      psychic.supernaturalShield = {
+        shieldUsed: psychicShield._id,
+        shieldValue:
+          psychicShield.system?.shieldPoints?.value ??
+          psychicShield.system?.shieldPoints ??
+          0,
+        newShield: false
+      };
+    }
   }
 
   static get defaultOptions() {
@@ -195,6 +327,75 @@ export class DefenseConfigurationDialog extends FormApplication {
       ui.shieldValue = 0;
     }
 
+    // --- Mystic data preparation ---
+    const { mystic, psychic } = defender;
+    const spells = this.defenderActor.system?.mystic?.spells ?? [];
+    const psychicPowers = this.defenderActor.system?.psychic?.psychicPowers ?? [];
+
+    // Refresh supernatural shields with flags (use real embedded Items)
+    const supShields = this.defenderActor.items
+      ? this.defenderActor.items
+          .filter(i => i.type === 'supernaturalShield')
+          .map(i => ({ _id: i.id, name: i.name, system: i.system, flags: i.flags }))
+      : shields;
+
+    if (!mystic.spellUsed) {
+      mystic.spellUsed = spells.find(
+        w => w.system?.combatType?.value === 'defense'
+      )?._id;
+    }
+    const spell = spells.find(w => w._id === mystic.spellUsed);
+    if (spell && this.defenderActor.mysticCanCastEvaluate) {
+      mystic.spellCasting = this.defenderActor.mysticCanCastEvaluate(
+        spell,
+        mystic.spellGrade,
+        mystic.spellCasting.casted,
+        mystic.spellCasting.override
+      );
+    }
+
+    if (!mystic.supernaturalShield.shieldUsed) {
+      mystic.supernaturalShield.shieldUsed = supShields.find(
+        w => w.flags?.animabf?.supernaturalShield?.type === 'mystic'
+      )?._id;
+    }
+    const mysticShield = supShields.find(
+      w => w._id === mystic.supernaturalShield.shieldUsed
+    );
+    mystic.supernaturalShield.shieldValue =
+      mysticShield?.system?.shieldPoints?.value ??
+      mysticShield?.system?.shieldPoints ??
+      0;
+
+    // --- Psychic data preparation ---
+    if (!psychic.powerUsed) {
+      psychic.powerUsed = psychicPowers.find(
+        w => w.system?.combatType?.value === 'defense'
+      )?._id;
+    }
+    const power = psychicPowers.find(w => w._id === psychic.powerUsed);
+    const psychicBonus = power?.system?.bonus?.value ?? 0;
+    psychic.psychicPotential.final =
+      psychic.psychicPotential.special +
+      (this.defenderActor.system?.psychic?.psychicPotential?.final?.value ?? 0) +
+      psychicBonus;
+
+    if (!psychic.supernaturalShield.shieldUsed) {
+      psychic.supernaturalShield.shieldUsed = supShields.find(
+        w => w.flags?.animabf?.supernaturalShield?.type === 'psychic'
+      )?._id;
+    }
+    const psychicShield = supShields.find(
+      w => w._id === psychic.supernaturalShield.shieldUsed
+    );
+    psychic.supernaturalShield.shieldValue =
+      psychicShield?.system?.shieldPoints?.value ??
+      psychicShield?.system?.shieldPoints ??
+      0;
+
+    // Store supShields with flags for template use
+    this.defenderActor.system.combat.supernaturalShields = supShields;
+
     return this.modalData;
   }
 
@@ -206,6 +407,16 @@ export class DefenseConfigurationDialog extends FormApplication {
       const raw = ev.currentTarget.dataset.type;
       const type = raw === 'block' ? 'block' : raw === 'shield' ? 'shield' : 'dodge';
       await this._sendDefenseToChat(type);
+    });
+
+    html.find('.send-mystic-defense').on('click', async ev => {
+      ev.preventDefault();
+      await this._sendMysticDefense();
+    });
+
+    html.find('.send-psychic-defense').on('click', async ev => {
+      ev.preventDefault();
+      await this._sendPsychicDefense();
     });
   }
 
@@ -234,9 +445,31 @@ export class DefenseConfigurationDialog extends FormApplication {
       if (v > bestShield) bestShield = v;
     }
 
-    if (bestShield >= dodge && bestShield >= block) return 'shield';
-    if (block >= dodge) return 'block';
-    return 'dodge';
+    const spells = actor.system?.mystic?.spells ?? [];
+    const magicProj = spells.length > 0
+      ? Number(
+          actor.system?.mystic?.magicProjection?.imbalance?.defensive?.final?.value ?? 0
+        ) || 0
+      : 0;
+
+    const psychicPowers = actor.system?.psychic?.psychicPowers ?? [];
+    const psychicProj = psychicPowers.length > 0
+      ? Number(
+          actor.system?.psychic?.psychicProjection?.imbalance?.defensive?.final
+            ?.value ?? 0
+        ) || 0
+      : 0;
+
+    const candidates = [
+      { tab: 'dodge', value: dodge },
+      { tab: 'block', value: block },
+      { tab: 'shield', value: bestShield },
+      { tab: 'mystic', value: magicProj },
+      { tab: 'psychic', value: psychicProj }
+    ];
+
+    candidates.sort((a, b) => b.value - a.value);
+    return candidates[0].tab;
   }
 
   static _evaluateShieldFormula(formula, actor) {
@@ -428,8 +661,334 @@ export class DefenseConfigurationDialog extends FormApplication {
     }
   }
 
+  async _sendMysticDefense() {
+    const actor = this.defenderActor;
+    if (!actor) return ui.notifications?.warn('Defender no encontrado.');
+
+    const { defender, attackData } = this.modalData;
+    const {
+      mystic: {
+        magicProjection,
+        modifier,
+        spellUsed,
+        spellGrade,
+        spellCasting,
+        supernaturalShield: { shieldUsed, newShield }
+      }
+    } = defender;
+
+    const { spells } = actor.system?.mystic ?? {};
+    const supernaturalShields = actor.system?.combat?.supernaturalShields ?? [];
+    let spell, supShield;
+
+    if (!newShield) {
+      if (!shieldUsed) {
+        return ui.notifications?.warn(
+          game.i18n.localize(
+            'macros.combat.dialog.warning.supernaturalShieldNotFound.mystic'
+          )
+        );
+      }
+      spell = supernaturalShields.find(w => (w._id ?? w.id) === shieldUsed);
+      supShield = { create: false, id: shieldUsed };
+    } else if (spellUsed) {
+      actor.setFlag?.(game.animabf.id, 'spellCastingOverride', spellCasting.override);
+      actor.setFlag?.(game.animabf.id, 'lastDefensiveSpellUsed', spellUsed);
+      spell = (spells ?? []).find(w => w._id === spellUsed);
+      spellCasting.zeon.cost = spell?.system?.grades?.[spellGrade]?.zeon?.value ?? 0;
+      if (actor.evaluateCast?.(spellCasting)) {
+        defender.mystic.overrideMysticCast = true;
+        return;
+      }
+      const gradeData = spell?.system?.grades?.[spellGrade];
+      const shieldPoints = shieldValueCheck(gradeData);
+      supShield = { create: true, shieldPoints };
+    }
+
+    try {
+      if (!this._claimed && this.modalData?.messageId) {
+        const { actorUuid, tokenUuid } = this._getTargetKeys();
+        await updateAttackTargetsFlag(this.modalData.messageId, {
+          actorUuid,
+          tokenUuid,
+          state: 'rolling',
+          rolledBy: game.user.id,
+          updatedAt: Date.now()
+        });
+        this._claimed = true;
+      }
+
+      this.modalData.defenseSent = true;
+      setTimeout(() => this.render(), 0);
+
+      const vis = getChatVisibilityOptions();
+      const combatModifier = Number(modifier ?? 0);
+
+      let formula = `1d100xa + ${magicProjection.final} + ${combatModifier}`;
+      if (defender.withoutRoll) formula = formula.replace('1d100xa', '0');
+      if ((magicProjection.base ?? 0) >= 200)
+        formula = formula.replace('xa', 'xamastery');
+
+      const roll = new ABFFoundryRoll(formula, actor.system);
+      await roll.evaluate({ async: true });
+
+      if (defender.showRoll) {
+        const flavor = game.i18n.format('macros.combat.dialog.magicDefense.title', {
+          spell: spell?.name ?? '?',
+          target: this.modalData.attacker?.token?.name ?? '?'
+        });
+        const speaker = this._buildSpeaker();
+        await roll.toMessage({ speaker, flavor, rollMode: vis.rollMode });
+      }
+
+      const armorType = attackData?.armorType;
+      const taFinal =
+        armorType != null
+          ? actor.system?.combat?.totalArmor?.at?.[armorType]?.value ?? 0
+          : 0;
+
+      const defenseData = ABFDefenseData.builder()
+        .defenseAbility(roll.total)
+        .armor(taFinal)
+        .defenseType('mystic')
+        .defenderId(actor.id)
+        .defenderTokenId(defender?.token?.id ?? '')
+        .shieldId(shieldUsed ?? '')
+        .build();
+
+      const combatResult = computeCombatResult(attackData, defenseData);
+      const damageFinal = Number(combatResult?.damageFinal ?? 0);
+
+      const speaker = this._buildSpeaker();
+      const content = await (
+        foundry.applications?.handlebars?.renderTemplate ?? renderTemplate
+      )(Templates.Chat.CombatResult, {
+        combatResult: { ...combatResult, damageFinal },
+        defenderId: actor.id,
+        defenderTokenId: defender?.token?.id ?? ''
+      });
+
+      await ChatMessage.create({
+        content,
+        speaker,
+        ...vis,
+        flags: {
+          animabf: {
+            kind: 'combatResult',
+            result: { ...combatResult, damageFinal },
+            defender: { actorId: actor.id, tokenId: defender?.token?.id ?? '' },
+            damageControl: { appliedOnce: false, apps: [] }
+          }
+        }
+      });
+
+      this._resolved = true;
+      const { actorUuid, tokenUuid } = this._getTargetKeys();
+      await updateAttackTargetsFlag(this.modalData.messageId, {
+        actorUuid,
+        tokenUuid,
+        state: 'done',
+        rolledBy: game.user.id,
+        defenseResult: defenseData.toJSON?.() ?? defenseData,
+        updatedAt: Date.now()
+      });
+
+      await this.close();
+    } catch (err) {
+      console.error(err);
+      ui.notifications?.error('No se pudo enviar la defensa mística al chat.');
+    } finally {
+      this.modalData.defenseSent = false;
+      if (this.rendered) setTimeout(() => this.render(), 0);
+    }
+  }
+
+  async _sendPsychicDefense() {
+    const actor = this.defenderActor;
+    if (!actor) return ui.notifications?.warn('Defender no encontrado.');
+
+    const { defender, attackData } = this.modalData;
+    const {
+      psychic: {
+        psychicPotential,
+        powerUsed,
+        modifier,
+        eliminateFatigue,
+        mentalPatternImbalance,
+        supernaturalShield: { shieldUsed, newShield }
+      }
+    } = defender;
+
+    const { psychicPowers } = actor.system?.psychic ?? {};
+    const supernaturalShields = actor.system?.combat?.supernaturalShields ?? [];
+    let power, psychicFatigue, supShield, newPsychicPotential;
+
+    const psychicProjection =
+      actor.system?.psychic?.psychicProjection?.imbalance?.defensive?.final?.value ?? 0;
+    const combatModifier = Number(modifier ?? 0);
+
+    let formula = `1d100xa + ${psychicProjection} + ${combatModifier}`;
+    if (defender.withoutRoll) formula = formula.replace('1d100xa', '0');
+    if ((actor.system?.psychic?.psychicProjection?.base?.value ?? 0) >= 200)
+      formula = formula.replace('xa', 'xamastery');
+
+    const psychicProjectionRoll = new ABFFoundryRoll(formula, actor.system);
+    await psychicProjectionRoll.evaluate({ async: true });
+    const rolled = psychicProjectionRoll.total - psychicProjection - combatModifier;
+
+    if (!newShield) {
+      if (!shieldUsed) {
+        return ui.notifications?.warn(
+          game.i18n.localize(
+            'macros.combat.dialog.warning.supernaturalShieldNotFound.psychic'
+          )
+        );
+      }
+      power = supernaturalShields.find(w => (w._id ?? w.id) === shieldUsed);
+      supShield = { create: false, id: shieldUsed };
+    } else if (powerUsed) {
+      actor.setFlag?.(game.animabf.id, 'lastDefensivePowerUsed', powerUsed);
+      power = (psychicPowers ?? []).find(w => w._id === powerUsed);
+
+      const potentialRoll = new ABFFoundryRoll(
+        `1d100PsychicRoll + ${psychicPotential.final}`,
+        { ...actor.system, power, mentalPatternImbalance }
+      );
+      await potentialRoll.evaluate({ async: true });
+      newPsychicPotential = potentialRoll.total;
+
+      if (defender.showRoll) {
+        const speaker = this._buildSpeaker();
+        await potentialRoll.toMessage({
+          speaker,
+          flavor: game.i18n.format('macros.combat.dialog.psychicPotential.title')
+        });
+      }
+
+      psychicFatigue = await actor.evaluatePsychicFatigue?.(
+        power,
+        potentialRoll.total,
+        eliminateFatigue,
+        defender.showRoll
+      );
+
+      if (!psychicFatigue) {
+        const effStr =
+          power?.system?.effects?.[newPsychicPotential]?.value ??
+          power?.system?.effects?.[String(newPsychicPotential)]?.value ??
+          '';
+        supShield = { create: true, shieldPoints: shieldValueCheck(effStr) };
+      }
+    }
+
+    try {
+      if (!this._claimed && this.modalData?.messageId) {
+        const { actorUuid, tokenUuid } = this._getTargetKeys();
+        await updateAttackTargetsFlag(this.modalData.messageId, {
+          actorUuid,
+          tokenUuid,
+          state: 'rolling',
+          rolledBy: game.user.id,
+          updatedAt: Date.now()
+        });
+        this._claimed = true;
+      }
+
+      this.modalData.defenseSent = true;
+      setTimeout(() => this.render(), 0);
+
+      const vis = getChatVisibilityOptions();
+
+      if (!psychicFatigue && defender.showRoll) {
+        const flavor = game.i18n.format('macros.combat.dialog.psychicDefense.title', {
+          power: power?.name ?? '?',
+          target: this.modalData.attacker?.token?.name ?? '?'
+        });
+        const speaker = this._buildSpeaker();
+        await psychicProjectionRoll.toMessage({
+          speaker,
+          flavor,
+          rollMode: vis.rollMode
+        });
+      }
+
+      const armorType = attackData?.armorType;
+      const taFinal =
+        armorType != null
+          ? actor.system?.combat?.totalArmor?.at?.[armorType]?.value ?? 0
+          : 0;
+
+      const defenseData = ABFDefenseData.builder()
+        .defenseAbility(psychicFatigue ? 0 : psychicProjectionRoll.total)
+        .armor(taFinal)
+        .defenseType('psychic')
+        .defenderId(actor.id)
+        .defenderTokenId(defender?.token?.id ?? '')
+        .shieldId(shieldUsed ?? '')
+        .build();
+
+      const combatResult = computeCombatResult(attackData, defenseData);
+      const damageFinal = Number(combatResult?.damageFinal ?? 0);
+
+      const speaker = this._buildSpeaker();
+      const content = await (
+        foundry.applications?.handlebars?.renderTemplate ?? renderTemplate
+      )(Templates.Chat.CombatResult, {
+        combatResult: { ...combatResult, damageFinal },
+        defenderId: actor.id,
+        defenderTokenId: defender?.token?.id ?? ''
+      });
+
+      await ChatMessage.create({
+        content,
+        speaker,
+        ...vis,
+        flags: {
+          animabf: {
+            kind: 'combatResult',
+            result: { ...combatResult, damageFinal },
+            defender: { actorId: actor.id, tokenId: defender?.token?.id ?? '' },
+            damageControl: { appliedOnce: false, apps: [] }
+          }
+        }
+      });
+
+      this._resolved = true;
+      const { actorUuid, tokenUuid } = this._getTargetKeys();
+      await updateAttackTargetsFlag(this.modalData.messageId, {
+        actorUuid,
+        tokenUuid,
+        state: 'done',
+        rolledBy: game.user.id,
+        defenseResult: defenseData.toJSON?.() ?? defenseData,
+        updatedAt: Date.now()
+      });
+
+      await this.close();
+    } catch (err) {
+      console.error(err);
+      ui.notifications?.error('No se pudo enviar la defensa psíquica al chat.');
+    } finally {
+      this.modalData.defenseSent = false;
+      if (this.rendered) setTimeout(() => this.render(), 0);
+    }
+  }
+
+  _buildSpeaker() {
+    const { defender } = this.modalData;
+    const tokenDocOrToken = defender?.token ?? null;
+    const tokenForSpeaker = tokenDocOrToken?.object ?? tokenDocOrToken ?? null;
+    const tokenName =
+      tokenForSpeaker?.name ?? tokenForSpeaker?.document?.name ?? this.defenderActor.name;
+    return tokenForSpeaker
+      ? { ...ChatMessage.getSpeaker({ token: tokenForSpeaker }), alias: tokenName }
+      : ChatMessage.getSpeaker({ actor: this.defenderActor });
+  }
+
   async _updateObject(_event, formData) {
     const expanded = foundry.utils.expandObject(formData);
+
+    const prevSpell = this.modalData.defender?.mystic?.spellUsed;
 
     this.modalData = foundry.utils.mergeObject(this.modalData, expanded, {
       inplace: false,
@@ -437,6 +996,34 @@ export class DefenseConfigurationDialog extends FormApplication {
       insertKeys: true,
       insertValues: true
     });
+
+    // Recalculate attainable spell grades when spell selection changes
+    if (prevSpell !== this.modalData.defender?.mystic?.spellUsed) {
+      const { spells, mysticSettings } = this.defenderActor.system?.mystic ?? {};
+      const spell = (spells ?? []).find(
+        w => w._id === this.modalData.defender.mystic.spellUsed
+      );
+      this.modalData.defender.mystic.spellGrade = 'base';
+      this.modalData.defender.mystic.attainableSpellGrades = [];
+      const intelligence =
+        this.defenderActor.system?.characteristics?.primaries?.intelligence?.value ?? 0;
+      const finalIntelligence = mysticSettings?.aptitudeForMagicDevelopment
+        ? intelligence + 3
+        : intelligence;
+      for (const grade in spell?.system?.grades) {
+        if (finalIntelligence >= (spell.system.grades[grade]?.intRequired?.value ?? 0)) {
+          this.modalData.defender.mystic.attainableSpellGrades.push(grade);
+        }
+      }
+    }
+    if (this.modalData.defender?.mystic?.spellCasting?.override) {
+      this.modalData.defender.mystic.attainableSpellGrades = [
+        'base',
+        'intermediate',
+        'advanced',
+        'arcane'
+      ];
+    }
 
     setTimeout(() => this.render(), 0);
   }
