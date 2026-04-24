@@ -169,8 +169,6 @@ export default class ABFActorSheet extends ActorSheetV1 {
     const effectItems = actor.items.filter(i => i && i.type === ABFItems.EFFECT);
     sheet.effects = effectItems;
 
-    console.log('EFFECT ITEMS EN SHEET', sheet.effects);
-
     return sheet;
   }
 
@@ -306,7 +304,7 @@ export default class ABFActorSheet extends ActorSheetV1 {
       const key = e.currentTarget.dataset.onClick;
       const handler = clickHandlers[key];
       if (handler) handler(e);
-      else console.warn(`No handler for data-on-click="${key}"`);
+      else Logger.warn(`No handler for data-on-click="${key}"`);
     });
   }
 
@@ -480,8 +478,6 @@ export default class ABFActorSheet extends ActorSheetV1 {
     return foundry.utils.getProperty(this.actor.items.get(itemId), path);
   }
 
-  protected;
-
   async _updateObject(event, formData) {
     const [actorChanges, itemChanges] = splitAsActorAndItemChanges(formData);
 
@@ -607,11 +603,6 @@ export default class ABFActorSheet extends ActorSheetV1 {
   _getLinkedEffect(item) {
     if (!item) return null;
     return this.actor.effects.find(e => e.origin === item.uuid) ?? null;
-  }
-
-  async _linkItemToEffect(item, effect) {
-    if (!item || !effect) return;
-    await item.setFlag('animabf', 'linkedEffectId', effect.id);
   }
 
   async _ensureEffectForItem(item) {
