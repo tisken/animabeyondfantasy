@@ -224,7 +224,7 @@ export class ABFActor extends Actor {
    */
   async applyDamageSupernaturalShield(supShieldId, damage, dobleDamage, newCombatResult) {
     const supShield = this.getItem(supShieldId);
-    const shieldValue = supShield?.system.shieldPoints;
+    const shieldValue = supShield?.system.shieldPoints?.value ?? supShield?.system.shieldPoints ?? 0;
     const newShieldPoints = dobleDamage ? shieldValue - damage * 2 : shieldValue - damage;
     if (newShieldPoints > 0) {
       this.updateItem({
@@ -332,7 +332,8 @@ export class ABFActor extends Actor {
     for (const psychicShield of psychicShields) {
       const psychic = psychicShield.getFlag(game.animabf.id, 'psychic');
       if (psychic?.overmantained) {
-        if (psychic.maintainMax >= psychicShield.system.shieldPoints) {
+        const shieldPts = psychicShield.system.shieldPoints?.value ?? psychicShield.system.shieldPoints ?? 0;
+        if (psychic.maintainMax >= shieldPts) {
           psychicShield.unsetFlag(game.animabf.id, 'psychic');
         } else {
           const supShield = {

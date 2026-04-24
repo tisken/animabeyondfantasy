@@ -196,7 +196,7 @@ export class CombatDefenseDialog extends FormApplication {
       if (mysticShield) {
         mystic.supernaturalShield = {
           shieldUsed: mysticShield?._id,
-          shieldValue: mysticShield?.system.shieldPoints,
+          shieldValue: mysticShield?.system.shieldPoints?.value ?? mysticShield?.system.shieldPoints ?? 0,
           newShield: false
         };
       }
@@ -207,7 +207,7 @@ export class CombatDefenseDialog extends FormApplication {
       if (psychicShield) {
         psychic.supernaturalShield = {
           shieldUsed: psychicShield?._id,
-          shieldValue: psychicShield?.system.shieldPoints,
+          shieldValue: psychicShield?.system.shieldPoints?.value ?? psychicShield?.system.shieldPoints ?? 0,
           newShield: false
         };
       }
