@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Seiken",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "intermediate"
+    },
+    "powerLevel": {
+      "value": 2
+    },
+    "fabula": {
+      "grade1": 180,
+      "grade2": 240,
+      "grade3": 280
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Katana antigua que reduce TA, ralentiza y dificulta movimiento con armadura"
+    },
+    "source": {
+      "value": "Prometheum p.43"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "ZHNmuVvfd9Y2JCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!ZHNmuVvfd9Y2JCAA"
+}

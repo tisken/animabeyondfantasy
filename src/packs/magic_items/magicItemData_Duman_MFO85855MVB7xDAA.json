@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Duman",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "intermediate"
+    },
+    "powerLevel": {
+      "value": 2
+    },
+    "fabula": {
+      "grade1": 180,
+      "grade2": 240,
+      "grade3": 280
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Lanza con poderes sobre la niebla y las brumas"
+    },
+    "source": {
+      "value": "Prometheum p.44"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "MFO85855MVB7xDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!MFO85855MVB7xDAA"
+}

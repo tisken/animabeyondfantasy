@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Nephilim Vetala",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 0
+    },
+    "re": {
+      "value": -20
+    },
+    "rv": {
+      "value": 0
+    },
+    "rm": {
+      "value": 0
+    },
+    "rp": {
+      "value": 0
+    },
+    "agi": {
+      "value": 0
+    },
+    "con": {
+      "value": 0
+    },
+    "des": {
+      "value": 0
+    },
+    "fue": {
+      "value": 0
+    },
+    "int": {
+      "value": 0
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 0
+    },
+    "vol": {
+      "value": 0
+    },
+    "size": {
+      "value": 0
+    },
+    "regeneration": {
+      "value": 0
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Aguante al daño crítico, Éxtasis sanguíneo, Curación rápida, Piel fotosensible, Obsesión por la sangre, Salud enfermiza, Alma inmortal"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "imHGmWOiY9cuIDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!imHGmWOiY9cuIDAA"
+}

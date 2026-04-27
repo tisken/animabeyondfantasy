@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Pan (Instrumento Sylvain)",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "minor"
+    },
+    "powerLevel": {
+      "value": 1
+    },
+    "fabula": {
+      "grade1": 140,
+      "grade2": 180,
+      "grade3": 240
+    },
+    "itemType": {
+      "value": "tool"
+    },
+    "effect": {
+      "value": "Instrumento musical que afecta a espíritus de la naturaleza"
+    },
+    "source": {
+      "value": "Prometheum p.40"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "RJKuF3eEw3tHcFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!RJKuF3eEw3tHcFAA"
+}

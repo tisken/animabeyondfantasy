@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Devah",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": -10
+    },
+    "re": {
+      "value": -10
+    },
+    "rv": {
+      "value": 0
+    },
+    "rm": {
+      "value": 15
+    },
+    "rp": {
+      "value": 15
+    },
+    "agi": {
+      "value": 0
+    },
+    "con": {
+      "value": -2
+    },
+    "des": {
+      "value": 0
+    },
+    "fue": {
+      "value": -1
+    },
+    "int": {
+      "value": 1
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 1
+    },
+    "vol": {
+      "value": 1
+    },
+    "size": {
+      "value": -1
+    },
+    "regeneration": {
+      "value": 0
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Mente y alma superior, Comunicación sobrenatural, Mente compleja, El ojo del alma, Lazos existenciales, Fragilidad física, Alma innatural"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "eMU8lSMKBrJ9IEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!eMU8lSMKBrJ9IEAA"
+}

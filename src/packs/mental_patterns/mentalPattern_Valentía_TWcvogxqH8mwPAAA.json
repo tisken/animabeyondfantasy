@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Valentía",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Añade +30 a la Proyección y aumenta un grado en los Poderes de ataque"
+    },
+    "penalty": {
+      "value": "Aplica un -20 al defenderse y un -40 a toda acción enfocada a huir de un combate o reto"
+    },
+    "cost": {
+      "value": 30
+    },
+    "cost2": {
+      "value": 40
+    },
+    "opposite": {
+      "value": "Cobardía"
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Valentía"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "TWcvogxqH8mwPAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!TWcvogxqH8mwPAAA"
+}

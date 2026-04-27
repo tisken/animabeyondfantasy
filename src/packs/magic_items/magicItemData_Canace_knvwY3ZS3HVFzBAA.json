@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Canace",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "intermediate"
+    },
+    "powerLevel": {
+      "value": 2
+    },
+    "fabula": {
+      "grade1": 140,
+      "grade2": 180,
+      "grade3": 240
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Arco Duk'zarist con flechas perforantes que giran a gran velocidad"
+    },
+    "source": {
+      "value": "Prometheum p.43"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "knvwY3ZS3HVFzBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!knvwY3ZS3HVFzBAA"
+}

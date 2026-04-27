@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Daimah",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 0
+    },
+    "re": {
+      "value": 0
+    },
+    "rv": {
+      "value": 0
+    },
+    "rm": {
+      "value": 0
+    },
+    "rp": {
+      "value": 0
+    },
+    "agi": {
+      "value": 1
+    },
+    "con": {
+      "value": -1
+    },
+    "des": {
+      "value": 1
+    },
+    "fue": {
+      "value": 0
+    },
+    "int": {
+      "value": 0
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 0
+    },
+    "vol": {
+      "value": -1
+    },
+    "size": {
+      "value": -2
+    },
+    "regeneration": {
+      "value": 0
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Cuerpo felino, Sentir el bosque, Garras y dientes, Inhumanidad, Pequeño tamaño, Naturaleza curativa, Resistencia a las caídas, Inmunidad a enf. y venenos nat., Esencia mística, Movimiento por los bosques, Ver la esencia, Modificador de nivel: +1"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "0ncvcGsyZjMm3EAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!0ncvcGsyZjMm3EAA"
+}

@@ -403,7 +403,9 @@
       "martialArtData",
       "kiSkillData",
       "metamagicData",
-      "summonData"
+      "summonData",
+      "raceData",
+      "magicItemData"
     ],
     "advantage": {
       "category": { "value": "common" },
@@ -483,6 +485,25 @@
       "initialDifficulty": { "value": 0 },
       "initialCost": { "value": 0 },
       "powers": []
+    },
+    "raceData": {
+      "rf": { "value": 0 }, "re": { "value": 0 }, "rv": { "value": 0 },
+      "rm": { "value": 0 }, "rp": { "value": 0 },
+      "agi": { "value": 0 }, "con": { "value": 0 }, "des": { "value": 0 },
+      "fue": { "value": 0 }, "int": { "value": 0 }, "per": { "value": 0 },
+      "pod": { "value": 0 }, "vol": { "value": 0 },
+      "size": { "value": 0 },
+      "regeneration": { "value": 0 },
+      "fatigue": { "value": 0 },
+      "description": { "value": "" }
+    },
+    "magicItemData": {
+      "tier": { "value": "minor" },
+      "powerLevel": { "value": 0 },
+      "fabula": { "grade1": 0, "grade2": 0, "grade3": 0 },
+      "itemType": { "value": "" },
+      "effect": { "value": "" },
+      "source": { "value": "" }
     },
     "ammo": {
       "amount": { "value": 0 },
@@ -587,7 +608,14 @@
       }
     },
     "psychicDiscipline": { "imbalance": false },
-    "mentalPattern": { "bonus": { "value": "" }, "penalty": { "value": "" } },
+    "mentalPattern": {
+      "bonus": { "value": "" },
+      "penalty": { "value": "" },
+      "cost": { "value": 0 },
+      "cost2": { "value": 0 },
+      "opposite": { "value": "" },
+      "description": { "value": "" }
+    },
     "psychicPower": {
       "level": { "value": 0 },
       "effects": {

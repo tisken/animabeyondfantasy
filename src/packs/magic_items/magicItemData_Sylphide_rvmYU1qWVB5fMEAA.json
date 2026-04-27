@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Sylphide",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "major"
+    },
+    "powerLevel": {
+      "value": 3
+    },
+    "fabula": {
+      "grade1": 240,
+      "grade2": 280,
+      "grade3": 320
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Estoque del viento. Creado con poder residual de una Arias Vayu"
+    },
+    "source": {
+      "value": "Prometheum p.49"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "rvmYU1qWVB5fMEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!rvmYU1qWVB5fMEAA"
+}

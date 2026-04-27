@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Cobardía",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Proyección +30 para defenderse y aumenta un grado escudos e incrementos de Resistencias"
+    },
+    "penalty": {
+      "value": "Potencial -40 en los combates que no sepa si puede ganar. Aplica Miedo si está en peligro"
+    },
+    "cost": {
+      "value": 30
+    },
+    "cost2": {
+      "value": 40
+    },
+    "opposite": {
+      "value": "Valentía"
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Cobardía"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "1TnKINWL8pbJZEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1TnKINWL8pbJZEAA"
+}

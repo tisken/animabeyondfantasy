@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Capa de las Alas",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "intermediate"
+    },
+    "powerLevel": {
+      "value": 2
+    },
+    "fabula": {
+      "grade1": 180,
+      "grade2": 240,
+      "grade3": 280
+    },
+    "itemType": {
+      "value": "wearable"
+    },
+    "effect": {
+      "value": "Permite volar. Originaria de la cultura Ebudan"
+    },
+    "source": {
+      "value": "Prometheum p.41"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "EnKNU1knj4i3JCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!EnKNU1knj4i3JCAA"
+}

@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Cristales de Alma",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "minor"
+    },
+    "powerLevel": {
+      "value": 1
+    },
+    "fabula": {
+      "grade1": 140,
+      "grade2": 180,
+      "grade3": 240
+    },
+    "itemType": {
+      "value": "consumable"
+    },
+    "effect": {
+      "value": "Piedras índigo que almacenan fragmentos de almas. Pueden usarse para alimentar rituales"
+    },
+    "source": {
+      "value": "Prometheum p.38"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "F90fyOMGAga5BCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!F90fyOMGAga5BCAA"
+}

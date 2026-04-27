@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Gemas de Fuego",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "minor"
+    },
+    "powerLevel": {
+      "value": 1
+    },
+    "fabula": {
+      "grade1": 120,
+      "grade2": 140,
+      "grade3": 180
+    },
+    "itemType": {
+      "value": "consumable"
+    },
+    "effect": {
+      "value": "Cristales elementales de fuego. Al romperse liberan una explosión de llamas"
+    },
+    "source": {
+      "value": "Prometheum p.37"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "MZ529aRxRZrELDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!MZ529aRxRZrELDAA"
+}

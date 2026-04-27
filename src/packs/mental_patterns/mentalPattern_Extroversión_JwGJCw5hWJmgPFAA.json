@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Extroversión",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Añade +20 a Potencial y Proyección para afectar a otros "
+    },
+    "penalty": {
+      "value": "Dobla rango de Pifia en Poderes personales. Sus poderes on visibles y sufre un -40 solo"
+    },
+    "cost": {
+      "value": 30
+    },
+    "cost2": {
+      "value": 40
+    },
+    "opposite": {
+      "value": "Introversión"
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Extroversión"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "JwGJCw5hWJmgPFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!JwGJCw5hWJmgPFAA"
+}

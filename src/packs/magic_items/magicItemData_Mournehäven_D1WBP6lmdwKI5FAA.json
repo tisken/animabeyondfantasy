@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Mournehäven",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "legendary"
+    },
+    "powerLevel": {
+      "value": 4
+    },
+    "fabula": {
+      "grade1": 280,
+      "grade2": 320,
+      "grade3": 440
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Espada del Rey de los Héroes Holst. Mordedora de hielo. Poderes de frío devastadores"
+    },
+    "source": {
+      "value": "Prometheum p.46"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "D1WBP6lmdwKI5FAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!D1WBP6lmdwKI5FAA"
+}

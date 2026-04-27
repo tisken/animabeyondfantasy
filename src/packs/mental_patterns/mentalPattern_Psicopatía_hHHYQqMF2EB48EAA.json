@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Psicopatía",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Potencial +30 y Proyección +20 para dañar. Añade +10 al Daño. Bono de +40 a Frialdad"
+    },
+    "penalty": {
+      "value": "Potencial -80 en Sentiente y Telepatía. Potencial -20 si no daña o manipula. Acciones sociales -100"
+    },
+    "cost": {
+      "value": 30
+    },
+    "cost2": {
+      "value": 40
+    },
+    "opposite": {
+      "value": "Compasión"
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Psicopatía"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "hHHYQqMF2EB48EAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!hHHYQqMF2EB48EAA"
+}

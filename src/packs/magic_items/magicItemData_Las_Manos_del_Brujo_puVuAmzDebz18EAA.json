@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Las Manos del Brujo",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "major"
+    },
+    "powerLevel": {
+      "value": 3
+    },
+    "fabula": {
+      "grade1": 240,
+      "grade2": 280,
+      "grade3": 320
+    },
+    "itemType": {
+      "value": "wearable"
+    },
+    "effect": {
+      "value": "Guantes de cuero negro con runa mística. Potencian habilidades mágicas"
+    },
+    "source": {
+      "value": "Prometheum p.52"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "puVuAmzDebz18EAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!puVuAmzDebz18EAA"
+}

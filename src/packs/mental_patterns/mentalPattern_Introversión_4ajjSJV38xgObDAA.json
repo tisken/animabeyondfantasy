@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Introversión",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Potencial +40 a los Poderes que sólo le afecten a él. Se mantienen con un grado superior"
+    },
+    "penalty": {
+      "value": "Proyección -20 y -40 a todas las acciones sociales en público y a en la primera ronda de combate"
+    },
+    "cost": {
+      "value": 30
+    },
+    "cost2": {
+      "value": 40
+    },
+    "opposite": {
+      "value": "Extroversión"
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Introversión"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "4ajjSJV38xgObDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!4ajjSJV38xgObDAA"
+}

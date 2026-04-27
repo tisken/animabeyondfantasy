@@ -53,3 +53,54 @@ def gen_summons():
     wr('summons', items)
 if __name__ == '__main__':
     print('Generating...'); gen_advantages(); gen_disadvantages(); gen_categories(); gen_martial_arts(); gen_ki_skills(); gen_metamagic(); gen_summons(); print('Done!')
+
+def gen_mental_patterns():
+    items = []
+    for d in json.load(open(f'{DATA_DIR}/mental_patterns_excel.json')):
+        items.append(mk(d['name'], 'mentalPattern', {
+            'bonus': {'value': d.get('Bonos', '')},
+            'penalty': {'value': d.get('Penalizador', '')},
+            'cost': {'value': d.get('Coste', 0) or 0},
+            'cost2': {'value': d.get('Coste 2', 0) or 0},
+            'opposite': {'value': d.get('Opuesto', '')},
+            'description': {'value': d.get('Descripción', '')}
+        }))
+    wr('mental_patterns', items)
+
+def gen_races():
+    items = []
+    for d in json.load(open(f'{DATA_DIR}/races_excel.json')):
+        items.append(mk(d['name'], 'raceData', {
+            'rf': {'value': d.get('RF', 0) or 0}, 're': {'value': d.get('RE', 0) or 0},
+            'rv': {'value': d.get('RV', 0) or 0}, 'rm': {'value': d.get('RM', 0) or 0},
+            'rp': {'value': d.get('RP', 0) or 0},
+            'agi': {'value': d.get('AGI', 0) or 0}, 'con': {'value': d.get('CON', 0) or 0},
+            'des': {'value': d.get('DES', 0) or 0}, 'fue': {'value': d.get('FUE', 0) or 0},
+            'int': {'value': d.get('INT', 0) or 0}, 'per': {'value': d.get('PER', 0) or 0},
+            'pod': {'value': d.get('POD', 0) or 0}, 'vol': {'value': d.get('VOL', 0) or 0},
+            'size': {'value': d.get('Tamaño', 0) or 0},
+            'regeneration': {'value': d.get('Regeneración', 0) or 0},
+            'fatigue': {'value': d.get('Cansancio', 0) or 0},
+            'description': {'value': d.get('Descripciones', '')}
+        }))
+    wr('races', items)
+
+def gen_magic_items():
+    items = []
+    for d in json.load(open(f'{DATA_DIR}/magic_items.json')):
+        fab = d.get('fabula', [0,0,0])
+        if not isinstance(fab, list): fab = [0,0,0]
+        while len(fab) < 3: fab.append(0)
+        items.append(mk(d['name'], 'magicItemData', {
+            'tier': {'value': d.get('tier', 'minor')},
+            'powerLevel': {'value': d.get('powerLevel', 0) or 0},
+            'fabula': {'grade1': fab[0] or 0, 'grade2': fab[1] or 0, 'grade3': fab[2] or 0},
+            'itemType': {'value': d.get('type', '')},
+            'effect': {'value': d.get('effect', '')},
+            'source': {'value': d.get('source', '')}
+        }))
+    wr('magic_items', items)
+
+if __name__ == '__main__':
+    gen_mental_patterns(); gen_races(); gen_magic_items()
+    print('Extra packs done!')
