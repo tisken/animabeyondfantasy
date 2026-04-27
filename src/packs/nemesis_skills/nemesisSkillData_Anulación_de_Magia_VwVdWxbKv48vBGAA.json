@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Anulación de Magia",
+  "type": "nemesisSkillData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "martialKnowledge": {
+      "value": 30
+    },
+    "cost": {
+      "value": "30 CM"
+    },
+    "effect": {
+      "value": ""
+    },
+    "maintenance": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "VwVdWxbKv48vBGAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!VwVdWxbKv48vBGAA"
+}

@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Uno con la nada",
+  "type": "nemesisSkillData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "martialKnowledge": {
+      "value": 40
+    },
+    "cost": {
+      "value": "40 CM"
+    },
+    "effect": {
+      "value": ""
+    },
+    "maintenance": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "eCRcM6nQK5JyMFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!eCRcM6nQK5JyMFAA"
+}

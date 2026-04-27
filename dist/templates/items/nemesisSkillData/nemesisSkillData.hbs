@@ -1,0 +1,11 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field"><label>CM</label><input type="number" name="system.martialKnowledge.value" value="{{system.martialKnowledge.value}}" /></div>
+      <div class="item-field"><label>Coste</label><input type="text" name="system.cost.value" value="{{system.cost.value}}" /></div>
+      <div class="item-field"><label>Mantenimiento</label><input type="number" name="system.maintenance.value" value="{{system.maintenance.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Efecto</label><textarea name="system.effect.value" rows="4">{{system.effect.value}}</textarea></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

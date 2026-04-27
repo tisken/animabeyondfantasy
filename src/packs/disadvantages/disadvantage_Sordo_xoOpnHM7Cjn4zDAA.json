@@ -5,13 +5,13 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "category": {
-      "value": "common"
+      "value": "comunes"
     },
     "benefit": {
       "value": 1
     },
     "description": {
-      "value": "No puede oír. Penalizadores a percepción auditiva"
+      "value": ""
     },
     "effectData": {
       "icon": "",

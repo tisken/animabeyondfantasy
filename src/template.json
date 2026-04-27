@@ -405,7 +405,8 @@
       "metamagicData",
       "summonData",
       "raceData",
-      "magicItemData"
+      "magicItemData",
+      "nemesisSkillData"
     ],
     "advantage": {
       "category": { "value": "common" },
@@ -504,6 +505,12 @@
       "itemType": { "value": "" },
       "effect": { "value": "" },
       "source": { "value": "" }
+    },
+    "nemesisSkillData": {
+      "martialKnowledge": { "value": 0 },
+      "cost": { "value": "" },
+      "effect": { "value": "" },
+      "maintenance": { "value": 0 }
     },
     "ammo": {
       "amount": { "value": 0 },

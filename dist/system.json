@@ -2,7 +2,7 @@
   "id": "animabf",
   "title": "Anima Beyond Fantasy",
   "description": "Unofficial Anima Beyond Fantasy system for Foundry VTT",
-  "version": "2.3.0-test.10",
+  "version": "2.3.0-test.11",
   "compatibility": { "minimum": "13", "verified": "14.359" },
   "url": "https://github.com/tisken/animabeyondfantasy",
   "manifest": "https://raw.githubusercontent.com/tisken/animabeyondfantasy/main/dist/system.json",
@@ -93,7 +93,8 @@
     { "name": "summons", "label": "(ES) Invocaciones", "system": "animabf", "path": "./packs/summons", "type": "Item", "private": false, "flags": {} },
     { "name": "mental_patterns", "label": "(ES) Patrones Mentales", "system": "animabf", "path": "./packs/mental_patterns", "type": "Item", "private": false, "flags": {} },
     { "name": "races", "label": "(ES) Razas", "system": "animabf", "path": "./packs/races", "type": "Item", "private": false, "flags": {} },
-    { "name": "magic_items", "label": "(ES) Objetos Mágicos", "system": "animabf", "path": "./packs/magic_items", "type": "Item", "private": false, "flags": {} }
+    { "name": "magic_items", "label": "(ES) Objetos Mágicos", "system": "animabf", "path": "./packs/magic_items", "type": "Item", "private": false, "flags": {} },
+    { "name": "nemesis_skills", "label": "(ES) Habilidades de Némesis", "system": "animabf", "path": "./packs/nemesis_skills", "type": "Item", "private": false, "flags": {} }
   ],
   "languages": [
     { "lang": "es", "name": "Español", "path": "lang/es.json" },

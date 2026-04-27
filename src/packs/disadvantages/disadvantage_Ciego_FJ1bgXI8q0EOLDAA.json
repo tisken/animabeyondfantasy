@@ -5,13 +5,13 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "category": {
-      "value": "common"
+      "value": "comunes"
     },
     "benefit": {
       "value": 2
     },
     "description": {
-      "value": "No puede ver. Penalizadores severos a combate y percepción"
+      "value": ""
     },
     "effectData": {
       "icon": "",

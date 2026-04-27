@@ -1,0 +1,41 @@
+{
+  "folder": null,
+  "name": "Obligación oral",
+  "type": "disadvantage",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": {
+      "value": "don"
+    },
+    "benefit": {
+      "value": 1
+    },
+    "description": {
+      "value": ""
+    },
+    "effectData": {
+      "icon": "",
+      "disabled": true,
+      "changes": []
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "EmJIVfQtRP6XBCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!EmJIVfQtRP6XBCAA"
+}

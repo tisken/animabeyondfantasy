@@ -42,7 +42,8 @@ export const ABFItems = /** @type {const} */ ({
   METAMAGIC_DATA: 'metamagicData',
   SUMMON_DATA: 'summonData',
   RACE_DATA: 'raceData',
-  MAGIC_ITEM_DATA: 'magicItemData'
+  MAGIC_ITEM_DATA: 'magicItemData',
+  NEMESIS_SKILL_DATA: 'nemesisSkillData'
 });
 
 /** @typedef {ValueOf<typeof ABFItems>} ABFItemsEnum */
