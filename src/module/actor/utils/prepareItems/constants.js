@@ -35,13 +35,6 @@ import { ArmorItemConfig } from '../../../types/combat/ArmorItemConfig';
 import { SupernaturalShieldItemConfig } from '../../../types/combat/SupernaturalShieldItemConfig';
 import { InventoryItemItemConfig } from '../../../types/general/InventoryItemItemConfig';
 import { EffectItemConfig } from '../../../types/effects/EffectItemConfig';
-import { CategoryItemConfig } from '../../../types/general/CategoryItemConfig';
-import { MartialArtDataItemConfig } from '../../../types/domine/MartialArtDataItemConfig';
-import { KiSkillDataItemConfig } from '../../../types/domine/KiSkillDataItemConfig';
-import { MetamagicDataItemConfig } from '../../../types/mystic/MetamagicDataItemConfig';
-import { SummonDataItemConfig } from '../../../types/mystic/SummonDataItemConfig';
-import { RaceDataItemConfig } from '../../../types/general/RaceDataItemConfig';
-import { MagicItemDataItemConfig } from '../../../types/general/MagicItemDataItemConfig';
 
 export const INTERNAL_ITEM_CONFIGURATIONS = {
   [ArsMagnusItemConfig.type]: ArsMagnusItemConfig,
@@ -83,14 +76,7 @@ export const ITEM_CONFIGURATIONS = {
   [PsychicPowerItemConfig.type]: PsychicPowerItemConfig,
   [TechniqueItemConfig.type]: TechniqueItemConfig,
   [WeaponItemConfig.type]: WeaponItemConfig,
-  [EffectItemConfig.type]: EffectItemConfig,
-  [CategoryItemConfig.type]: CategoryItemConfig,
-  [MartialArtDataItemConfig.type]: MartialArtDataItemConfig,
-  [KiSkillDataItemConfig.type]: KiSkillDataItemConfig,
-  [MetamagicDataItemConfig.type]: MetamagicDataItemConfig,
-  [SummonDataItemConfig.type]: SummonDataItemConfig,
-  [RaceDataItemConfig.type]: RaceDataItemConfig,
-  [MagicItemDataItemConfig.type]: MagicItemDataItemConfig
+  [EffectItemConfig.type]: EffectItemConfig
 };
 
 export const ALL_ITEM_CONFIGURATIONS = {
