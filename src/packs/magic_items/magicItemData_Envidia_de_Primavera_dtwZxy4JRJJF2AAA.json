@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Envidia de Primavera",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "intermediate"
+    },
+    "powerLevel": {
+      "value": 2
+    },
+    "fabula": {
+      "grade1": 180,
+      "grade2": 240,
+      "grade3": 280
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Bastón vinculado a la naturaleza. La vegetación se aparta al paso del portador"
+    },
+    "source": {
+      "value": "Prometheum p.42"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "dtwZxy4JRJJF2AAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!dtwZxy4JRJJF2AAA"
+}

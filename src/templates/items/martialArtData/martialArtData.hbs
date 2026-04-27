@@ -1,0 +1,29 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field"><label>Daño Base</label><input type="number" name="system.damageBase.value" value="{{system.damageBase.value}}" /></div>
+      <div class="item-field"><label>Daño Máx</label><input type="number" name="system.damageMax.value" value="{{system.damageMax.value}}" /></div>
+      <div class="item-field"><label>CM</label><input type="number" name="system.martialKnowledge.value" value="{{system.martialKnowledge.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Ataque</label><input type="number" name="system.bonusAttack.value" value="{{system.bonusAttack.value}}" /></div>
+      <div class="item-field"><label>B. Parada</label><input type="number" name="system.bonusBlock.value" value="{{system.bonusBlock.value}}" /></div>
+      <div class="item-field"><label>B. Esquiva</label><input type="number" name="system.bonusDodge.value" value="{{system.bonusDodge.value}}" /></div>
+      <div class="item-field"><label>B. Turno</label><input type="number" name="system.bonusTurn.value" value="{{system.bonusTurn.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Daño</label><input type="number" name="system.bonusDamage.value" value="{{system.bonusDamage.value}}" /></div>
+      <div class="item-field"><label>B. Rotura</label><input type="number" name="system.bonusBreaking.value" value="{{system.bonusBreaking.value}}" /></div>
+      <div class="item-field"><label>B. Maestro At</label><input type="number" name="system.bonusMasterAttack.value" value="{{system.bonusMasterAttack.value}}" /></div>
+      <div class="item-field"><label>B. Maestro Def</label><input type="number" name="system.bonusMasterDefense.value" value="{{system.bonusMasterDefense.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Pen. HA</label><input type="number" name="system.penaltyHA.value" value="{{system.penaltyHA.value}}" /></div>
+      <div class="item-field"><label>Pen. HE</label><input type="number" name="system.penaltyHE.value" value="{{system.penaltyHE.value}}" /></div>
+      <div class="item-field"><label>Pen. HP</label><input type="number" name="system.penaltyHP.value" value="{{system.penaltyHP.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Especial</label><textarea name="system.special.value" rows="2">{{system.special.value}}</textarea></div>
+    <div class="item-field"><label>Requisitos</label><input type="text" name="system.requirements.value" value="{{system.requirements.value}}" /></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

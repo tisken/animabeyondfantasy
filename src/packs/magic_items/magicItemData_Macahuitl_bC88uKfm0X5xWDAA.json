@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Macahuitl",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "legendary"
+    },
+    "powerLevel": {
+      "value": 4
+    },
+    "fabula": {
+      "grade1": 280,
+      "grade2": 320,
+      "grade3": 440
+    },
+    "itemType": {
+      "value": "weapon"
+    },
+    "effect": {
+      "value": "Maza legendaria de Quezcatli. Poderes de destrucción masiva"
+    },
+    "source": {
+      "value": "Prometheum p.45"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "bC88uKfm0X5xWDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!bC88uKfm0X5xWDAA"
+}

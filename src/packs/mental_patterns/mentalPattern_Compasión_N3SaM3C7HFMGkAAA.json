@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Compasión",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Sin penalizador por cubrir a otros. Aumenta un grado sus poderes para ayudar a los demás"
+    },
+    "penalty": {
+      "value": "Penalizador -20 para dañar. Requiere un chequeo de VOL 18 para tratar de matar"
+    },
+    "cost": {
+      "value": 30
+    },
+    "cost2": {
+      "value": 40
+    },
+    "opposite": {
+      "value": "Psicopatía"
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Compasión"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "N3SaM3C7HFMGkAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!N3SaM3C7HFMGkAAA"
+}

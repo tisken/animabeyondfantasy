@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Candil de Oneiros",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "minor"
+    },
+    "powerLevel": {
+      "value": 1
+    },
+    "fabula": {
+      "grade1": 140,
+      "grade2": 180,
+      "grade3": 240
+    },
+    "itemType": {
+      "value": "tool"
+    },
+    "effect": {
+      "value": "Artefacto para tratar problemas relacionados con el sueño y los espíritus oníricos"
+    },
+    "source": {
+      "value": "Prometheum p.38"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "UfJoNx1Zyiql4DAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!UfJoNx1Zyiql4DAA"
+}

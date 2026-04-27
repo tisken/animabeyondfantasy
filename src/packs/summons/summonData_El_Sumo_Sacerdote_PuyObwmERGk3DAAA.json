@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "El Sumo Sacerdote",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "normal"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 100
+    },
+    "initialCost": {
+      "value": 80
+    },
+    "powers": [
+      {
+        "name": "El Sumo Sacerdote",
+        "difficulty": 100,
+        "cost": 80,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Área de protección sagrada que impide entrada de seres sobrenaturales",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "PuyObwmERGk3DAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!PuyObwmERGk3DAAA"
+}

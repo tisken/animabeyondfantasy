@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "La Torre invertida",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "invertido"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano invertido)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 200
+    },
+    "initialCost": {
+      "value": 300
+    },
+    "powers": [
+      {
+        "name": "La Torre invertida",
+        "difficulty": 200,
+        "cost": 300,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Implosión: destrucción concentrada en un punto",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "QZxtUDaR8tPCxFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QZxtUDaR8tPCxFAA"
+}

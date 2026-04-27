@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Nephilim Duk'zarist",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 20
+    },
+    "re": {
+      "value": 15
+    },
+    "rv": {
+      "value": 15
+    },
+    "rm": {
+      "value": 15
+    },
+    "rp": {
+      "value": 15
+    },
+    "agi": {
+      "value": 0
+    },
+    "con": {
+      "value": 0
+    },
+    "des": {
+      "value": 0
+    },
+    "fue": {
+      "value": 0
+    },
+    "int": {
+      "value": 0
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 0
+    },
+    "vol": {
+      "value": 0
+    },
+    "size": {
+      "value": 0
+    },
+    "regeneration": {
+      "value": 1
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Resist. excepcionales, Des. hacia la oscuridad, Aguante a la muerte, Curación rápida, Necesidades limitadas (1/3), Pres. lo oscuro y lo luminoso, Visión nocturna, Devoción al fuego, Cuerpos perfectos, Alergia al metal, Alma inmortal (-5 PXs)"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "8qBNE7BPSNPd5BAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!8qBNE7BPSNPd5BAA"
+}

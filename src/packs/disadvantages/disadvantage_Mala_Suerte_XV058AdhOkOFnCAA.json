@@ -1,0 +1,41 @@
+{
+  "folder": null,
+  "name": "Mala Suerte",
+  "type": "disadvantage",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": {
+      "value": "common"
+    },
+    "benefit": {
+      "value": 1
+    },
+    "description": {
+      "value": "+2 al rango de pifia (1-5 en vez de 1-3)"
+    },
+    "effectData": {
+      "icon": "",
+      "disabled": true,
+      "changes": []
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "XV058AdhOkOFnCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!XV058AdhOkOFnCAA"
+}

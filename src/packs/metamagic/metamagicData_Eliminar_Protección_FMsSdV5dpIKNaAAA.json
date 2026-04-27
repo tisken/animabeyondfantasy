@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Eliminar Protección",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "bellum"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Reduce la TA del objetivo en 2 puntos por cada 20 Zeon adicionales"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "FMsSdV5dpIKNaAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!FMsSdV5dpIKNaAAA"
+}

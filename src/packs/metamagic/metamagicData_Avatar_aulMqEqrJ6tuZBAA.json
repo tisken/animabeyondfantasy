@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Avatar",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 3
+    },
+    "branch": {
+      "value": "potestas"
+    },
+    "spheres": {
+      "value": 3
+    },
+    "effect": {
+      "value": "Gasta la mitad de Zeon actual para entrar en estado Avatar: ACT ×3, conjuros sin acumulación durante POD asaltos"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "aulMqEqrJ6tuZBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!aulMqEqrJ6tuZBAA"
+}

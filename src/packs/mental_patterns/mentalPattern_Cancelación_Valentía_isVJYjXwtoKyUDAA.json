@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Cancelación: Valentía",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Modificadores de Patrón mental: Valentía cancelados"
+    },
+    "penalty": {
+      "value": ""
+    },
+    "cost": {
+      "value": 10
+    },
+    "cost2": {
+      "value": 10
+    },
+    "opposite": {
+      "value": ""
+    },
+    "description": {
+      "value": "Cancela Patrón mental: Valentía"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "isVJYjXwtoKyUDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!isVJYjXwtoKyUDAA"
+}

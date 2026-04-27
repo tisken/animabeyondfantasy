@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Magia Definida",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "cognos"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Permite elegir exactamente a quién afecta un conjuro de área"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "SKlrwbuFT3ppQDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!SKlrwbuFT3ppQDAA"
+}

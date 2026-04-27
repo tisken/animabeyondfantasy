@@ -1,0 +1,116 @@
+{
+  "folder": null,
+  "name": "Hechicero",
+  "type": "category",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "categoryId": {
+      "value": "hechicero"
+    },
+    "levels": {
+      "value": 1
+    },
+    "turnPerLevel": {
+      "value": 5
+    },
+    "lpPerLevel": {
+      "value": 5
+    },
+    "lifeMultiple": {
+      "value": 20
+    },
+    "mkPerLevel": {
+      "value": 10
+    },
+    "cvPerLevels": {
+      "value": 3
+    },
+    "limitCombat": {
+      "value": 0.5
+    },
+    "limitMagic": {
+      "value": 0.6000000000000001
+    },
+    "limitPsychic": {
+      "value": 0.5
+    },
+    "archetype1": {
+      "value": "Místico"
+    },
+    "archetype2": {
+      "value": "Sin"
+    },
+    "costs": {
+      "attack": {
+        "value": 0
+      },
+      "block": {
+        "value": 0
+      },
+      "dodge": {
+        "value": 0
+      },
+      "wearArmor": {
+        "value": 0
+      },
+      "zeon": {
+        "value": 100
+      },
+      "ki": {
+        "value": 3
+      },
+      "kiAccum": {
+        "value": 30
+      },
+      "act": {
+        "value": 50
+      },
+      "summon": {
+        "value": 2
+      },
+      "bind": {
+        "value": 2
+      },
+      "banish": {
+        "value": 2
+      },
+      "cv": {
+        "value": 20
+      },
+      "social": {
+        "value": 2
+      },
+      "perceptive": {
+        "value": 2
+      },
+      "vigor": {
+        "value": 3
+      },
+      "subterfuge": {
+        "value": 2
+      },
+      "creative": {
+        "value": 2
+      }
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "tQNoesnvYBdaADAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!tQNoesnvYBdaADAA"
+}

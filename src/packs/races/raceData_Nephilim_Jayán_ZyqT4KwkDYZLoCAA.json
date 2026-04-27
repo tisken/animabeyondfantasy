@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Nephilim Jayán",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 15
+    },
+    "re": {
+      "value": 0
+    },
+    "rv": {
+      "value": 0
+    },
+    "rm": {
+      "value": -10
+    },
+    "rp": {
+      "value": 0
+    },
+    "agi": {
+      "value": 0
+    },
+    "con": {
+      "value": 0
+    },
+    "des": {
+      "value": 0
+    },
+    "fue": {
+      "value": 1
+    },
+    "int": {
+      "value": 0
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 0
+    },
+    "vol": {
+      "value": 0
+    },
+    "size": {
+      "value": 3
+    },
+    "regeneration": {
+      "value": 0
+    },
+    "fatigue": {
+      "value": 1
+    },
+    "description": {
+      "value": "Gigantes, Aguante al cansancio, Resistencia al daño, Fuerza descomunal, Visión espiritual, Debilidad contra la magia, Alma inmortal (-3 PXs)"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "ZyqT4KwkDYZLoCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!ZyqT4KwkDYZLoCAA"
+}

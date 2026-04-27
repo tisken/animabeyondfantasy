@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Duk'zarist",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 20
+    },
+    "re": {
+      "value": 15
+    },
+    "rv": {
+      "value": 15
+    },
+    "rm": {
+      "value": 15
+    },
+    "rp": {
+      "value": 15
+    },
+    "agi": {
+      "value": 1
+    },
+    "con": {
+      "value": 1
+    },
+    "des": {
+      "value": 1
+    },
+    "fue": {
+      "value": 1
+    },
+    "int": {
+      "value": 1
+    },
+    "per": {
+      "value": 1
+    },
+    "pod": {
+      "value": 1
+    },
+    "vol": {
+      "value": 1
+    },
+    "size": {
+      "value": 2
+    },
+    "regeneration": {
+      "value": 5
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Perfección física y anímica, Ojos de fuego, Inhumanidad, Pres. lo oscuro y lo luminoso, Lazo de oscuridad y fuego, Resisitencias excepcionales, Aguante extremo a la muerte, Curación rápida, Necesidades limitadas (1/7), Obligación sobrenatural, Alergia al metal, Modificador de nivel: +3"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "wuDqYmwnXbXdGAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!wuDqYmwnXbXdGAAA"
+}

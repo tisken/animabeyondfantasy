@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Nephilim Turak",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 0
+    },
+    "re": {
+      "value": 0
+    },
+    "rv": {
+      "value": 0
+    },
+    "rm": {
+      "value": 0
+    },
+    "rp": {
+      "value": 0
+    },
+    "agi": {
+      "value": 0
+    },
+    "con": {
+      "value": 0
+    },
+    "des": {
+      "value": 0
+    },
+    "fue": {
+      "value": 0
+    },
+    "int": {
+      "value": 0
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 0
+    },
+    "vol": {
+      "value": 0
+    },
+    "size": {
+      "value": 0
+    },
+    "regeneration": {
+      "value": 0
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Armas naturales, Memoria racial, Piel resistente, Sangre fría, Alma inmortal (-3 PXs)"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "m3JxQ957ngQFHBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!m3JxQ957ngQFHBAA"
+}

@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Idea, Musa de la Locura",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "intermediate"
+    },
+    "pact": {
+      "description": {
+        "value": "Llevar a la completa locura a un grupo numeroso de gente"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Locura",
+        "difficulty": 240,
+        "cost": 400,
+        "attack": 220,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque anímico a 300m. RM/RP 120: fracaso <20=psicosis menor, 20-60=locura temporal (hasta luna nueva), >60=locura permanente. +5 RM por cada 10 sobre dificultad",
+        "duration": "Instantáneo (efectos permanentes)"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "gLVpn9ukYcgQwEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!gLVpn9ukYcgQwEAA"
+}

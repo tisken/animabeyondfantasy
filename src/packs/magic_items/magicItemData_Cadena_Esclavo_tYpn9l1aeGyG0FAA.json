@@ -1,0 +1,47 @@
+{
+  "folder": null,
+  "name": "Cadena Esclavo",
+  "type": "magicItemData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "tier": {
+      "value": "major"
+    },
+    "powerLevel": {
+      "value": 3
+    },
+    "fabula": {
+      "grade1": 240,
+      "grade2": 280,
+      "grade3": 320
+    },
+    "itemType": {
+      "value": "wearable"
+    },
+    "effect": {
+      "value": "Cadena que somete y controla. Usado por el Imperio de Yehudah"
+    },
+    "source": {
+      "value": "Prometheum p.51"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "tYpn9l1aeGyG0FAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!tYpn9l1aeGyG0FAA"
+}

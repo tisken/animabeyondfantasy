@@ -1,0 +1,42 @@
+{
+  "folder": null,
+  "name": "Transmisión del Ki",
+  "type": "kiSkillData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "martialKnowledge": {
+      "value": 10
+    },
+    "cost": {
+      "value": "Variable"
+    },
+    "stat": {
+      "value": "any"
+    },
+    "effect": {
+      "value": "Transmite o absorbe Ki de otro ser"
+    },
+    "maintenance": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "9bf8vCm7yYOYhCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!9bf8vCm7yYOYhCAA"
+}

@@ -23,5 +23,6 @@ export const AdvantageItemConfig = ABFItemConfigFactory({
       name,
       type: ABFItems.ADVANTAGE
     });
-  }
+  },
+  hasSheet: true
 });

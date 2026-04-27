@@ -1,0 +1,17 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field"><label>Rango</label><input type="text" name="system.tier.value" value="{{system.tier.value}}" /></div>
+      <div class="item-field"><label>Nivel de Poder</label><input type="number" name="system.powerLevel.value" value="{{system.powerLevel.value}}" /></div>
+      <div class="item-field"><label>Tipo</label><input type="text" name="system.itemType.value" value="{{system.itemType.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Fábula G1</label><input type="number" name="system.fabula.grade1" value="{{system.fabula.grade1}}" /></div>
+      <div class="item-field"><label>Fábula G2</label><input type="number" name="system.fabula.grade2" value="{{system.fabula.grade2}}" /></div>
+      <div class="item-field"><label>Fábula G3</label><input type="number" name="system.fabula.grade3" value="{{system.fabula.grade3}}" /></div>
+    </div>
+    <div class="item-field"><label>Efecto</label><textarea name="system.effect.value" rows="4">{{system.effect.value}}</textarea></div>
+    <div class="item-field"><label>Fuente</label><input type="text" name="system.source.value" value="{{system.source.value}}" /></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

@@ -1,0 +1,90 @@
+{
+  "folder": null,
+  "name": "Hanja (Base)",
+  "type": "martialArtData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": "base"
+    },
+    "complexity": {
+      "value": 1
+    },
+    "damageBase": {
+      "value": 0
+    },
+    "damageMax": {
+      "value": 0
+    },
+    "damageType": {
+      "value": "impact"
+    },
+    "bonusAttack": {
+      "value": 0
+    },
+    "bonusBlock": {
+      "value": 10
+    },
+    "bonusDodge": {
+      "value": 10
+    },
+    "bonusTurn": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bonusBreaking": {
+      "value": 0
+    },
+    "bonusMasterAttack": {
+      "value": 0
+    },
+    "bonusMasterDefense": {
+      "value": 0
+    },
+    "bonusEndurance": {
+      "value": 0
+    },
+    "critic": {
+      "value": ""
+    },
+    "special": {
+      "value": "Sin penalizador por Espalda y Espacio reducido"
+    },
+    "requirements": {
+      "value": "NO"
+    },
+    "martialKnowledge": {
+      "value": 10
+    },
+    "penaltyHA": {
+      "value": 0
+    },
+    "penaltyHE": {
+      "value": -10
+    },
+    "penaltyHP": {
+      "value": -10
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "QNi2G3PpfQbgoFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QNi2G3PpfQbgoFAA"
+}

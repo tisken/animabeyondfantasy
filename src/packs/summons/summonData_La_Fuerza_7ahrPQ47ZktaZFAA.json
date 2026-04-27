@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "La Fuerza",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "normal"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 100
+    },
+    "initialCost": {
+      "value": 100
+    },
+    "powers": [
+      {
+        "name": "La Fuerza",
+        "difficulty": 100,
+        "cost": 100,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "1000 LP adicionales como acumulación de daño temporal",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "7ahrPQ47ZktaZFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7ahrPQ47ZktaZFAA"
+}

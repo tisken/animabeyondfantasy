@@ -1,0 +1,41 @@
+{
+  "folder": null,
+  "name": "Ventaja personalizada #2",
+  "type": "advantage",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": {
+      "value": "comunes"
+    },
+    "cost": {
+      "value": 0
+    },
+    "description": {
+      "value": ""
+    },
+    "effectData": {
+      "icon": "",
+      "disabled": true,
+      "changes": []
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "1eJIdHTIyyccNAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1eJIdHTIyyccNAAA"
+}

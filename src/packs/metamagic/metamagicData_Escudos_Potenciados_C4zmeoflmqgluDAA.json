@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Escudos Potenciados",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "bellum"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Incrementa los puntos de resistencia de un escudo mágico en +50 por cada 20 Zeon"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "C4zmeoflmqgluDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!C4zmeoflmqgluDAA"
+}

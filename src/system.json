@@ -2,13 +2,13 @@
   "id": "animabf",
   "title": "Anima Beyond Fantasy",
   "description": "Unofficial Anima Beyond Fantasy system for Foundry VTT",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "compatibility": { "minimum": "13", "verified": "14.359" },
-  "url": "https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry",
-  "manifest": "https://raw.githubusercontent.com/AnimaBeyondDevelop/AnimaBeyondFoundry/main/src/system.json",
-  "changelog": "https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/releases/tag/v2.2.1",
-  "download": "https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/releases/download/v2.2.1/animabf.zip",
-  "bugs": "https://github.com/AnimaBeyondDevelop/AnimaBeyondFoundry/issues",
+  "url": "https://github.com/LarsLTS/AnimaBeyondFoundry",
+  "manifest": "https://raw.githubusercontent.com/LarsLTS/AnimaBeyondFoundry/main/src/system.json",
+  "changelog": "https://github.com/LarsLTS/AnimaBeyondFoundry/releases/tag/v2.3.0",
+  "download": "https://github.com/LarsLTS/AnimaBeyondFoundry/releases/download/v2.3.0/animabf.zip",
+  "bugs": "https://github.com/LarsLTS/AnimaBeyondFoundry/issues",
   "authors": [
     { "name": "Linkaynn", "url": "https://www.jeseromero.com" },
     { "name": "Julen Bordonaba" },
@@ -83,7 +83,17 @@
       "system": "animabf",
       "private": false,
       "flags": {}
-    }
+    },
+    { "name": "advantages", "label": "(ES) Ventajas", "system": "animabf", "path": "./packs/advantages", "type": "Item", "private": false, "flags": {} },
+    { "name": "disadvantages", "label": "(ES) Desventajas", "system": "animabf", "path": "./packs/disadvantages", "type": "Item", "private": false, "flags": {} },
+    { "name": "categories", "label": "(ES) Categorías", "system": "animabf", "path": "./packs/categories", "type": "Item", "private": false, "flags": {} },
+    { "name": "martial_arts", "label": "(ES) Artes Marciales", "system": "animabf", "path": "./packs/martial_arts", "type": "Item", "private": false, "flags": {} },
+    { "name": "ki_skills", "label": "(ES) Habilidades de Ki", "system": "animabf", "path": "./packs/ki_skills", "type": "Item", "private": false, "flags": {} },
+    { "name": "metamagic", "label": "(ES) Metamagia", "system": "animabf", "path": "./packs/metamagic", "type": "Item", "private": false, "flags": {} },
+    { "name": "summons", "label": "(ES) Invocaciones", "system": "animabf", "path": "./packs/summons", "type": "Item", "private": false, "flags": {} },
+    { "name": "mental_patterns", "label": "(ES) Patrones Mentales", "system": "animabf", "path": "./packs/mental_patterns", "type": "Item", "private": false, "flags": {} },
+    { "name": "races", "label": "(ES) Razas", "system": "animabf", "path": "./packs/races", "type": "Item", "private": false, "flags": {} },
+    { "name": "magic_items", "label": "(ES) Objetos Mágicos", "system": "animabf", "path": "./packs/magic_items", "type": "Item", "private": false, "flags": {} }
   ],
   "languages": [
     { "lang": "es", "name": "Español", "path": "lang/es.json" },

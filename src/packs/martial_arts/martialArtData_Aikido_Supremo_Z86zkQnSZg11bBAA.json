@@ -1,0 +1,90 @@
+{
+  "folder": null,
+  "name": "Aikido (Supremo)",
+  "type": "martialArtData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": "base"
+    },
+    "complexity": {
+      "value": 1
+    },
+    "damageBase": {
+      "value": 10
+    },
+    "damageMax": {
+      "value": 0
+    },
+    "damageType": {
+      "value": "impact"
+    },
+    "bonusAttack": {
+      "value": 0
+    },
+    "bonusBlock": {
+      "value": 10
+    },
+    "bonusDodge": {
+      "value": 10
+    },
+    "bonusTurn": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bonusBreaking": {
+      "value": 0
+    },
+    "bonusMasterAttack": {
+      "value": 0
+    },
+    "bonusMasterDefense": {
+      "value": 0
+    },
+    "bonusEndurance": {
+      "value": 0
+    },
+    "critic": {
+      "value": ""
+    },
+    "special": {
+      "value": "Bono +2 Presa y Derribo. Contra: Presa y Derribo sin pen. y daño +4xFUE enemigo"
+    },
+    "requirements": {
+      "value": "NO"
+    },
+    "martialKnowledge": {
+      "value": 20
+    },
+    "penaltyHA": {
+      "value": 0
+    },
+    "penaltyHE": {
+      "value": -10
+    },
+    "penaltyHP": {
+      "value": -10
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "Z86zkQnSZg11bBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Z86zkQnSZg11bBAA"
+}

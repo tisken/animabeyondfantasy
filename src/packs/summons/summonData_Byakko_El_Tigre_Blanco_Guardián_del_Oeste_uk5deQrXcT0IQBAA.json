@@ -1,0 +1,69 @@
+{
+  "folder": null,
+  "name": "Byakko, El Tigre Blanco (Guardián del Oeste)",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "cardinal"
+    },
+    "pact": {
+      "description": {
+        "value": "Proteger el equilibrio del Oeste"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Protección",
+        "difficulty": 220,
+        "cost": 300,
+        "attack": 0,
+        "defense": 0,
+        "action": "passive",
+        "effect": "Reduce en -20 el daño base de cualquier ataque contra el invocador",
+        "duration": "1 asalto por cada 10 sobre dificultad"
+      },
+      {
+        "name": "Garra del Tigre",
+        "difficulty": 320,
+        "cost": 550,
+        "attack": 300,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque devastador. Daño base 150 en Penetrantes",
+        "duration": "Instantáneo"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "uk5deQrXcT0IQBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!uk5deQrXcT0IQBAA"
+}

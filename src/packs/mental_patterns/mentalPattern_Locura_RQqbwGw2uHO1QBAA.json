@@ -1,0 +1,45 @@
+{
+  "folder": null,
+  "name": "Locura",
+  "type": "mentalPattern",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "bonus": {
+      "value": "Bonificador al Potencial variable. Inmune a efectos de Locura"
+    },
+    "penalty": {
+      "value": "Loco. Tiene 0 puntos de SM"
+    },
+    "cost": {
+      "value": 20
+    },
+    "cost2": {
+      "value": 30
+    },
+    "opposite": {
+      "value": ""
+    },
+    "description": {
+      "value": "Uso de Patrón mental: Locura"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "RQqbwGw2uHO1QBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!RQqbwGw2uHO1QBAA"
+}

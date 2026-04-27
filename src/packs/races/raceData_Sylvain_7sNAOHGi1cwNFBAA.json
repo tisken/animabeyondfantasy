@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Sylvain",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 0
+    },
+    "re": {
+      "value": 20
+    },
+    "rv": {
+      "value": 10
+    },
+    "rm": {
+      "value": 30
+    },
+    "rp": {
+      "value": 30
+    },
+    "agi": {
+      "value": 1
+    },
+    "con": {
+      "value": -1
+    },
+    "des": {
+      "value": 1
+    },
+    "fue": {
+      "value": -1
+    },
+    "int": {
+      "value": 1
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 1
+    },
+    "vol": {
+      "value": 0
+    },
+    "size": {
+      "value": -2
+    },
+    "regeneration": {
+      "value": 3
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Características sobrehumanas, Res. anímicas excepcionales, Inmunidad a enf. y venenos nat., Inhumanidad, Necesidades limitadas (1/5), Curación rápida, Pres. lo oscuro y lo luminoso, Lazo hacia la luz, Obligación mágica, Su visión del mundo (-3 PXs), Modificador de nivel: +2"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "7sNAOHGi1cwNFBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7sNAOHGi1cwNFBAA"
+}

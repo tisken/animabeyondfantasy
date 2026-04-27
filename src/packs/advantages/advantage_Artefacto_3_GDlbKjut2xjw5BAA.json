@@ -1,0 +1,41 @@
+{
+  "folder": null,
+  "name": "Artefacto (3)",
+  "type": "advantage",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": {
+      "value": "trasfondo"
+    },
+    "cost": {
+      "value": 3
+    },
+    "description": {
+      "value": ""
+    },
+    "effectData": {
+      "icon": "",
+      "disabled": true,
+      "changes": []
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "GDlbKjut2xjw5BAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!GDlbKjut2xjw5BAA"
+}

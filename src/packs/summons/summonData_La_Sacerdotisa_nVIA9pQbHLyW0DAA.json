@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "La Sacerdotisa",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "normal"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 60
+    },
+    "initialCost": {
+      "value": 40
+    },
+    "powers": [
+      {
+        "name": "La Sacerdotisa",
+        "difficulty": 60,
+        "cost": 40,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Escudo de luz: 800 puntos (+100 por cada 10 sobre dificultad)",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "nVIA9pQbHLyW0DAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!nVIA9pQbHLyW0DAA"
+}

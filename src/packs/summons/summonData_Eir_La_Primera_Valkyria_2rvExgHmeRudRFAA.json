@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Eir, La Primera Valkyria",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "intermediate"
+    },
+    "pact": {
+      "description": {
+        "value": "Salvar cinco vidas de una muerte cierta"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Resurrección",
+        "difficulty": 240,
+        "cost": 350,
+        "attack": 300,
+        "defense": 0,
+        "action": "active",
+        "effect": "Puede devolver a la vida a un ser muerto hace menos de 1 minuto por cada 10 sobre dificultad",
+        "duration": "Permanente"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "2rvExgHmeRudRFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!2rvExgHmeRudRFAA"
+}

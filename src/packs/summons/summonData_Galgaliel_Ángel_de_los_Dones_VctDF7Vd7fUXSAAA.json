@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Galgaliel, Ángel de los Dones",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "minor"
+    },
+    "pact": {
+      "description": {
+        "value": "Promesa de hacer solo el bien. Si rompe la condición, no vuelve"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Arma Sagrada",
+        "difficulty": 260,
+        "cost": 400,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Crea arma calidad +10 con propiedades de luz. Doble daño contra seres malvados",
+        "duration": "1 hora por cada 10 sobre dificultad"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "VctDF7Vd7fUXSAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!VctDF7Vd7fUXSAAA"
+}

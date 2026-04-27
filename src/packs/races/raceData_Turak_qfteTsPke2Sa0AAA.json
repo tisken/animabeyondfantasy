@@ -1,0 +1,78 @@
+{
+  "folder": null,
+  "name": "Turak",
+  "type": "raceData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "rf": {
+      "value": 0
+    },
+    "re": {
+      "value": 0
+    },
+    "rv": {
+      "value": 0
+    },
+    "rm": {
+      "value": 0
+    },
+    "rp": {
+      "value": 0
+    },
+    "agi": {
+      "value": 0
+    },
+    "con": {
+      "value": 1
+    },
+    "des": {
+      "value": 0
+    },
+    "fue": {
+      "value": 1
+    },
+    "int": {
+      "value": -1
+    },
+    "per": {
+      "value": 0
+    },
+    "pod": {
+      "value": 0
+    },
+    "vol": {
+      "value": 0
+    },
+    "size": {
+      "value": 2
+    },
+    "regeneration": {
+      "value": 1
+    },
+    "fatigue": {
+      "value": 0
+    },
+    "description": {
+      "value": "Hombres dragón, Armas naturales, Escamas, Regeneración de lagarto, Cercanía con El dragón, Sangre fría, Aprendizaje lento (-3 PXs), Modificador de nivel: +1 (+2 si desarrolla más de 1 rasgo de Cercanía)"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "qfteTsPke2Sa0AAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!qfteTsPke2Sa0AAA"
+}

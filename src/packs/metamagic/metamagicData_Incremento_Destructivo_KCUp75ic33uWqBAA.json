@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Incremento Destructivo",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "bellum"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Incrementa el daño base de un conjuro ofensivo en +25 por cada 20 puntos de Zeon adicionales invertidos"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "KCUp75ic33uWqBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!KCUp75ic33uWqBAA"
+}

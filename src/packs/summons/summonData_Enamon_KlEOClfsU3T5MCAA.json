@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Enamon",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "minor"
+    },
+    "pact": {
+      "description": {
+        "value": "Ser elogiado como músico o poeta por más de mil personas"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Canción de Fascinación",
+        "difficulty": 220,
+        "cost": 500,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Todos a menos de 500m que oigan más de 1 asalto: RM/RP 100 o Fascinación. Obedecen órdenes de la canción. Resistencia +5 por cada 10 sobre dificultad",
+        "duration": "1 turno por cada 10 sobre dificultad"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "KlEOClfsU3T5MCAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!KlEOClfsU3T5MCAA"
+}

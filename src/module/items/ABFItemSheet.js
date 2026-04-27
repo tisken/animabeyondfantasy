@@ -23,6 +23,11 @@ export default class ABFItemSheet extends ItemSheetV1 {
       return `systems/animabf/templates/items/${this.item.type}/${this.item.type}.hbs`;
     }
 
+    const newTypes = ['category','martialArtData','kiSkillData','metamagicData','summonData','raceData','magicItemData','advantage','disadvantage','mentalPattern'];
+    if (newTypes.includes(this.item?.type)) {
+      return `systems/animabf/templates/items/${this.item.type}/${this.item.type}.hbs`;
+    }
+
     return super.template;
   }
 

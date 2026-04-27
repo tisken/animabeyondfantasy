@@ -1,0 +1,69 @@
+{
+  "folder": null,
+  "name": "Druaga",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "major"
+    },
+    "pact": {
+      "description": {
+        "value": "Pagar un precio extraño y aberrante designado por Druaga"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Destructora de Demonios",
+        "difficulty": 280,
+        "cost": 400,
+        "attack": 240,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque a distancia 250m. Daño base 100. Doble daño contra demonios y seres oscuros",
+        "duration": "Instantáneo"
+      },
+      {
+        "name": "Kali",
+        "difficulty": 340,
+        "cost": 700,
+        "attack": 320,
+        "defense": 0,
+        "action": "active",
+        "effect": "10 ataques consecutivos contra un único adversario",
+        "duration": "Instantáneo"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "AhFAggSL6y269AAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!AhFAggSL6y269AAA"
+}

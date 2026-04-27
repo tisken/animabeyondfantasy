@@ -1,0 +1,42 @@
+{
+  "folder": null,
+  "name": "Mult. mayor",
+  "type": "kiSkillData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "martialKnowledge": {
+      "value": 30
+    },
+    "cost": {
+      "value": ""
+    },
+    "stat": {
+      "value": ""
+    },
+    "effect": {
+      "value": ""
+    },
+    "maintenance": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "xJ3Xhq4pzP5ruBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xJ3Xhq4pzP5ruBAA"
+}
