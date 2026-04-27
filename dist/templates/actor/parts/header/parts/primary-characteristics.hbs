@@ -1,0 +1,8 @@
+{{#> ui/group class="characteristics"}}
+  {{> ui/group-header title=(localize "anima.ui.characteristics.title") }}
+  {{#> ui/group-body class="characteristics"}}
+    {{#each system.characteristics.primaries as |char key|}}
+      {{> ui/types/characteristic char=char key=key}}
+    {{/each}}
+  {{/ ui/group-body}}
+{{/ ui/group}}

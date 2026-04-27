@@ -1,0 +1,77 @@
+{{#> "systems/animabf/templates/common/ui/group.hbs"
+  class="base-values"
+}}
+  {{>
+  "systems/animabf/templates/common/ui/group-header.hbs"
+    title=(localize "anima.ui.combat.baseValues.title")
+  }}
+  {{#> "systems/animabf/templates/common/ui/group-body.hbs"
+    class="base-values"
+  }}
+    {{>
+      "systems/animabf/templates/common/ui/types/ability.hbs"
+      cssClass="attack"
+      title=(localize "anima.ui.combat.baseValues.attack.title")
+      rollable=true
+      path="system.combat.attack"
+      value=system.combat.attack
+    }}
+
+    {{>
+      "systems/animabf/templates/common/ui/types/ability.hbs"
+      cssClass="block"
+      title=(localize "anima.ui.combat.baseValues.block.title")
+      rollable=true
+      path="system.combat.block"
+      value=system.combat.block
+    }}
+
+    {{>
+      "systems/animabf/templates/common/ui/types/ability.hbs"
+      cssClass="dodge"
+      title=(localize "anima.ui.combat.baseValues.dodge.title")
+      rollable=true
+      path="system.combat.dodge"
+      value=system.combat.dodge
+    }}
+
+    {{>
+      "systems/animabf/templates/common/ui/types/affected-by-characteristic-value.hbs"
+      cssClass="wear-armor"
+      title=(localize "anima.ui.combat.baseValues.wearArmor.title")
+      rollable=false
+      path="system.combat.wearArmor"
+      value=system.combat.wearArmor
+    }}
+
+    {{>
+      "systems/animabf/templates/common/ui/types/numerical-value.hbs"
+      cssClass="extra-damage"
+      title=(localize "anima.ui.combat.baseValues.extraDamage.title")
+      path="system.general.modifiers.extraDamage"
+      value=system.general.modifiers.extraDamage
+    }}
+    {{>
+      "systems/animabf/templates/common/ui/types/numerical-value.hbs"
+      cssClass="crit-damage-bonus"
+      title=(localize "anima.ui.combat.baseValues.critDamageBonus.title")
+      path="system.general.modifiers.critDamageBonus"
+      value=system.general.modifiers.critDamageBonus
+    }}
+    {{>
+      "systems/animabf/templates/common/ui/horizontal-titled-input.hbs"
+      title=(localize "anima.ui.combat.baseValues.automaticCrit.title")
+      inputType="checkbox"
+      inputName="system.general.modifiers.automaticCrit.value"
+      inputValue=system.general.modifiers.automaticCrit.value
+    }}
+    {{>
+      "systems/animabf/templates/common/ui/types/numerical-value.hbs"
+      cssClass="damage-reduction"
+      title=(localize "anima.ui.combat.baseValues.damageReduction.title")
+      path="system.combat.damageReduction"
+      value=system.combat.damageReduction
+    }}
+
+  {{/"systems/animabf/templates/common/ui/group-body.hbs"}}
+{{/"systems/animabf/templates/common/ui/group.hbs"}}

@@ -1,0 +1,313 @@
+import { registerSettings } from "./utils/registerSettings.js";
+import { Logger } from "./utils/log.js";
+import { TEMPLATE_PATHS } from "./utils/templatePaths.js";
+import ABFActorSheet from "./module/actor/ABFActorSheet.js";
+import ABFFoundryRoll from "./module/rolls/ABFFoundryRoll.js";
+import ABFCombat from "./module/combat/ABFCombat.js";
+import { ABFActor } from "./module/actor/ABFActor.js";
+import { registerHelpers } from "./utils/handlebars-helpers/registerHelpers.js";
+import ABFItemSheet from "./module/items/ABFItemSheet.js";
+import { ABFConfig } from "./module/ABFConfig.js";
+import ABFItem from "./module/items/ABFItem.js";
+import ABFActorDirectory from "./module/SidebarDirectories/ABFActorDirectory.js";
+import { registerCombatWebsocketRoutes } from "./module/combat/websocket/registerCombatWebsocketRoutes.js";
+import { Templates, HandlebarsPartials } from "./module/utils/constants.js";
+import "./module/dialogs/GenericDialog.js";
+import { ABFSettingsKeys } from "./utils/settingKeys.js";
+import { registerKeyBindings } from "./utils/registerKeyBindings.js";
+import { applyMigrations } from "./module/migration/migrate.js";
+import { registerGlobalTypes } from "./utils/registerGlobalTypes.js";
+import ABFCombatant from "./module/combat/ABFCombatant.js";
+import { chatActionHandlers } from "./utils/chatActionHandlers.js";
+import { preloadClickHandlers } from "./module/actor/utils/createClickHandlers.js";
+import { ABFAttackData } from "./module/combat/ABFAttackData.js";
+import { getChatContextMenuFactories } from "./utils/buildChatContextMenu.js";
+/* empty css                  */
+import { registerSystemOnGame, System } from "./utils/systemMeta.js";
+import { resolveTokenName } from "./utils/tokenName.js";
+import { FormulaEvaluator } from "./utils/formulaEvaluator.js";
+import { registerHandlebarsPartials } from "./utils/handlebarsPartials.js";
+import { macroExecutors, macroCreators } from "./utils/macroCreatorRegistry.js";
+Hooks.once("init", async () => {
+  Logger.log("Initializing system");
+  registerSystemOnGame();
+  Logger.log(`Game Id:${System.id}`);
+  window.ABFFoundryRoll = ABFFoundryRoll;
+  CONFIG.Dice.rolls = [ABFFoundryRoll, ...CONFIG.Dice.rolls];
+  await (foundry.applications.handlebars.loadTemplates ?? loadTemplates)(TEMPLATE_PATHS);
+  await registerHandlebarsPartials(HandlebarsPartials);
+  CONFIG.Actor.documentClass = ABFActor;
+  CONFIG.config = ABFConfig;
+  CONFIG.Combat.documentClass = ABFCombat;
+  CONFIG.Combatant.documentClass = ABFCombatant;
+  CONFIG.Item.documentClass = ABFItem;
+  CONFIG.ui.actors = ABFActorDirectory;
+  const ActorsCollection = foundry.documents?.collections?.Actors ?? Actors;
+  const ItemsCollection = foundry.documents?.collections?.Items ?? Items;
+  const ActorSheetV1 = foundry.appv1?.sheets?.ActorSheet ?? ActorSheet;
+  const ItemSheetV1 = foundry.appv1?.sheets?.ItemSheet ?? ItemSheet;
+  ActorsCollection.unregisterSheet("core", ActorSheetV1);
+  ActorsCollection.registerSheet(System.id, ABFActorSheet, { makeDefault: true });
+  ItemsCollection.unregisterSheet("core", ItemSheetV1);
+  ItemsCollection.registerSheet(System.id, ABFItemSheet, {
+    makeDefault: true
+  });
+  registerSettings(System.id);
+  registerHelpers();
+  registerKeyBindings();
+  preloadClickHandlers();
+});
+Hooks.once("setup", () => {
+});
+Hooks.once("ready", async () => {
+  if (game.user.isGM) {
+    const creationVersion = game.settings.get(
+      System.id,
+      ABFSettingsKeys.WORLD_CREATION_SYSTEM_VERSION
+    );
+    if (!creationVersion) {
+      await game.settings.set(
+        System.id,
+        ABFSettingsKeys.WORLD_CREATION_SYSTEM_VERSION,
+        game.system.version
+      );
+      console.log(`Registrada versión de creación del mundo: ${game.system.version}`);
+    }
+  }
+  registerCombatWebsocketRoutes();
+  applyMigrations();
+  registerGlobalTypes();
+  game.animabf ??= {};
+  game.animabf.api ??= {};
+  Object.assign(game.animabf.api, { ABFAttackData });
+  game.animabf.macros ??= {};
+  game.animabf.macros.execute = async ({ id, actorUuid, itemUuid }) => {
+    const exec = macroExecutors[id];
+    if (typeof exec !== "function") return;
+    const actor = await fromUuid(actorUuid);
+    const item = await fromUuid(itemUuid);
+    if (!actor || !item) return;
+    return exec({ actor, item });
+  };
+  game.socket.on("system.animabf", async (p) => {
+    if (!game.user.isGM) return;
+    if (!p || p.op !== "updateAttackTargets") return;
+    const msg = game.messages.get(p.messageId);
+    if (!msg) return;
+    const kind = msg.getFlag(System.id, "kind");
+    if (kind !== "attackData") return;
+    const entry = p.entry ?? {};
+    const targets = foundry.utils.duplicate(msg.getFlag(System.id, "targets") ?? []);
+    const findIndexByKey = (arr, e) => {
+      if (e.tokenUuid) {
+        const iTok = arr.findIndex((t) => t.tokenUuid === e.tokenUuid);
+        if (iTok >= 0) return iTok;
+      }
+      if (e.actorUuid && !e.tokenUuid) {
+        return arr.findIndex((t) => t.actorUuid === e.actorUuid && !t.tokenUuid);
+      }
+      return -1;
+    };
+    const i = findIndexByKey(targets, entry);
+    if (i >= 0) targets[i] = { ...targets[i], ...entry };
+    else targets.push(entry);
+    await msg.setFlag(System.id, "targets", targets);
+    ui.chat?.updateMessage?.(msg);
+  });
+});
+async function _handleChatMessage(message, html) {
+  html.addEventListener("click", (e) => {
+    const btn = e.target.closest(".contractible-button");
+    if (btn) btn.closest(".contractible-group")?.classList.toggle("contracted");
+  });
+  if (!game.user.isGM) {
+    html.querySelectorAll('.only-if-gm, [data-requires-permission="gm"]').forEach((el) => el.remove());
+  }
+  const speakerActorId = message.speaker?.actor;
+  const speakerActor = speakerActorId ? game.actors.get(speakerActorId) : null;
+  if (speakerActor && !speakerActor.testUserPermission(game.user, CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER)) {
+    html.querySelectorAll('.only-if-owner, [data-requires-permission="owner"]').forEach((el) => el.remove());
+  }
+  html.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chat-action-button");
+    if (!btn) return;
+    const { action } = btn.dataset;
+    const handler = chatActionHandlers[action];
+    if (handler) handler(message, html, btn.dataset);
+    else console.warn(`No handler found for action: ${action}`);
+  });
+  if (message.getFlag(System.id, "kind") !== "attackData") return;
+  const flags = message.flags?.animabf ?? {};
+  const targets = Array.isArray(flags.targets) ? [...flags.targets] : [];
+  const rowId = `animabf-defense-row-${message.id}`;
+  const row = html.querySelector(`#${rowId}`);
+  if (!row) return;
+  if (!targets.length) {
+    row.innerHTML = "";
+    if (game.user.isGM) {
+      row.innerHTML = `<span class="hint" style="opacity:.7;">${game.i18n.localize("chat.attackData.noTargets")}</span>`;
+    }
+    return;
+  }
+  const order = { pending: 0, rolling: 1, done: 2, expired: 3 };
+  targets.sort((a, b) => (order[a.state] ?? 99) - (order[b.state] ?? 99));
+  const me = game.user;
+  const enriched = targets.map((t) => {
+    const actor = t.actorUuid ? game.actors.get(t.actorUuid) : null;
+    const canDefend = me.isGM || actor?.testUserPermission?.(me, CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER);
+    const state = t.state ?? "pending";
+    const dot = state === "done" ? "🟢" : state === "rolling" ? "🟠" : state === "expired" ? "⚪" : "🟡";
+    const rollerName = state !== "pending" && t.rolledBy ? game.users.get(t.rolledBy)?.name ?? t.rolledBy : null;
+    const rollerTitle = rollerName ? game.i18n.format("chat.attackData.rollingBy", { name: rollerName }) : "";
+    (() => {
+      const id = t.tokenUuid;
+      if (!id) return null;
+      try {
+        if (typeof id === "string" && id.includes(".")) {
+          const doc = fromUuidSync(id);
+          return doc?.name ?? doc?.document?.name ?? doc?.object?.name ?? null;
+        }
+        const onCanvas = canvas?.tokens?.get?.(id);
+        if (onCanvas) return onCanvas.name ?? onCanvas.document?.name ?? null;
+        const sceneId = message.speaker?.scene;
+        if (sceneId) {
+          const tok = game.scenes?.get(sceneId)?.tokens?.get?.(id);
+          if (tok) return tok.name;
+        }
+        for (const s of game.scenes) {
+          const tok = s.tokens?.get?.(id);
+          if (tok) return tok.name;
+        }
+      } catch {
+      }
+      return null;
+    })();
+    const tokenLabel = resolveTokenName(
+      { tokenUuid: t.tokenUuid, actorUuid: t.actorUuid },
+      { message }
+    );
+    const label = t.label ?? tokenLabel ?? actor?.name ?? game.i18n.localize("chat.common.target");
+    return {
+      messageId: message.id,
+      actorUuid: t.actorUuid ?? "",
+      tokenUuid: t.tokenUuid ?? "",
+      state,
+      stateDot: dot,
+      stateLabel: game.i18n.localize(`chat.attackData.state.${state}`),
+      rollerName,
+      rollerTitle,
+      label,
+      showDefendButton: !!(canDefend && state === "pending")
+    };
+  });
+  const fn = foundry.applications?.handlebars?.renderTemplate ?? renderTemplate;
+  const chipsHTML = await fn(Templates.Chat.AttackTargetsChips, { targets: enriched });
+  row.innerHTML = chipsHTML;
+}
+Hooks.on("renderChatMessageHTML", (message, html) => _handleChatMessage(message, html));
+Hooks.on("getChatMessageContextOptions", (_app, menu) => {
+  const menuItemFactories = getChatContextMenuFactories();
+  for (const makeItem of menuItemFactories) {
+    const item = makeItem();
+    if (Array.isArray(item)) menu.push(...item);
+    else menu.push(item);
+  }
+});
+Hooks.on("chatMessage", (chatLog, message, chatData) => {
+  if (!message || !message.includes("@formula{")) return;
+  if (chatData._animabfFormulaDone) return;
+  const speaker = chatData.speaker || {};
+  let actor = null;
+  if (speaker.actor) {
+    actor = game.actors.get(speaker.actor) ?? actor;
+  }
+  if (!actor && speaker.token) {
+    try {
+      const tokenDoc = fromUuidSync(speaker.token);
+      actor = tokenDoc?.actor ?? actor;
+    } catch (e) {
+      console.error("Formula @ speaker.token resolve error", e);
+    }
+  }
+  if (!actor && canvas?.tokens?.controlled?.length) {
+    actor = canvas.tokens.controlled[0]?.actor ?? actor;
+  }
+  const replaced = message.replace(/@formula\{([^}]+)\}/g, (match, inner) => {
+    const value = FormulaEvaluator.evaluate(inner, actor);
+    return value ?? match;
+  });
+  if (replaced === message) return;
+  chatData._animabfFormulaDone = true;
+  chatLog.processMessage(replaced, chatData);
+  return false;
+});
+Hooks.on("renderActiveEffectConfig", (app, html) => {
+  const transfer = html.find('input[name="transfer"]');
+  if (!transfer.length) return;
+  transfer.prop("checked", false);
+  transfer.prop("disabled", true);
+  transfer.closest(".form-group").hide();
+});
+Hooks.on("renderTokenHUD", async (hud, html) => {
+  const root = hud.element ?? html?.[0];
+  if (!root) return;
+  const token = hud.object;
+  const actor = token?.actor;
+  if (!actor) return;
+  const flagSystem = game.animabf.id;
+  const flagKey = "defensesCounter";
+  const defensesCounter = await actor.getFlag(flagSystem, flagKey) ?? {
+    accumulated: 0,
+    keepAccumulating: true
+  };
+  const currentValue = Number(defensesCounter.accumulated) || 0;
+  const middleCol = root.querySelector(".col.middle");
+  if (!middleCol) return;
+  let control = middleCol.querySelector(".attribute.abf-flag-value");
+  if (!control) {
+    control = document.createElement("div");
+    control.classList.add("attribute", "abf-flag-value");
+    control.dataset.tooltip = "Defensas adicionales";
+    control.innerHTML = `
+      <label style="margin-right: 4px;">DEF</label>
+      <input type="number" name="abfFlagValue" min="0" step="1" value="0">
+    `;
+    middleCol.prepend(control);
+  }
+  const input = control.querySelector("input[name='abfFlagValue']");
+  if (!input) return;
+  input.value = currentValue;
+  input.onchange = async (ev) => {
+    ev.stopPropagation();
+    const newValue = Number(ev.target.value) || 0;
+    await actor.setFlag(flagSystem, flagKey, {
+      ...defensesCounter,
+      accumulated: newValue
+    });
+  };
+});
+Hooks.on("hotbarDrop", async (_bar, data, slot) => {
+  if (data?.type !== "Item" || !data.uuid) return;
+  const item = await fromUuid(data.uuid);
+  if (!item) return;
+  const actor = item.parent;
+  if (!actor) return;
+  const creatorId = item.system?.hotbarMacroCreatorId;
+  if (!creatorId) return;
+  const creator = macroCreators[creatorId];
+  if (typeof creator !== "function") return;
+  const handled = await creator({ actor, item, slot });
+  if (handled) return false;
+});
+Handlebars.JavaScriptCompiler.prototype.nameLookup = function(parent, name) {
+  if (name.indexOf("xRoot") === 0) {
+    return "data.root";
+  }
+  if (/^[0-9]+$/.test(name)) {
+    return `${parent}[${name}]`;
+  }
+  if (Handlebars.JavaScriptCompiler.isValidJavaScriptVariableName(name)) {
+    return `${parent}.${name}`;
+  }
+  return `${parent}['${name}']`;
+};

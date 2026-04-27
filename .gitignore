@@ -8,7 +8,7 @@ foundryconfig.json
 
 .husky/
 
-dist/
+# dist/ — included for test
 package/
 /packs
 
