@@ -1,0 +1,30 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <h4>Modificadores de Características</h4>
+    <div class="item-row">
+      <div class="item-field"><label>FUE</label><input type="number" name="system.fue.value" value="{{system.fue.value}}" /></div>
+      <div class="item-field"><label>DES</label><input type="number" name="system.des.value" value="{{system.des.value}}" /></div>
+      <div class="item-field"><label>AGI</label><input type="number" name="system.agi.value" value="{{system.agi.value}}" /></div>
+      <div class="item-field"><label>CON</label><input type="number" name="system.con.value" value="{{system.con.value}}" /></div>
+      <div class="item-field"><label>INT</label><input type="number" name="system.int.value" value="{{system.int.value}}" /></div>
+      <div class="item-field"><label>PER</label><input type="number" name="system.per.value" value="{{system.per.value}}" /></div>
+      <div class="item-field"><label>POD</label><input type="number" name="system.pod.value" value="{{system.pod.value}}" /></div>
+      <div class="item-field"><label>VOL</label><input type="number" name="system.vol.value" value="{{system.vol.value}}" /></div>
+    </div>
+    <h4>Resistencias</h4>
+    <div class="item-row">
+      <div class="item-field"><label>RF</label><input type="number" name="system.rf.value" value="{{system.rf.value}}" /></div>
+      <div class="item-field"><label>RE</label><input type="number" name="system.re.value" value="{{system.re.value}}" /></div>
+      <div class="item-field"><label>RV</label><input type="number" name="system.rv.value" value="{{system.rv.value}}" /></div>
+      <div class="item-field"><label>RM</label><input type="number" name="system.rm.value" value="{{system.rm.value}}" /></div>
+      <div class="item-field"><label>RP</label><input type="number" name="system.rp.value" value="{{system.rp.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Tamaño</label><input type="number" name="system.size.value" value="{{system.size.value}}" /></div>
+      <div class="item-field"><label>Regeneración</label><input type="number" name="system.regeneration.value" value="{{system.regeneration.value}}" /></div>
+      <div class="item-field"><label>Cansancio</label><input type="number" name="system.fatigue.value" value="{{system.fatigue.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Descripción</label><textarea name="system.description.value" rows="3">{{system.description.value}}</textarea></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

@@ -1,0 +1,40 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field"><label>Turno/Nivel</label><input type="number" name="system.turnPerLevel.value" value="{{system.turnPerLevel.value}}" /></div>
+      <div class="item-field"><label>PV/Nivel</label><input type="number" name="system.lpPerLevel.value" value="{{system.lpPerLevel.value}}" /></div>
+      <div class="item-field"><label>Mult. Vida</label><input type="number" name="system.lifeMultiple.value" value="{{system.lifeMultiple.value}}" /></div>
+      <div class="item-field"><label>CM/Nivel</label><input type="number" name="system.mkPerLevel.value" value="{{system.mkPerLevel.value}}" /></div>
+      <div class="item-field"><label>CV/Niveles</label><input type="number" name="system.cvPerLevels.value" value="{{system.cvPerLevels.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Lím. Combate</label><input type="number" name="system.limitCombat.value" value="{{system.limitCombat.value}}" step="0.1" /></div>
+      <div class="item-field"><label>Lím. Magia</label><input type="number" name="system.limitMagic.value" value="{{system.limitMagic.value}}" step="0.1" /></div>
+      <div class="item-field"><label>Lím. Psíquico</label><input type="number" name="system.limitPsychic.value" value="{{system.limitPsychic.value}}" step="0.1" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Arquetipo 1</label><input type="text" name="system.archetype1.value" value="{{system.archetype1.value}}" /></div>
+      <div class="item-field"><label>Arquetipo 2</label><input type="text" name="system.archetype2.value" value="{{system.archetype2.value}}" /></div>
+    </div>
+    <h4>Costes PD</h4>
+    <div class="item-row">
+      <div class="item-field"><label>Ataque</label><input type="number" name="system.costs.attack.value" value="{{system.costs.attack.value}}" /></div>
+      <div class="item-field"><label>Parada</label><input type="number" name="system.costs.block.value" value="{{system.costs.block.value}}" /></div>
+      <div class="item-field"><label>Esquiva</label><input type="number" name="system.costs.dodge.value" value="{{system.costs.dodge.value}}" /></div>
+      <div class="item-field"><label>Ll. Armadura</label><input type="number" name="system.costs.wearArmor.value" value="{{system.costs.wearArmor.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Ki</label><input type="number" name="system.costs.ki.value" value="{{system.costs.ki.value}}" /></div>
+      <div class="item-field"><label>Ac. Ki</label><input type="number" name="system.costs.kiAccum.value" value="{{system.costs.kiAccum.value}}" /></div>
+      <div class="item-field"><label>Zeon</label><input type="number" name="system.costs.zeon.value" value="{{system.costs.zeon.value}}" /></div>
+      <div class="item-field"><label>ACT</label><input type="number" name="system.costs.act.value" value="{{system.costs.act.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Convocar</label><input type="number" name="system.costs.summon.value" value="{{system.costs.summon.value}}" /></div>
+      <div class="item-field"><label>Atar</label><input type="number" name="system.costs.bind.value" value="{{system.costs.bind.value}}" /></div>
+      <div class="item-field"><label>Desconvocar</label><input type="number" name="system.costs.banish.value" value="{{system.costs.banish.value}}" /></div>
+      <div class="item-field"><label>CV</label><input type="number" name="system.costs.cv.value" value="{{system.costs.cv.value}}" /></div>
+    </div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

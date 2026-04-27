@@ -1,0 +1,23 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field"><label>Tipo</label><input type="text" name="system.summonType.value" value="{{system.summonType.value}}" /></div>
+      <div class="item-field"><label>Rango</label><input type="text" name="system.tier.value" value="{{system.tier.value}}" /></div>
+      <div class="item-field"><label>Dificultad</label><input type="number" name="system.initialDifficulty.value" value="{{system.initialDifficulty.value}}" /></div>
+      <div class="item-field"><label>Coste Zeon</label><input type="number" name="system.initialCost.value" value="{{system.initialCost.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Pacto</label><textarea name="system.pact.description.value" rows="2">{{system.pact.description.value}}</textarea></div>
+    {{#each system.powers as |power idx|}}
+    <div class="item-power-block">
+      <h4>Poder: {{power.name}}</h4>
+      <div class="item-row">
+        <div class="item-field"><label>Dificultad</label><span>{{power.difficulty}}</span></div>
+        <div class="item-field"><label>Coste</label><span>{{power.cost}}</span></div>
+        <div class="item-field"><label>Duración</label><span>{{power.duration}}</span></div>
+      </div>
+      <div class="item-field"><label>Efecto</label><p>{{power.effect}}</p></div>
+    </div>
+    {{/each}}
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

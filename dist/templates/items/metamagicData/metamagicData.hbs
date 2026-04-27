@@ -1,0 +1,11 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field"><label>Grado</label><input type="number" name="system.grade.value" value="{{system.grade.value}}" /></div>
+      <div class="item-field"><label>Rama</label><input type="text" name="system.branch.value" value="{{system.branch.value}}" /></div>
+      <div class="item-field"><label>Esferas</label><input type="number" name="system.spheres.value" value="{{system.spheres.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Efecto</label><textarea name="system.effect.value" rows="4">{{system.effect.value}}</textarea></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

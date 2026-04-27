@@ -19,7 +19,8 @@ const DisadvantageItemConfig = ABFItemConfigFactory({
       name,
       type: ABFItems.DISADVANTAGE
     });
-  }
+  },
+  hasSheet: true
 });
 export {
   DisadvantageItemConfig

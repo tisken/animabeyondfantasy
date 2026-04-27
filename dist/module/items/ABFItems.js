@@ -37,7 +37,14 @@ const ABFItems = (
     ARMOR: "armor",
     SUPERNATURAL_SHIELD: "supernaturalShield",
     INVENTORY_ITEM: "inventoryItem",
-    EFFECT: "effect"
+    EFFECT: "effect",
+    CATEGORY: "category",
+    MARTIAL_ART_DATA: "martialArtData",
+    KI_SKILL_DATA: "kiSkillData",
+    METAMAGIC_DATA: "metamagicData",
+    SUMMON_DATA: "summonData",
+    RACE_DATA: "raceData",
+    MAGIC_ITEM_DATA: "magicItemData"
   }
 );
 export {
