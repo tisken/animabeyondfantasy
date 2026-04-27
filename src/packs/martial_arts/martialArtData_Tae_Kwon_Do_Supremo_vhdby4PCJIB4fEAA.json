@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "supremo"
+    },
+    "artType": {
+      "value": "normal"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Ataque adicional, incluso tras atacar con armas, sin penalizador"
+      "value": "Grado Supremo (incluye bonos de Base + Avanzado). Los bonos mostrados son los de ESTE grado, se suman a los anteriores.\n\nAtaque adicional, incluso tras atacar con armas, sin penalizador"
     },
     "requirements": {
       "value": "NO"

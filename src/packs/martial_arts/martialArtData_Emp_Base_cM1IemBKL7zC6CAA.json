@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Desarmar sin penalizador y con +3 a los controles enfrentados"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\nDesarmar sin penalizador y con +3 a los controles enfrentados"
     },
     "requirements": {
       "value": "NO"

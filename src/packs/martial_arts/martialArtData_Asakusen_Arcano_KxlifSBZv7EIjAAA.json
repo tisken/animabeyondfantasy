@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Sustituye bono de Kung Fu por +40. +20 al Crítico si Apuntado"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nSustituye bono de Kung Fu por +40. +20 al Crítico si Apuntado"
     },
     "requirements": {
       "value": "NO"

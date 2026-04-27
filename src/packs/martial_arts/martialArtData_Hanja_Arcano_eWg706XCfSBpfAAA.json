@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Sin penalizador por Espalda, Espacio reducido, Amenazado y Parálisis menor y parcial"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nSin penalizador por Espalda, Espacio reducido, Amenazado y Parálisis menor y parcial"
     },
     "requirements": {
       "value": "NO"

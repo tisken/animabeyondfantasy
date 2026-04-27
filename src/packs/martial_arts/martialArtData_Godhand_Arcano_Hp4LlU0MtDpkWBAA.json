@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Sacrifica 1 Ataque: +60 HA, +100 Daño primero del siguiente turno"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nSacrifica 1 Ataque: +60 HA, +100 Daño primero del siguiente turno"
     },
     "requirements": {
       "value": "NO"

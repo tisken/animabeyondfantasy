@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Desarmar bono +3 y sin penalizador. Chequeo de Desarmar en cada Parada con éxito"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nDesarmar bono +3 y sin penalizador. Chequeo de Desarmar en cada Parada con éxito"
     },
     "requirements": {
       "value": "NO"

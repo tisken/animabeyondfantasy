@@ -445,6 +445,7 @@
     },
     "martialArtData": {
       "grade": { "value": "base" },
+      "artType": { "value": "normal" },
       "complexity": { "value": 1 },
       "damageBase": { "value": 0 },
       "damageMax": { "value": 0 },

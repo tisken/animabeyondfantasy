@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "TA 6 contra todo. Barrera de Daño 200"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nTA 6 contra todo. Barrera de Daño 200"
     },
     "requirements": {
       "value": "NO"

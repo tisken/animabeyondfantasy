@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "supremo"
+    },
+    "artType": {
+      "value": "normal"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Añade +20 al nivel del crítico obtenido"
+      "value": "Grado Supremo (incluye bonos de Base + Avanzado). Los bonos mostrados son los de ESTE grado, se suman a los anteriores.\n\nAñade +20 al nivel del crítico obtenido"
     },
     "requirements": {
       "value": "NO"

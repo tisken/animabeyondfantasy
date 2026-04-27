@@ -2,10 +2,29 @@
   <div class="item-sheet-body">
     <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
     <div class="item-row">
-      <div class="item-field"><label>Daño Base</label><input type="number" name="system.damageBase.value" value="{{system.damageBase.value}}" /></div>
-      <div class="item-field"><label>Daño Máx</label><input type="number" name="system.damageMax.value" value="{{system.damageMax.value}}" /></div>
+      <div class="item-field">
+        <label>Tipo</label>
+        <select name="system.artType.value">
+          <option value="normal" {{#if (is 'eq' system.artType.value 'normal')}}selected{{/if}}>Normal (Base → Avanzado → Supremo)</option>
+          <option value="arcana" {{#if (is 'eq' system.artType.value 'arcana')}}selected{{/if}}>Arcana (Base → Arcano)</option>
+        </select>
+      </div>
+      <div class="item-field">
+        <label>Grado</label>
+        <select name="system.grade.value">
+          <option value="base" {{#if (is 'eq' system.grade.value 'base')}}selected{{/if}}>Base</option>
+          <option value="avanzado" {{#if (is 'eq' system.grade.value 'avanzado')}}selected{{/if}}>Avanzado</option>
+          <option value="supremo" {{#if (is 'eq' system.grade.value 'supremo')}}selected{{/if}}>Supremo</option>
+          <option value="arcano" {{#if (is 'eq' system.grade.value 'arcano')}}selected{{/if}}>Arcano</option>
+        </select>
+      </div>
       <div class="item-field"><label>CM</label><input type="number" name="system.martialKnowledge.value" value="{{system.martialKnowledge.value}}" /></div>
     </div>
+    <div class="item-row">
+      <div class="item-field"><label>Daño Base</label><input type="number" name="system.damageBase.value" value="{{system.damageBase.value}}" /></div>
+      <div class="item-field"><label>Daño Máx</label><input type="number" name="system.damageMax.value" value="{{system.damageMax.value}}" /></div>
+    </div>
+    <h4>Bonos de este grado (se acumulan con grados anteriores)</h4>
     <div class="item-row">
       <div class="item-field"><label>B. Ataque</label><input type="number" name="system.bonusAttack.value" value="{{system.bonusAttack.value}}" /></div>
       <div class="item-field"><label>B. Parada</label><input type="number" name="system.bonusBlock.value" value="{{system.bonusBlock.value}}" /></div>
@@ -18,12 +37,13 @@
       <div class="item-field"><label>B. Maestro At</label><input type="number" name="system.bonusMasterAttack.value" value="{{system.bonusMasterAttack.value}}" /></div>
       <div class="item-field"><label>B. Maestro Def</label><input type="number" name="system.bonusMasterDefense.value" value="{{system.bonusMasterDefense.value}}" /></div>
     </div>
+    <h4>Penalizaciones a habilidades</h4>
     <div class="item-row">
       <div class="item-field"><label>Pen. HA</label><input type="number" name="system.penaltyHA.value" value="{{system.penaltyHA.value}}" /></div>
       <div class="item-field"><label>Pen. HE</label><input type="number" name="system.penaltyHE.value" value="{{system.penaltyHE.value}}" /></div>
       <div class="item-field"><label>Pen. HP</label><input type="number" name="system.penaltyHP.value" value="{{system.penaltyHP.value}}" /></div>
     </div>
-    <div class="item-field"><label>Especial</label><textarea name="system.special.value" rows="2">{{system.special.value}}</textarea></div>
+    <div class="item-field"><label>Especial / Notas</label><textarea name="system.special.value" rows="4">{{system.special.value}}</textarea></div>
     <div class="item-field"><label>Requisitos</label><input type="text" name="system.requirements.value" value="{{system.requirements.value}}" /></div>
   </div>
 {{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

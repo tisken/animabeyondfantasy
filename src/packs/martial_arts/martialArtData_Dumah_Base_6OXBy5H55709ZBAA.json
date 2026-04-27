@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": "PEN"
     },
     "special": {
-      "value": " -2 TA enemiga y +10 a la Rotura (aplicado)"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\n -2 TA enemiga y +10 a la Rotura (aplicado)"
     },
     "requirements": {
       "value": "NO"

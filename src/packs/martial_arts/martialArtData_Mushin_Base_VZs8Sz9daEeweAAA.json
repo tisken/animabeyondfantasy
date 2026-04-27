@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "RF Daño+20 (Max 220): penalizador igual al Fracaso, daño 2xFracaso"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\nRF Daño+20 (Max 220): penalizador igual al Fracaso, daño 2xFracaso"
     },
     "requirements": {
       "value": "NO"

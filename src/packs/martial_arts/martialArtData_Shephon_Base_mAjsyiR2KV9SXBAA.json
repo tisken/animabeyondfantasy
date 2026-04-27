@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Defensa Total concede un bono de +60"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\nDefensa Total concede un bono de +60"
     },
     "requirements": {
       "value": "NO"

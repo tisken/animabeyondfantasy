@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "normal"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "-"
+      "value": "Grado Base. Progresión: Base → Avanzado → Supremo. Los bonos de cada grado se acumulan con los anteriores.\n\n-"
     },
     "requirements": {
       "value": "NO"

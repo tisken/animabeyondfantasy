@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Añade 2 defensas adicionales sin penalizador"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\nAñade 2 defensas adicionales sin penalizador"
     },
     "requirements": {
       "value": "NO"

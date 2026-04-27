@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "avanzado"
+    },
+    "artType": {
+      "value": "normal"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Ataques adicionales con penalizador de -10 a la HA"
+      "value": "Grado Avanzado (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nAtaques adicionales con penalizador de -10 a la HA"
     },
     "requirements": {
       "value": "NO"

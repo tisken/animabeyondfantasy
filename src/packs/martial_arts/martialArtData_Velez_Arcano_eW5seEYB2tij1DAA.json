@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": "ENE"
     },
     "special": {
-      "value": "Ataques intangibles de Energía. Permite usar POD para chequeos"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nAtaques intangibles de Energía. Permite usar POD para chequeos"
     },
     "requirements": {
       "value": "NO"

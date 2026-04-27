@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "arcano"
+    },
+    "artType": {
+      "value": "arcana"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Bono +3 Presa y Derribo. +50 a Ataque Completo (Presa). +3 a Aplastar y Estrangular"
+      "value": "Grado Arcano (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nBono +3 Presa y Derribo. +50 a Ataque Completo (Presa). +3 a Aplastar y Estrangular"
     },
     "requirements": {
       "value": "NO"

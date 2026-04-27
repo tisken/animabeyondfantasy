@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "avanzado"
+    },
+    "artType": {
+      "value": "normal"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "En contraataque Presa y Derribo sin penalizador y Daño +2xFUE enemigo"
+      "value": "Grado Avanzado (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nEn contraataque Presa y Derribo sin penalizador y Daño +2xFUE enemigo"
     },
     "requirements": {
       "value": "NO"

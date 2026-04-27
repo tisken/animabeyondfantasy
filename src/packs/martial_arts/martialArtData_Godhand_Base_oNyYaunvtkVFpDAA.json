@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Sacrifica 1 Ataque: +30 HA, +50 Daño primero del siguiente turno"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\nSacrifica 1 Ataque: +30 HA, +50 Daño primero del siguiente turno"
     },
     "requirements": {
       "value": "NO"

@@ -5,7 +5,10 @@
   "img": "icons/svg/item-bag.svg",
   "system": {
     "grade": {
-      "value": "base"
+      "value": "avanzado"
+    },
+    "artType": {
+      "value": "normal"
     },
     "complexity": {
       "value": 1
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Bono especial de +10 en contraataque"
+      "value": "Grado Avanzado (incluye bonos de Base). Los bonos mostrados son los de ESTE grado, se suman a los de Base.\n\nBono especial de +10 en contraataque"
     },
     "requirements": {
       "value": "NO"

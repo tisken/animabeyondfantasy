@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "normal"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Bono de +1 a los controles para defenderse de Presa y Derribo"
+      "value": "Grado Base. Progresión: Base → Avanzado → Supremo. Los bonos de cada grado se acumulan con los anteriores.\n\nBono de +1 a los controles para defenderse de Presa y Derribo"
     },
     "requirements": {
       "value": "NO"

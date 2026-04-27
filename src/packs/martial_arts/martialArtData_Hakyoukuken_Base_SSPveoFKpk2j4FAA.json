@@ -7,6 +7,9 @@
     "grade": {
       "value": "base"
     },
+    "artType": {
+      "value": "arcana"
+    },
     "complexity": {
       "value": 1
     },
@@ -50,7 +53,7 @@
       "value": ""
     },
     "special": {
-      "value": "Penalizador -2 a las TA blandas y +20 al nivel de Crítico obtenido"
+      "value": "Grado Base. Progresión: Base → Arcano. Los bonos de cada grado se acumulan con los anteriores.\n\nPenalizador -2 a las TA blandas y +20 al nivel de Crítico obtenido"
     },
     "requirements": {
       "value": "NO"
