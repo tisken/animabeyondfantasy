@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "La Templanza",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "normal"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 160
+    },
+    "initialCost": {
+      "value": 200
+    },
+    "powers": [
+      {
+        "name": "La Templanza",
+        "difficulty": 160,
+        "cost": 200,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Armoniza energías, eliminando efectos negativos sobrenaturales",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "DAIXbYsuDCkZAAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!DAIXbYsuDCkZAAAA"
+}

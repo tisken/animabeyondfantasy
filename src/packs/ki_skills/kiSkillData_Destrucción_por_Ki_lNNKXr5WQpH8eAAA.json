@@ -1,0 +1,42 @@
+{
+  "folder": null,
+  "name": "Destrucción por Ki",
+  "type": "kiSkillData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "martialKnowledge": {
+      "value": 20
+    },
+    "cost": {
+      "value": ""
+    },
+    "stat": {
+      "value": ""
+    },
+    "effect": {
+      "value": ""
+    },
+    "maintenance": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "lNNKXr5WQpH8eAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!lNNKXr5WQpH8eAAA"
+}

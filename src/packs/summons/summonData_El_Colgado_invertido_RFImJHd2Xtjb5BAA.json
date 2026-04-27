@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "El Colgado invertido",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "invertido"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano invertido)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 140
+    },
+    "initialCost": {
+      "value": 150
+    },
+    "powers": [
+      {
+        "name": "El Colgado invertido",
+        "difficulty": 140,
+        "cost": 150,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Sacrificio forzado: obliga al objetivo a sacrificar algo valioso",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "RFImJHd2Xtjb5BAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!RFImJHd2Xtjb5BAA"
+}

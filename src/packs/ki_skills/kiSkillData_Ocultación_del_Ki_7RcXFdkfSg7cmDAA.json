@@ -1,0 +1,42 @@
+{
+  "folder": null,
+  "name": "Ocultación del Ki",
+  "type": "kiSkillData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "martialKnowledge": {
+      "value": 10
+    },
+    "cost": {
+      "value": "1 Ki (cualquier)/asalto"
+    },
+    "stat": {
+      "value": "willPower"
+    },
+    "effect": {
+      "value": "Oculta la energía Ki del personaje, haciéndola invisible"
+    },
+    "maintenance": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "7RcXFdkfSg7cmDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!7RcXFdkfSg7cmDAA"
+}

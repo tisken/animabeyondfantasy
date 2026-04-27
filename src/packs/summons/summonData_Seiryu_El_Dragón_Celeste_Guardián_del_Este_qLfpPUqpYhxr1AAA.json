@@ -1,0 +1,69 @@
+{
+  "folder": null,
+  "name": "Seiryu, El Dragón Celeste (Guardián del Este)",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "cardinal"
+    },
+    "pact": {
+      "description": {
+        "value": "Proteger el equilibrio del Este"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Tormenta",
+        "difficulty": 350,
+        "cost": 600,
+        "attack": 300,
+        "defense": 0,
+        "action": "active",
+        "effect": "Controla el agua de las tormentas. Ataque de agua/rayo en área masiva",
+        "duration": "1 asalto por cada 10 sobre dificultad"
+      },
+      {
+        "name": "Transformación",
+        "difficulty": 300,
+        "cost": 500,
+        "attack": 0,
+        "defense": 0,
+        "action": "passive",
+        "effect": "El invocador se transforma en criatura draconiana con poderes de agua",
+        "duration": "1 asalto por cada 10 sobre dificultad"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "qLfpPUqpYhxr1AAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!qLfpPUqpYhxr1AAA"
+}

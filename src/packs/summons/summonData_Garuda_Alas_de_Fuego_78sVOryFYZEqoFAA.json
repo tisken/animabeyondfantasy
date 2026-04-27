@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Garuda, Alas de Fuego",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "intermediate"
+    },
+    "pact": {
+      "description": {
+        "value": "Exterminar un dragón y entregarle su corazón"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Cúpula de Llamas",
+        "difficulty": 220,
+        "cost": 350,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Cúpula de fuego sólido radio 10m. 2000 LP, TA 8. Inmune a ataques no-energía y a calor/electricidad. +200 LP por cada 10 sobre dificultad",
+        "duration": "Hasta destrucción"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "78sVOryFYZEqoFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!78sVOryFYZEqoFAA"
+}

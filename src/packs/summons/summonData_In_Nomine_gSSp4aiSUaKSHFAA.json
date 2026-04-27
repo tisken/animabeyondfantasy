@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "In Nomine",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "intermediate"
+    },
+    "pact": {
+      "description": {
+        "value": "Desconocido"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Nombre Verdadero",
+        "difficulty": 240,
+        "cost": 350,
+        "attack": 300,
+        "defense": 0,
+        "action": "active",
+        "effect": "Averigua el verdadero nombre de algo. Ataque anímico",
+        "duration": "Instantáneo"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "gSSp4aiSUaKSHFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!gSSp4aiSUaKSHFAA"
+}

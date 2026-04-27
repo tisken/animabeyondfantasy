@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Tiamat",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "major"
+    },
+    "pact": {
+      "description": {
+        "value": "Destruir una ciudad o asentamiento importante"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Terremoto",
+        "difficulty": 400,
+        "cost": 880,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Terremoto en 250m radio. Control AGI 15 o caer a río de lava. Destrucción masiva de estructuras",
+        "duration": "2 asaltos"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "YEmJLGZSL70rAGAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!YEmJLGZSL70rAGAA"
+}

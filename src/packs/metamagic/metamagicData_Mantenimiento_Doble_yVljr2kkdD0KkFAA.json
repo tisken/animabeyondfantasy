@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Mantenimiento Doble",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "cognos"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Puede mantener el doble de conjuros simultáneamente"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "yVljr2kkdD0KkFAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!yVljr2kkdD0KkFAA"
+}

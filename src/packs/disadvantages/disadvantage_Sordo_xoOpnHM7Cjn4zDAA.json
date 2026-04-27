@@ -1,0 +1,41 @@
+{
+  "folder": null,
+  "name": "Sordo",
+  "type": "disadvantage",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": {
+      "value": "common"
+    },
+    "benefit": {
+      "value": 1
+    },
+    "description": {
+      "value": "No puede oír. Penalizadores a percepción auditiva"
+    },
+    "effectData": {
+      "icon": "",
+      "disabled": true,
+      "changes": []
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "xoOpnHM7Cjn4zDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!xoOpnHM7Cjn4zDAA"
+}

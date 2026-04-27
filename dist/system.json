@@ -2,7 +2,7 @@
   "id": "animabf",
   "title": "Anima Beyond Fantasy",
   "description": "Unofficial Anima Beyond Fantasy system for Foundry VTT",
-  "version": "2.3.0-test.6",
+  "version": "2.3.0-test.7",
   "compatibility": { "minimum": "13", "verified": "14.359" },
   "url": "https://github.com/tisken/animabeyondfantasy",
   "manifest": "https://raw.githubusercontent.com/tisken/animabeyondfantasy/main/dist/system.json",
@@ -83,7 +83,14 @@
       "system": "animabf",
       "private": false,
       "flags": {}
-    }
+    },
+    { "name": "advantages", "label": "(ES) Ventajas", "system": "animabf", "path": "./packs/advantages", "type": "Item", "private": false, "flags": {} },
+    { "name": "disadvantages", "label": "(ES) Desventajas", "system": "animabf", "path": "./packs/disadvantages", "type": "Item", "private": false, "flags": {} },
+    { "name": "categories", "label": "(ES) Categorías", "system": "animabf", "path": "./packs/categories", "type": "Item", "private": false, "flags": {} },
+    { "name": "martial_arts", "label": "(ES) Artes Marciales", "system": "animabf", "path": "./packs/martial_arts", "type": "Item", "private": false, "flags": {} },
+    { "name": "ki_skills", "label": "(ES) Habilidades de Ki", "system": "animabf", "path": "./packs/ki_skills", "type": "Item", "private": false, "flags": {} },
+    { "name": "metamagic", "label": "(ES) Metamagia", "system": "animabf", "path": "./packs/metamagic", "type": "Item", "private": false, "flags": {} },
+    { "name": "summons", "label": "(ES) Invocaciones", "system": "animabf", "path": "./packs/summons", "type": "Item", "private": false, "flags": {} }
   ],
   "languages": [
     { "lang": "es", "name": "Español", "path": "lang/es.json" },

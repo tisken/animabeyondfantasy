@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "El Diablo",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "normal"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano invertido)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 180
+    },
+    "initialCost": {
+      "value": 250
+    },
+    "powers": [
+      {
+        "name": "El Diablo",
+        "difficulty": 180,
+        "cost": 250,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "RM 140 o quedar bajo control del invocador (posesión)",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "GPyjWTetuQc0VDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!GPyjWTetuQc0VDAA"
+}

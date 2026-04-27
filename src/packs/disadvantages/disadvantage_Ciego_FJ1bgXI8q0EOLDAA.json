@@ -1,0 +1,41 @@
+{
+  "folder": null,
+  "name": "Ciego",
+  "type": "disadvantage",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "category": {
+      "value": "common"
+    },
+    "benefit": {
+      "value": 2
+    },
+    "description": {
+      "value": "No puede ver. Penalizadores severos a combate y percepción"
+    },
+    "effectData": {
+      "icon": "",
+      "disabled": true,
+      "changes": []
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "FJ1bgXI8q0EOLDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!FJ1bgXI8q0EOLDAA"
+}

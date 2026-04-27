@@ -398,8 +398,92 @@
       "psychicPower",
       "technique",
       "weapon",
-      "effect"
+      "effect",
+      "category",
+      "martialArtData",
+      "kiSkillData",
+      "metamagicData",
+      "summonData"
     ],
+    "advantage": {
+      "category": { "value": "common" },
+      "cost": { "value": 1 },
+      "description": { "value": "" },
+      "effectData": { "icon": "", "disabled": true, "changes": [] }
+    },
+    "disadvantage": {
+      "category": { "value": "common" },
+      "benefit": { "value": 1 },
+      "description": { "value": "" },
+      "effectData": { "icon": "", "disabled": true, "changes": [] }
+    },
+    "category": {
+      "categoryId": { "value": "" },
+      "levels": { "value": 1 },
+      "turnPerLevel": { "value": 0 },
+      "lpPerLevel": { "value": 0 },
+      "lifeMultiple": { "value": 0 },
+      "mkPerLevel": { "value": 0 },
+      "cvPerLevels": { "value": 0 },
+      "limitCombat": { "value": 0.6 },
+      "limitMagic": { "value": 0.5 },
+      "limitPsychic": { "value": 0.5 },
+      "archetype1": { "value": "" },
+      "archetype2": { "value": "" },
+      "costs": {
+        "attack": { "value": 0 }, "block": { "value": 0 }, "dodge": { "value": 0 },
+        "wearArmor": { "value": 0 }, "ki": { "value": 0 }, "kiAccum": { "value": 0 },
+        "zeon": { "value": 0 }, "act": { "value": 0 },
+        "summon": { "value": 0 }, "bind": { "value": 0 }, "banish": { "value": 0 },
+        "cv": { "value": 0 },
+        "social": { "value": 0 }, "perceptive": { "value": 0 }, "vigor": { "value": 0 },
+        "subterfuge": { "value": 0 }, "creative": { "value": 0 }
+      }
+    },
+    "martialArtData": {
+      "grade": { "value": "base" },
+      "complexity": { "value": 1 },
+      "damageBase": { "value": 0 },
+      "damageMax": { "value": 0 },
+      "damageType": { "value": "impact" },
+      "bonusAttack": { "value": 0 },
+      "bonusBlock": { "value": 0 },
+      "bonusDodge": { "value": 0 },
+      "bonusTurn": { "value": 0 },
+      "bonusDamage": { "value": 0 },
+      "bonusBreaking": { "value": 0 },
+      "bonusMasterAttack": { "value": 0 },
+      "bonusMasterDefense": { "value": 0 },
+      "bonusEndurance": { "value": 0 },
+      "critic": { "value": "" },
+      "special": { "value": "" },
+      "requirements": { "value": "" },
+      "martialKnowledge": { "value": 0 },
+      "penaltyHA": { "value": 0 },
+      "penaltyHE": { "value": 0 },
+      "penaltyHP": { "value": 0 }
+    },
+    "kiSkillData": {
+      "martialKnowledge": { "value": 0 },
+      "cost": { "value": "" },
+      "stat": { "value": "" },
+      "effect": { "value": "" },
+      "maintenance": { "value": 0 }
+    },
+    "metamagicData": {
+      "grade": { "value": 1 },
+      "branch": { "value": "" },
+      "spheres": { "value": 1 },
+      "effect": { "value": "" }
+    },
+    "summonData": {
+      "summonType": { "value": "normal" },
+      "tier": { "value": "minor" },
+      "pact": { "description": { "value": "" }, "fulfilled": { "value": false } },
+      "initialDifficulty": { "value": 0 },
+      "initialCost": { "value": 0 },
+      "powers": []
+    },
     "ammo": {
       "amount": { "value": 0 },
       "damage": { "value": 0 },

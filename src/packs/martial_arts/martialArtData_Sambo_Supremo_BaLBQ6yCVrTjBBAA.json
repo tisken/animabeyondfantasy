@@ -1,0 +1,90 @@
+{
+  "folder": null,
+  "name": "Sambo (Supremo)",
+  "type": "martialArtData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": "base"
+    },
+    "complexity": {
+      "value": 1
+    },
+    "damageBase": {
+      "value": 30
+    },
+    "damageMax": {
+      "value": 0
+    },
+    "damageType": {
+      "value": "impact"
+    },
+    "bonusAttack": {
+      "value": 0
+    },
+    "bonusBlock": {
+      "value": 10
+    },
+    "bonusDodge": {
+      "value": 0
+    },
+    "bonusTurn": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bonusBreaking": {
+      "value": 0
+    },
+    "bonusMasterAttack": {
+      "value": 0
+    },
+    "bonusMasterDefense": {
+      "value": 0
+    },
+    "bonusEndurance": {
+      "value": 0
+    },
+    "critic": {
+      "value": ""
+    },
+    "special": {
+      "value": "Mitad de penalizador: Derribo, Desarmar, Presa, Ataque en Área y Ataques Apuntados"
+    },
+    "requirements": {
+      "value": "NO"
+    },
+    "martialKnowledge": {
+      "value": 20
+    },
+    "penaltyHA": {
+      "value": 0
+    },
+    "penaltyHE": {
+      "value": 0
+    },
+    "penaltyHP": {
+      "value": -10
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "BaLBQ6yCVrTjBBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!BaLBQ6yCVrTjBBAA"
+}

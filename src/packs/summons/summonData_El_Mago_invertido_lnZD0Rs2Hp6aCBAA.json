@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "El Mago invertido",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "invertido"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano invertido)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 40
+    },
+    "initialCost": {
+      "value": 20
+    },
+    "powers": [
+      {
+        "name": "El Mago invertido",
+        "difficulty": 40,
+        "cost": 20,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Anula la magia en un área. Contraconjuro supremo",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "lnZD0Rs2Hp6aCBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!lnZD0Rs2Hp6aCBAA"
+}

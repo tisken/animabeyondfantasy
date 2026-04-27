@@ -1,0 +1,69 @@
+{
+  "folder": null,
+  "name": "Suzaku, El Fénix (Guardián del Sur)",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "cardinal"
+    },
+    "pact": {
+      "description": {
+        "value": "Proteger el equilibrio del Sur"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Calamidad",
+        "difficulty": 280,
+        "cost": 400,
+        "attack": 260,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque sobrenatural cada asalto a 250m. Daño 80 en Energía. Si causa daño, el objetivo arde",
+        "duration": "1 asalto por cada 10 sobre dificultad"
+      },
+      {
+        "name": "Renacimiento",
+        "difficulty": 400,
+        "cost": 800,
+        "attack": 0,
+        "defense": 0,
+        "action": "passive",
+        "effect": "Si el invocador muere, renace de las llamas con todos sus LP",
+        "duration": "Instantáneo (una vez)"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "MwXfxXN3ddb1oEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!MwXfxXN3ddb1oEAA"
+}

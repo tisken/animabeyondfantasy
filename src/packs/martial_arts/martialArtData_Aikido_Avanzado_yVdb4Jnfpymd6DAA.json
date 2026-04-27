@@ -1,0 +1,90 @@
+{
+  "folder": null,
+  "name": "Aikido (Avanzado)",
+  "type": "martialArtData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": "base"
+    },
+    "complexity": {
+      "value": 1
+    },
+    "damageBase": {
+      "value": 10
+    },
+    "damageMax": {
+      "value": 0
+    },
+    "damageType": {
+      "value": "impact"
+    },
+    "bonusAttack": {
+      "value": 0
+    },
+    "bonusBlock": {
+      "value": 10
+    },
+    "bonusDodge": {
+      "value": 10
+    },
+    "bonusTurn": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bonusBreaking": {
+      "value": 0
+    },
+    "bonusMasterAttack": {
+      "value": 0
+    },
+    "bonusMasterDefense": {
+      "value": 0
+    },
+    "bonusEndurance": {
+      "value": 0
+    },
+    "critic": {
+      "value": ""
+    },
+    "special": {
+      "value": "En contraataque Presa y Derribo sin penalizador y Daño +2xFUE enemigo"
+    },
+    "requirements": {
+      "value": "NO"
+    },
+    "martialKnowledge": {
+      "value": 10
+    },
+    "penaltyHA": {
+      "value": 0
+    },
+    "penaltyHE": {
+      "value": -10
+    },
+    "penaltyHP": {
+      "value": -10
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "yVdb4Jnfpymd6DAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!yVdb4Jnfpymd6DAA"
+}

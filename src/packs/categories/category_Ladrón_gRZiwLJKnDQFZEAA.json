@@ -1,0 +1,116 @@
+{
+  "folder": null,
+  "name": "Ladrón",
+  "type": "category",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "categoryId": {
+      "value": "ladrón"
+    },
+    "levels": {
+      "value": 1
+    },
+    "turnPerLevel": {
+      "value": 10
+    },
+    "lpPerLevel": {
+      "value": 5
+    },
+    "lifeMultiple": {
+      "value": 20
+    },
+    "mkPerLevel": {
+      "value": 20
+    },
+    "cvPerLevels": {
+      "value": 3
+    },
+    "limitCombat": {
+      "value": 0.5
+    },
+    "limitMagic": {
+      "value": 0.5
+    },
+    "limitPsychic": {
+      "value": 0.5
+    },
+    "archetype1": {
+      "value": "Acechador"
+    },
+    "archetype2": {
+      "value": "Sin"
+    },
+    "costs": {
+      "attack": {
+        "value": 0
+      },
+      "block": {
+        "value": 0
+      },
+      "dodge": {
+        "value": 5
+      },
+      "wearArmor": {
+        "value": 0
+      },
+      "zeon": {
+        "value": 0
+      },
+      "ki": {
+        "value": 2
+      },
+      "kiAccum": {
+        "value": 25
+      },
+      "act": {
+        "value": 70
+      },
+      "summon": {
+        "value": 3
+      },
+      "bind": {
+        "value": 3
+      },
+      "banish": {
+        "value": 3
+      },
+      "cv": {
+        "value": 20
+      },
+      "social": {
+        "value": 2
+      },
+      "perceptive": {
+        "value": 2
+      },
+      "vigor": {
+        "value": 3
+      },
+      "subterfuge": {
+        "value": 1
+      },
+      "creative": {
+        "value": 2
+      }
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "gRZiwLJKnDQFZEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!gRZiwLJKnDQFZEAA"
+}

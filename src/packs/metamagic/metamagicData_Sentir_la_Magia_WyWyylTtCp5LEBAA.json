@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Sentir la Magia",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "esoteros"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Detecta automáticamente la presencia de magia en un radio"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "WyWyylTtCp5LEBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!WyWyylTtCp5LEBAA"
+}

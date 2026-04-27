@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Naaga, Madre de los Venenos",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "minor"
+    },
+    "pact": {
+      "description": {
+        "value": "Beber una gota de su sangre (veneno nivel 80) y sobrevivir sin ayuda"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Ataque Venenoso",
+        "difficulty": 140,
+        "cost": 200,
+        "attack": 160,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque físico PEN daño base 50. Si causa daño, crea veneno nivel 40 (+5 niveles por cada 20 sobre dificultad)",
+        "duration": "Instantáneo"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "LRpEcxhOKhFw8BAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!LRpEcxhOKhFw8BAA"
+}

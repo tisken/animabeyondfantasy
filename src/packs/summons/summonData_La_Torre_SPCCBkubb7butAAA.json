@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "La Torre",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "normal"
+    },
+    "tier": {
+      "value": "arcana"
+    },
+    "pact": {
+      "description": {
+        "value": "Implícito (varía según el Arcano)"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 200
+    },
+    "initialCost": {
+      "value": 300
+    },
+    "powers": [
+      {
+        "name": "La Torre",
+        "difficulty": 200,
+        "cost": 300,
+        "attack": 0,
+        "defense": 0,
+        "action": "active",
+        "effect": "Destrucción masiva en área. Daño enorme a estructuras y seres. Arcano neutral",
+        "duration": ""
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "SPCCBkubb7butAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!SPCCBkubb7butAAA"
+}

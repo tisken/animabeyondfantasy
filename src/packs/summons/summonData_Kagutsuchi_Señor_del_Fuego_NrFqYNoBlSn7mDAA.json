@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Kagutsuchi, Señor del Fuego",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "major"
+    },
+    "pact": {
+      "description": {
+        "value": "Quemar algo que el invocador ame profundamente"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Hi No Tsubasa (Alas de Fuego)",
+        "difficulty": 360,
+        "cost": 650,
+        "attack": 340,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque en línea 50m ancho × 100m largo (+20m por cada 10 sobre dif). Daño base 200 en Fuego. Solo quema lo que desee el invocador",
+        "duration": "Instantáneo"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "NrFqYNoBlSn7mDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!NrFqYNoBlSn7mDAA"
+}

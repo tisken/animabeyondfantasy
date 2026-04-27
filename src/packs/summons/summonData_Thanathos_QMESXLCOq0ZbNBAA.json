@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Thanathos",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "intermediate"
+    },
+    "pact": {
+      "description": {
+        "value": "Matar a alguien designado por Thanathos"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Muerte",
+        "difficulty": 280,
+        "cost": 500,
+        "attack": 280,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque de muerte. Si supera defensa, el objetivo debe superar RF contra el nivel de éxito o morir",
+        "duration": "Instantáneo"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "QMESXLCOq0ZbNBAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!QMESXLCOq0ZbNBAA"
+}

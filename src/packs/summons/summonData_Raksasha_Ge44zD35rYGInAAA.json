@@ -1,0 +1,59 @@
+{
+  "folder": null,
+  "name": "Raksasha",
+  "type": "summonData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "summonType": {
+      "value": "granBestia"
+    },
+    "tier": {
+      "value": "intermediate"
+    },
+    "pact": {
+      "description": {
+        "value": "Sufrir su tortura y sobrevivir, o entregarle al ser más amado"
+      },
+      "fulfilled": {
+        "value": false
+      }
+    },
+    "initialDifficulty": {
+      "value": 0
+    },
+    "initialCost": {
+      "value": 0
+    },
+    "powers": [
+      {
+        "name": "Tortura",
+        "difficulty": 200,
+        "cost": 300,
+        "attack": 200,
+        "defense": 0,
+        "action": "active",
+        "effect": "Ataque anímico. Si supera defensa, causa dolor extremo: -80 a toda acción y pérdida de 1 punto de característica por asalto",
+        "duration": "5 asaltos por cada 10 sobre dificultad"
+      }
+    ]
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "Ge44zD35rYGInAAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!Ge44zD35rYGInAAA"
+}

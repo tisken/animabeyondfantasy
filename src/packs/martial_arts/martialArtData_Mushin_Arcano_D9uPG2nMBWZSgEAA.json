@@ -1,0 +1,90 @@
+{
+  "folder": null,
+  "name": "Mushin (Arcano)",
+  "type": "martialArtData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": "base"
+    },
+    "complexity": {
+      "value": 1
+    },
+    "damageBase": {
+      "value": 0
+    },
+    "damageMax": {
+      "value": 0
+    },
+    "damageType": {
+      "value": "impact"
+    },
+    "bonusAttack": {
+      "value": 0
+    },
+    "bonusBlock": {
+      "value": 0
+    },
+    "bonusDodge": {
+      "value": 0
+    },
+    "bonusTurn": {
+      "value": 0
+    },
+    "bonusDamage": {
+      "value": 0
+    },
+    "bonusBreaking": {
+      "value": 0
+    },
+    "bonusMasterAttack": {
+      "value": 20
+    },
+    "bonusMasterDefense": {
+      "value": 0
+    },
+    "bonusEndurance": {
+      "value": 0
+    },
+    "critic": {
+      "value": ""
+    },
+    "special": {
+      "value": "RF Daño+40 (Max 240): penalizador = Fracaso, daño = 2xFracaso. Puntos de presión"
+    },
+    "requirements": {
+      "value": "NO"
+    },
+    "martialKnowledge": {
+      "value": 30
+    },
+    "penaltyHA": {
+      "value": 0
+    },
+    "penaltyHE": {
+      "value": 0
+    },
+    "penaltyHP": {
+      "value": 0
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "D9uPG2nMBWZSgEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!D9uPG2nMBWZSgEAA"
+}
