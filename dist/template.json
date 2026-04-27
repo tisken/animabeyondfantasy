@@ -406,7 +406,9 @@
       "summonData",
       "raceData",
       "magicItemData",
-      "nemesisSkillData"
+      "nemesisSkillData",
+      "artifactWeapon",
+      "artifactArmor"
     ],
     "advantage": {
       "category": { "value": "common" },
@@ -514,6 +516,59 @@
       "effect": { "value": "" },
       "maintenance": { "value": 0 }
     },
+    "artifactWeapon": {
+      "tier": { "value": "minor" },
+      "powerLevel": { "value": 0 },
+      "quality": { "value": 0 },
+      "damage": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "attack": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "block": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "initiative": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "breaking": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "integrity": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "presence": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "critic": { "primary": { "value": "-" }, "secondary": { "value": "-" } },
+      "bonusAllActions": { "value": 0 },
+      "bonusTurn": { "value": 0 },
+      "bonusDamage": { "value": 0 },
+      "bonusMagicProjection": { "value": 0 },
+      "bonusPsychicProjection": { "value": 0 },
+      "bonusLifePoints": { "value": 0 },
+      "bonusRegeneration": { "value": 0 },
+      "bonusResistances": { "value": 0 },
+      "special": { "value": "" },
+      "description": { "value": "" },
+      "source": { "value": "" }
+    },
+    "artifactArmor": {
+      "tier": { "value": "minor" },
+      "powerLevel": { "value": 0 },
+      "quality": { "value": 0 },
+      "cut": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "impact": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "thrust": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "heat": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "electricity": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "cold": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "energy": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "integrity": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "presence": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "naturalPenalty": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "movementRestriction": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "bonusAllActions": { "value": 0 },
+      "bonusTurn": { "value": 0 },
+      "bonusAttack": { "value": 0 },
+      "bonusBlock": { "value": 0 },
+      "bonusDodge": { "value": 0 },
+      "bonusMagicProjection": { "value": 0 },
+      "bonusPsychicProjection": { "value": 0 },
+      "bonusLifePoints": { "value": 0 },
+      "bonusRegeneration": { "value": 0 },
+      "bonusResistances": { "value": 0 },
+      "special": { "value": "" },
+      "description": { "value": "" },
+      "source": { "value": "" }
+    },
     "ammo": {
       "amount": { "value": 0 },
       "damage": { "value": 0 },
@@ -543,7 +598,8 @@
       "movementRestriction": { "base": { "value": 0 }, "final": { "value": 0 } },
       "naturalPenalty": { "base": { "value": 0 }, "final": { "value": 0 } },
       "perceptionPenalty": { "base": { "value": 0 }, "final": { "value": 0 } },
-      "wearArmorRequirement": { "base": { "value": 0 }, "final": { "value": 0 } }
+      "wearArmorRequirement": { "base": { "value": 0 }, "final": { "value": 0 } },
+      "description": { "value": "" }
     },
     "spell": {
       "level": { "value": 0 },
@@ -785,7 +841,8 @@
       "weaponStrength": { "base": { "value": 0 }, "final": { "value": 0 } },
       "critic": { "primary": { "value": "-" }, "secondary": { "value": "-" } },
       "useCustomFormula": {"value": false },
-      "hotbarMacroCreatorId": ""
+      "hotbarMacroCreatorId": "",
+      "description": { "value": "" }
     },
     "supernaturalShield": {
       "shieldPoints": { "value": 0 },

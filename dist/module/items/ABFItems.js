@@ -45,7 +45,9 @@ const ABFItems = (
     SUMMON_DATA: "summonData",
     RACE_DATA: "raceData",
     MAGIC_ITEM_DATA: "magicItemData",
-    NEMESIS_SKILL_DATA: "nemesisSkillData"
+    NEMESIS_SKILL_DATA: "nemesisSkillData",
+    ARTIFACT_WEAPON: "artifactWeapon",
+    ARTIFACT_ARMOR: "artifactArmor"
   }
 );
 export {

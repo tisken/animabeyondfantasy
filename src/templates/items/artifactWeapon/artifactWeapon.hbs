@@ -1,0 +1,51 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field">
+        <label>Rango</label>
+        <select name="system.tier.value">
+          <option value="minor" {{#if (is 'eq' system.tier.value 'minor')}}selected{{/if}}>Menor</option>
+          <option value="major" {{#if (is 'eq' system.tier.value 'major')}}selected{{/if}}>Mayor</option>
+          <option value="legendary" {{#if (is 'eq' system.tier.value 'legendary')}}selected{{/if}}>Legendario</option>
+        </select>
+      </div>
+      <div class="item-field"><label>Nivel de Poder</label><input type="number" name="system.powerLevel.value" value="{{system.powerLevel.value}}" /></div>
+      <div class="item-field"><label>Calidad</label><input type="number" name="system.quality.value" value="{{system.quality.value}}" /></div>
+    </div>
+    <h4>Estadísticas del Arma</h4>
+    <div class="item-row">
+      <div class="item-field"><label>Daño</label><input type="number" name="system.damage.base.value" value="{{system.damage.base.value}}" /></div>
+      <div class="item-field"><label>Ataque</label><input type="number" name="system.attack.base.value" value="{{system.attack.base.value}}" /></div>
+      <div class="item-field"><label>Parada</label><input type="number" name="system.block.base.value" value="{{system.block.base.value}}" /></div>
+      <div class="item-field"><label>Turno</label><input type="number" name="system.initiative.base.value" value="{{system.initiative.base.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Rotura</label><input type="number" name="system.breaking.base.value" value="{{system.breaking.base.value}}" /></div>
+      <div class="item-field"><label>Entereza</label><input type="number" name="system.integrity.base.value" value="{{system.integrity.base.value}}" /></div>
+      <div class="item-field"><label>Presencia</label><input type="number" name="system.presence.base.value" value="{{system.presence.base.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Crítico 1</label><input type="text" name="system.critic.primary.value" value="{{system.critic.primary.value}}" /></div>
+      <div class="item-field"><label>Crítico 2</label><input type="text" name="system.critic.secondary.value" value="{{system.critic.secondary.value}}" /></div>
+    </div>
+    <h4>Bonos del Artefacto</h4>
+    <div class="item-row">
+      <div class="item-field"><label>B. Todas Acciones</label><input type="number" name="system.bonusAllActions.value" value="{{system.bonusAllActions.value}}" /></div>
+      <div class="item-field"><label>B. Turno</label><input type="number" name="system.bonusTurn.value" value="{{system.bonusTurn.value}}" /></div>
+      <div class="item-field"><label>B. Daño</label><input type="number" name="system.bonusDamage.value" value="{{system.bonusDamage.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Proy. Mágica</label><input type="number" name="system.bonusMagicProjection.value" value="{{system.bonusMagicProjection.value}}" /></div>
+      <div class="item-field"><label>B. Proy. Psíquica</label><input type="number" name="system.bonusPsychicProjection.value" value="{{system.bonusPsychicProjection.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Puntos de Vida</label><input type="number" name="system.bonusLifePoints.value" value="{{system.bonusLifePoints.value}}" /></div>
+      <div class="item-field"><label>B. Regeneración</label><input type="number" name="system.bonusRegeneration.value" value="{{system.bonusRegeneration.value}}" /></div>
+      <div class="item-field"><label>B. Resistencias</label><input type="number" name="system.bonusResistances.value" value="{{system.bonusResistances.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Especial</label><textarea name="system.special.value" rows="2">{{system.special.value}}</textarea></div>
+    <div class="item-field"><label>Descripción</label><textarea name="system.description.value" rows="3">{{system.description.value}}</textarea></div>
+    <div class="item-field"><label>Fuente</label><input type="text" name="system.source.value" value="{{system.source.value}}" /></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

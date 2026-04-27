@@ -1,0 +1,55 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field">
+        <label>Rango</label>
+        <select name="system.tier.value">
+          <option value="minor" {{#if (is 'eq' system.tier.value 'minor')}}selected{{/if}}>Menor</option>
+          <option value="major" {{#if (is 'eq' system.tier.value 'major')}}selected{{/if}}>Mayor</option>
+          <option value="legendary" {{#if (is 'eq' system.tier.value 'legendary')}}selected{{/if}}>Legendario</option>
+        </select>
+      </div>
+      <div class="item-field"><label>Nivel de Poder</label><input type="number" name="system.powerLevel.value" value="{{system.powerLevel.value}}" /></div>
+      <div class="item-field"><label>Calidad</label><input type="number" name="system.quality.value" value="{{system.quality.value}}" /></div>
+    </div>
+    <h4>Tipos de Armadura (TA)</h4>
+    <div class="item-row">
+      <div class="item-field"><label>FIL</label><input type="number" name="system.cut.base.value" value="{{system.cut.base.value}}" /></div>
+      <div class="item-field"><label>CON</label><input type="number" name="system.impact.base.value" value="{{system.impact.base.value}}" /></div>
+      <div class="item-field"><label>PEN</label><input type="number" name="system.thrust.base.value" value="{{system.thrust.base.value}}" /></div>
+      <div class="item-field"><label>CAL</label><input type="number" name="system.heat.base.value" value="{{system.heat.base.value}}" /></div>
+      <div class="item-field"><label>ELE</label><input type="number" name="system.electricity.base.value" value="{{system.electricity.base.value}}" /></div>
+      <div class="item-field"><label>FRI</label><input type="number" name="system.cold.base.value" value="{{system.cold.base.value}}" /></div>
+      <div class="item-field"><label>ENE</label><input type="number" name="system.energy.base.value" value="{{system.energy.base.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>Entereza</label><input type="number" name="system.integrity.base.value" value="{{system.integrity.base.value}}" /></div>
+      <div class="item-field"><label>Presencia</label><input type="number" name="system.presence.base.value" value="{{system.presence.base.value}}" /></div>
+      <div class="item-field"><label>Pen. Natural</label><input type="number" name="system.naturalPenalty.base.value" value="{{system.naturalPenalty.base.value}}" /></div>
+      <div class="item-field"><label>Rest. Mov.</label><input type="number" name="system.movementRestriction.base.value" value="{{system.movementRestriction.base.value}}" /></div>
+    </div>
+    <h4>Bonos del Artefacto</h4>
+    <div class="item-row">
+      <div class="item-field"><label>B. Todas Acciones</label><input type="number" name="system.bonusAllActions.value" value="{{system.bonusAllActions.value}}" /></div>
+      <div class="item-field"><label>B. Turno</label><input type="number" name="system.bonusTurn.value" value="{{system.bonusTurn.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Ataque</label><input type="number" name="system.bonusAttack.value" value="{{system.bonusAttack.value}}" /></div>
+      <div class="item-field"><label>B. Parada</label><input type="number" name="system.bonusBlock.value" value="{{system.bonusBlock.value}}" /></div>
+      <div class="item-field"><label>B. Esquiva</label><input type="number" name="system.bonusDodge.value" value="{{system.bonusDodge.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Proy. Mágica</label><input type="number" name="system.bonusMagicProjection.value" value="{{system.bonusMagicProjection.value}}" /></div>
+      <div class="item-field"><label>B. Proy. Psíquica</label><input type="number" name="system.bonusPsychicProjection.value" value="{{system.bonusPsychicProjection.value}}" /></div>
+    </div>
+    <div class="item-row">
+      <div class="item-field"><label>B. Puntos de Vida</label><input type="number" name="system.bonusLifePoints.value" value="{{system.bonusLifePoints.value}}" /></div>
+      <div class="item-field"><label>B. Regeneración</label><input type="number" name="system.bonusRegeneration.value" value="{{system.bonusRegeneration.value}}" /></div>
+      <div class="item-field"><label>B. Resistencias</label><input type="number" name="system.bonusResistances.value" value="{{system.bonusResistances.value}}" /></div>
+    </div>
+    <div class="item-field"><label>Especial</label><textarea name="system.special.value" rows="2">{{system.special.value}}</textarea></div>
+    <div class="item-field"><label>Descripción</label><textarea name="system.description.value" rows="3">{{system.description.value}}</textarea></div>
+    <div class="item-field"><label>Fuente</label><input type="text" name="system.source.value" value="{{system.source.value}}" /></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}
