@@ -11,10 +11,10 @@
       "value": "esoteros"
     },
     "spheres": {
-      "value": 1
+      "value": 3
     },
     "effect": {
-      "value": "Conocimiento de conjuros ofensivos. Permite identificar conjuros enemigos"
+      "value": "Conocimiento de conjuros ofensivos. Permite identificar conjuros enemigos.\n• 1 esfera: identifica conjuros de nivel hasta 50\n• 2 esferas: hasta nivel 80\n• 3 esferas: cualquier nivel"
     }
   },
   "effects": [],

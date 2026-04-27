@@ -11,10 +11,10 @@
       "value": "bellum"
     },
     "spheres": {
-      "value": 1
+      "value": 5
     },
     "effect": {
-      "value": "Incrementa los puntos de resistencia de un escudo mágico en +50 por cada 20 Zeon"
+      "value": "Incrementa los puntos de resistencia de un escudo mágico.\n• 1 esfera: +50 puntos por cada 20 Zeon\n• 2 esferas: +100 puntos por cada 30 Zeon\n• 3 esferas: +150 puntos por cada 40 Zeon\n• 4 esferas: +250 puntos por cada 50 Zeon\n• 5 esferas: +500 puntos por cada 60 Zeon"
     }
   },
   "effects": [],

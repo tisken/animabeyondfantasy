@@ -11,10 +11,10 @@
       "value": "bellum"
     },
     "spheres": {
-      "value": 1
+      "value": 5
     },
     "effect": {
-      "value": "Gasta Zeon adicional para incrementar Proyección Mágica ofensiva. Básico: hasta +20 por 20 Zeon"
+      "value": "Gasta Zeon adicional para incrementar Proyección Mágica ofensiva.\n• 1 esfera: hasta +20 por 20 Zeon\n• 2 esferas: hasta +40 por 30 Zeon\n• 3 esferas: hasta +60 por 40 Zeon\n• 4 esferas: hasta +80 por 50 Zeon\n• 5 esferas: hasta +100 por 60 Zeon"
     }
   },
   "effects": [],

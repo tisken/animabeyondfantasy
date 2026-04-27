@@ -11,10 +11,10 @@
       "value": "cognos"
     },
     "spheres": {
-      "value": 1
+      "value": 3
     },
     "effect": {
-      "value": "Puede mantener el doble de conjuros simultáneamente"
+      "value": "Puede mantener más conjuros simultáneamente.\n• 1 esfera: ×2 conjuros mantenidos\n• 2 esferas: ×3 conjuros mantenidos\n• 3 esferas: ×4 conjuros mantenidos"
     }
   },
   "effects": [],

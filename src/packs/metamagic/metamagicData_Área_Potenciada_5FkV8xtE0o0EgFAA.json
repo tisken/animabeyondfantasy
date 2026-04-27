@@ -11,10 +11,10 @@
       "value": "bellum"
     },
     "spheres": {
-      "value": 1
+      "value": 5
     },
     "effect": {
-      "value": "Incrementa el área de efecto de un conjuro. Básico: ×2 por 30 Zeon"
+      "value": "Incrementa el área de efecto de un conjuro.\n• 1 esfera: ×2 área por 30 Zeon\n• 2 esferas: ×5 área por 40 Zeon\n• 3 esferas: ×10 área por 50 Zeon\n• 4 esferas: ×25 área por 60 Zeon\n• 5 esferas: ×50 área por 80 Zeon"
     }
   },
   "effects": [],

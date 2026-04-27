@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Conjuro Especial (Nv 80)",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 2
+    },
+    "branch": {
+      "value": "esoteros"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Permite crear un conjuro personalizado de nivel hasta 80. Requiere Conjuro Especial (Nv 70)."
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "24o0ksNub7jWPEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!24o0ksNub7jWPEAA"
+}

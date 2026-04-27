@@ -11,10 +11,10 @@
       "value": "potestas"
     },
     "spheres": {
-      "value": 1
+      "value": 3
     },
     "effect": {
-      "value": "Transmite o recibe Zeon a distancia sin contacto físico"
+      "value": "Transmite o recibe Zeon a distancia sin contacto físico.\n• 1 esfera: alcance 10m\n• 2 esferas: alcance 50m\n• 3 esferas: alcance 100m"
     }
   },
   "effects": [],

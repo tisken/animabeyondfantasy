@@ -11,10 +11,10 @@
       "value": "potestas"
     },
     "spheres": {
-      "value": 3
+      "value": 1
     },
     "effect": {
-      "value": "Gasta la mitad de Zeon actual para entrar en estado Avatar: ACT ×3, conjuros sin acumulación durante POD asaltos"
+      "value": "Gasta la mitad del Zeon actual para entrar en estado Avatar: ACT ×3, conjuros sin acumulación durante POD asaltos. Solo se puede usar una vez por combate."
     }
   },
   "effects": [],

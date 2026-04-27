@@ -11,10 +11,10 @@
       "value": "bellum"
     },
     "spheres": {
-      "value": 1
+      "value": 5
     },
     "effect": {
-      "value": "Reduce la TA del objetivo en 2 puntos por cada 20 Zeon adicionales"
+      "value": "Reduce la TA del objetivo gastando Zeon adicional.\n• 1 esfera: -2 TA por cada 20 Zeon\n• 2 esferas: -4 TA por cada 30 Zeon\n• 3 esferas: -6 TA por cada 40 Zeon\n• 4 esferas: -8 TA por cada 50 Zeon\n• 5 esferas: -10 TA por cada 60 Zeon"
     }
   },
   "effects": [],

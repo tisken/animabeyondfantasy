@@ -11,10 +11,10 @@
       "value": "potestas"
     },
     "spheres": {
-      "value": 2
+      "value": 1
     },
     "effect": {
-      "value": "Enlaza dos conjuros para que se activen simultáneamente"
+      "value": "Enlaza dos conjuros para que se activen simultáneamente. Ambos se lanzan como una sola acción."
     }
   },
   "effects": [],

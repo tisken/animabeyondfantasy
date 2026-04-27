@@ -11,10 +11,10 @@
       "value": "cognos"
     },
     "spheres": {
-      "value": 1
+      "value": 3
     },
     "effect": {
-      "value": "Reduce el rango de pifia mágica en 1"
+      "value": "Reduce el rango de pifia mágica.\n• 1 esfera: -1 al rango de pifia\n• 2 esferas: -2 al rango de pifia\n• 3 esferas: -3 al rango de pifia"
     }
   },
   "effects": [],

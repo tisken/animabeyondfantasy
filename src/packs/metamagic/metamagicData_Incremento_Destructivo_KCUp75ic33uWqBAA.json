@@ -11,10 +11,10 @@
       "value": "bellum"
     },
     "spheres": {
-      "value": 1
+      "value": 5
     },
     "effect": {
-      "value": "Incrementa el daño base de un conjuro ofensivo en +25 por cada 20 puntos de Zeon adicionales invertidos"
+      "value": "Incrementa el daño base de un conjuro ofensivo gastando Zeon adicional.\n• 1 esfera: +25 daño por cada 20 Zeon\n• 2 esferas: +50 daño por cada 30 Zeon\n• 3 esferas: +75 daño por cada 40 Zeon\n• 4 esferas: +100 daño por cada 50 Zeon\n• 5 esferas: +150 daño por cada 60 Zeon"
     }
   },
   "effects": [],

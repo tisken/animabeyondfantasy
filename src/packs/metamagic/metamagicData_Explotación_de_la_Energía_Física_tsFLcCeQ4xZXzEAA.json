@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Explotación de la Energía Física",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 1
+    },
+    "branch": {
+      "value": "potestas"
+    },
+    "spheres": {
+      "value": 3
+    },
+    "effect": {
+      "value": "Gasta Cansancio para incrementar ACT por encima del +15 habitual.\n• 1 esfera: +20 ACT por punto de Cansancio\n• 2 esferas: +25 ACT por punto\n• 3 esferas: +30 ACT por punto"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "tsFLcCeQ4xZXzEAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!tsFLcCeQ4xZXzEAA"
+}

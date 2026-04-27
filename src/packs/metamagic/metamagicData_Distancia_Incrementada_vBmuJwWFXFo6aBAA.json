@@ -11,10 +11,10 @@
       "value": "esoteros"
     },
     "spheres": {
-      "value": 1
+      "value": 3
     },
     "effect": {
-      "value": "Duplica el alcance de un conjuro por 20 Zeon adicionales"
+      "value": "Incrementa el alcance de los conjuros.\n• 1 esfera: ×2 alcance por 20 Zeon\n• 2 esferas: ×5 alcance por 30 Zeon\n• 3 esferas: ×10 alcance por 40 Zeon"
     }
   },
   "effects": [],

@@ -11,10 +11,10 @@
       "value": "esoteros"
     },
     "spheres": {
-      "value": 1
+      "value": 3
     },
     "effect": {
-      "value": "Conocimiento de conjuros defensivos. Permite identificar conjuros enemigos"
+      "value": "Conocimiento de conjuros defensivos. Permite identificar conjuros enemigos y obtener bonos contra ellos.\n• 1 esfera: +10 a resistir conjuros identificados\n• 2 esferas: +20 a resistir\n• 3 esferas: +30 a resistir"
     }
   },
   "effects": [],

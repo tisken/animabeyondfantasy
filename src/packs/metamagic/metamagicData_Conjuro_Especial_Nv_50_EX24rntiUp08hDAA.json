@@ -1,0 +1,39 @@
+{
+  "folder": null,
+  "name": "Conjuro Especial (Nv 50)",
+  "type": "metamagicData",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "grade": {
+      "value": 2
+    },
+    "branch": {
+      "value": "esoteros"
+    },
+    "spheres": {
+      "value": 1
+    },
+    "effect": {
+      "value": "Permite crear un conjuro personalizado de nivel hasta 50. El conjuro debe ser aprobado por el DJ y sigue las reglas de creación de conjuros del Arcana Exxet."
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "14.359",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0",
+    "createdTime": null,
+    "modifiedTime": null,
+    "lastModifiedBy": null
+  },
+  "_id": "EX24rntiUp08hDAA",
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!EX24rntiUp08hDAA"
+}

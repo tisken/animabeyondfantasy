@@ -14,7 +14,7 @@
       "value": 1
     },
     "effect": {
-      "value": "Permite elegir exactamente a quién afecta un conjuro de área"
+      "value": "Permite elegir exactamente a quién afecta un conjuro de área, excluyendo aliados u objetivos específicos."
     }
   },
   "effects": [],

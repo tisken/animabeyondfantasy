@@ -11,10 +11,10 @@
       "value": "potestas"
     },
     "spheres": {
-      "value": 1
+      "value": 5
     },
     "effect": {
-      "value": "Gasta Zeon adicional para reducir el tiempo de acumulación"
+      "value": "Gasta Zeon adicional para reducir el tiempo de acumulación.\n• 1 esfera: reduce 1 turno por 40 Zeon\n• 2 esferas: reduce 1 turno por 30 Zeon\n• 3 esferas: reduce 1 turno por 20 Zeon\n• 4 esferas: reduce 2 turnos por 30 Zeon\n• 5 esferas: reduce 2 turnos por 20 Zeon"
     }
   },
   "effects": [],

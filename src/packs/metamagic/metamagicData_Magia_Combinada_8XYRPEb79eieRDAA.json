@@ -14,7 +14,7 @@
       "value": 1
     },
     "effect": {
-      "value": "Permite combinar dos conjuros en uno solo"
+      "value": "Permite combinar dos conjuros en uno solo, lanzándolos simultáneamente. Ambos conjuros deben acumularse por separado."
     }
   },
   "effects": [],
