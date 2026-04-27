@@ -4,6 +4,9 @@
   "type": "raceData",
   "img": "icons/svg/item-bag.svg",
   "system": {
+    "raceType": {
+      "value": "race"
+    },
     "rf": {
       "value": 20
     },

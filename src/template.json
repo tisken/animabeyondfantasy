@@ -488,6 +488,7 @@
       "powers": []
     },
     "raceData": {
+      "raceType": { "value": "race" },
       "rf": { "value": 0 }, "re": { "value": 0 }, "rv": { "value": 0 },
       "rm": { "value": 0 }, "rp": { "value": 0 },
       "agi": { "value": 0 }, "con": { "value": 0 }, "des": { "value": 0 },

@@ -1,6 +1,16 @@
 {{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
   <div class="item-sheet-body">
     <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field">
+        <label>Tipo</label>
+        <select name="system.raceType.value">
+          <option value="race" {{#if (is 'eq' system.raceType.value 'race')}}selected{{/if}}>Raza</option>
+          <option value="nephilim" {{#if (is 'eq' system.raceType.value 'nephilim')}}selected{{/if}}>Nephilim</option>
+          <option value="creature" {{#if (is 'eq' system.raceType.value 'creature')}}selected{{/if}}>Criatura (Ser Entre Mundos)</option>
+        </select>
+      </div>
+    </div>
     <h4>Modificadores de Características</h4>
     <div class="item-row">
       <div class="item-field"><label>FUE</label><input type="number" name="system.fue.value" value="{{system.fue.value}}" /></div>
@@ -25,6 +35,6 @@
       <div class="item-field"><label>Regeneración</label><input type="number" name="system.regeneration.value" value="{{system.regeneration.value}}" /></div>
       <div class="item-field"><label>Cansancio</label><input type="number" name="system.fatigue.value" value="{{system.fatigue.value}}" /></div>
     </div>
-    <div class="item-field"><label>Descripción</label><textarea name="system.description.value" rows="3">{{system.description.value}}</textarea></div>
+    <div class="item-field"><label>Habilidades / Descripción</label><textarea name="system.description.value" rows="4">{{system.description.value}}</textarea></div>
   </div>
 {{/"systems/animabf/templates/items/base/base-sheet.hbs"}}
