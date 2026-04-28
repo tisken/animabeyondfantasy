@@ -9,8 +9,8 @@
  */
 export const difficultyRange = [20, 40, 80, 120, 140, 180, 240, 280, 320, 440];
 export const psychicPotentialEffect = (potential, imbalance, inhuman, zen) => {
-  // let max = zen ? 9 : inhuman ? 8 : 7;
-  let max = zen ? 9 : inhuman ? 8 : 7;
+  // Psychic potential has no Inhuman/Zen cap - it's mental, not physical
+  let max = 9;
   if (potential < 40) {
     return difficultyRange[0 + imbalance];
   } else if (potential < 80) {
