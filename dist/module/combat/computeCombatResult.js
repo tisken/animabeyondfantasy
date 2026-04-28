@@ -5,10 +5,10 @@ function computeCombatResult(attackData, defenseData) {
   const defenderActor = defenderToken?.actor || (defenseData.defenderId ? game.actors?.get?.(defenseData.defenderId) : null);
   attackData.attackerId ? game.actors?.get?.(attackData.attackerId) : null;
   const difference = (attackData.attackAbility ?? 0) - (defenseData.defenseAbility ?? 0);
-  const hasCounterAttack = difference <= 0 && attackData.canBeCounterAttacked !== false && defenseData.canCounterAttack !== false;
+  const hasCounterAttack = difference < 0 && attackData.canBeCounterAttacked !== false && defenseData.canCounterAttack !== false;
   const counterAttackMultiplier = 0.5;
   const rawBonus = hasCounterAttack ? -difference * counterAttackMultiplier : 0;
-  const counterAttackValue = Math.floor(rawBonus / 5) * 5;
+  const counterAttackValue = Math.min(Math.floor(rawBonus / 5) * 5, 150);
   const baseDamage = getFinalBaseDamage(attackData, defenseData);
   const finalArmor = getFinalArmor(attackData, defenseData);
   const roundedDifference = Math.floor(difference / 10) * 10;

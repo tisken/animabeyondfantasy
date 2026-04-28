@@ -25,15 +25,15 @@ export function computeCombatResult(attackData, defenseData) {
   const difference = (attackData.attackAbility ?? 0) - (defenseData.defenseAbility ?? 0);
 
   const hasCounterAttack =
-    difference <= 0 &&
+    difference < 0 &&
     attackData.canBeCounterAttacked !== false &&
     defenseData.canCounterAttack !== false;
 
-  const counterAttackMultiplier = 0.5; // TODO: source from defender if needed
+  const counterAttackMultiplier = 0.5;
 
-  // Round down to nearest multiple of 5
+  // Round down to nearest multiple of 5, cap at 150
   const rawBonus = hasCounterAttack ? -difference * counterAttackMultiplier : 0;
-  const counterAttackValue = Math.floor(rawBonus / 5) * 5;
+  const counterAttackValue = Math.min(Math.floor(rawBonus / 5) * 5, 150);
 
   const baseDamage = getFinalBaseDamage(attackData, defenseData);
   const finalArmor = getFinalArmor(attackData, defenseData);
