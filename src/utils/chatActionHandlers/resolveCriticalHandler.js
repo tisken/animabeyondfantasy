@@ -1,10 +1,9 @@
 import { resolveCritical } from '../../module/combat/resolveCritical.js';
 
-async function handler(message, html, dataset) {
-  const baseCriticalValue = Number(dataset.baseCrit) || 0;
-  const defActorId = dataset.defActor || '';
-  const defTokenId = dataset.defToken || '';
-
+export default async function resolveCriticalHandler(message, _html, ds) {
+  const baseCriticalValue = Number(ds.baseCrit) || 0;
+  const defActorId = ds.defActor || '';
+  const defTokenId = ds.defToken || '';
   const defenderActor = defActorId ? game.actors.get(defActorId) : null;
 
   await resolveCritical({
@@ -14,6 +13,4 @@ async function handler(message, html, dataset) {
   });
 }
 
-handler.action = 'animabf-resolve-critical';
-export { handler as default };
 export const action = 'animabf-resolve-critical';
