@@ -23,9 +23,16 @@
     </div>
     <div class="item-row">
       <div class="item-field">
-        <label>Sostenida</label>
-        <input type="checkbox" name="system.isMaintained.value" {{#if system.isMaintained.value}}checked{{/if}} />
+        <label>Duración</label>
+        <select name="system.durationType.value">
+          <option value="oneUse" {{#if (is 'eq' system.durationType.value 'oneUse')}}selected{{/if}}>Un Uso</option>
+          <option value="maintained" {{#if (is 'eq' system.durationType.value 'maintained')}}selected{{/if}}>Mantenida (Ki/asalto)</option>
+          <option value="sustained" {{#if (is 'eq' system.durationType.value 'sustained')}}selected{{/if}}>Sostenida (asaltos fijos)</option>
+        </select>
       </div>
+      {{#if (is 'eq' system.durationType.value 'sustained')}}
+      <div class="item-field"><label>Asaltos</label><input type="number" name="system.sustainedTurns.value" value="{{system.sustainedTurns.value}}" /></div>
+      {{/if}}
       <div class="item-field">
         <label>Combinable</label>
         <input type="checkbox" name="system.isCombinable.value" {{#if system.isCombinable.value}}checked{{/if}} />
@@ -42,7 +49,7 @@
       <div class="item-field"><label>VOL</label><input type="number" name="system.kiCost.willPower.value" value="{{system.kiCost.willPower.value}}" /></div>
     </div>
 
-    {{#if system.isMaintained.value}}
+    {{#if (is 'eq' system.durationType.value 'maintained')}}
     <h4>Mantenimiento (Ki por asalto)</h4>
     <div class="item-row">
       <div class="item-field"><label>FUE</label><input type="number" name="system.maintenance.strength.value" value="{{system.maintenance.strength.value}}" /></div>
@@ -58,16 +65,23 @@
     {{#each system.effects as |effect idx|}}
     <div class="item-power-block">
       <div class="item-row">
-        <div class="item-field"><label>Efecto</label><span>{{effect.name}}</span></div>
+        <div class="item-field" style="flex:2;"><label>Efecto</label><span style="font-weight:bold;">{{effect.name}}</span></div>
         <div class="item-field"><label>Clase</label><span>{{effect.class}}</span></div>
+      </div>
+      <div class="item-row">
         <div class="item-field"><label>Valor</label><span>{{effect.value}}</span></div>
         <div class="item-field"><label>CM</label><span>{{effect.cm}}</span></div>
+        <div class="item-field"><label>Ki 1º</label><span>{{effect.ki1}}</span></div>
+        <div class="item-field"><label>Ki 2º</label><span>{{effect.ki2}}</span></div>
+        <div class="item-field"><label>Mant.</label><span>{{effect.maint}}</span></div>
       </div>
+      {{#if effect.detail}}
       <div class="item-field"><label>Detalle</label><p>{{effect.detail}}</p></div>
+      {{/if}}
     </div>
     {{/each}}
     {{#unless system.effects.length}}
-    <p style="opacity:0.6; font-size:0.8rem;">Sin efectos definidos. Edita la descripción para detallar los efectos de la técnica.</p>
+    <p style="opacity:0.6; font-size:0.8rem;">Sin efectos estructurados. Usa la descripción para detallar los efectos.</p>
     {{/unless}}
 
     <div class="item-field"><label>Descripción</label><textarea name="system.description.value" rows="5">{{system.description.value}}</textarea></div>

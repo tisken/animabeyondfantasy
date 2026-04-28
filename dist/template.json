@@ -591,7 +591,8 @@
         "power": { "value": 0 },
         "willPower": { "value": 0 }
       },
-      "isMaintained": { "value": false },
+      "durationType": { "value": "oneUse" },
+      "sustainedTurns": { "value": 0 },
       "isCombinable": { "value": false },
       "actionType": { "value": "attack" },
       "effects": [],
