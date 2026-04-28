@@ -1,14 +1,16 @@
+import * as applyCriticalEffectHandler from "./chatActionHandlers/applyCriticalEffectHandler.js";
 import * as applyDamageActionHandler from "./chatActionHandlers/applyDamageActionHandler.js";
 import * as applyMultiDefenseActions from "./chatActionHandlers/applyMultiDefenseActions.js";
 import * as autoDefendActionHandler from "./chatActionHandlers/autoDefendActionHandler.js";
 import * as autoDefendPendingActionHandler from "./chatActionHandlers/autoDefendPendingActionHandler.js";
 import * as defendActionHandler from "./chatActionHandlers/defendActionHandler.js";
 import * as defendTargetActionHandler from "./chatActionHandlers/defendTargetActionHandler.js";
+import * as resolveCriticalHandler from "./chatActionHandlers/resolveCriticalHandler.js";
 const chatActionHandlers = (() => {
   const actionModules = {
     // ← añade también chatActions
-    .../* @__PURE__ */ Object.assign({ "./chatActionHandlers/applyDamageActionHandler.js": applyDamageActionHandler, "./chatActionHandlers/applyMultiDefenseActions.js": applyMultiDefenseActions, "./chatActionHandlers/autoDefendActionHandler.js": autoDefendActionHandler, "./chatActionHandlers/autoDefendPendingActionHandler.js": autoDefendPendingActionHandler, "./chatActionHandlers/defendActionHandler.js": defendActionHandler, "./chatActionHandlers/defendTargetActionHandler.js": defendTargetActionHandler }),
-    .../* @__PURE__ */ Object.assign({ "./chatActionHandlers/applyDamageActionHandler.js": applyDamageActionHandler, "./chatActionHandlers/applyMultiDefenseActions.js": applyMultiDefenseActions, "./chatActionHandlers/autoDefendActionHandler.js": autoDefendActionHandler, "./chatActionHandlers/autoDefendPendingActionHandler.js": autoDefendPendingActionHandler, "./chatActionHandlers/defendActionHandler.js": defendActionHandler, "./chatActionHandlers/defendTargetActionHandler.js": defendTargetActionHandler }),
+    .../* @__PURE__ */ Object.assign({ "./chatActionHandlers/applyCriticalEffectHandler.js": applyCriticalEffectHandler, "./chatActionHandlers/applyDamageActionHandler.js": applyDamageActionHandler, "./chatActionHandlers/applyMultiDefenseActions.js": applyMultiDefenseActions, "./chatActionHandlers/autoDefendActionHandler.js": autoDefendActionHandler, "./chatActionHandlers/autoDefendPendingActionHandler.js": autoDefendPendingActionHandler, "./chatActionHandlers/defendActionHandler.js": defendActionHandler, "./chatActionHandlers/defendTargetActionHandler.js": defendTargetActionHandler, "./chatActionHandlers/resolveCriticalHandler.js": resolveCriticalHandler }),
+    .../* @__PURE__ */ Object.assign({ "./chatActionHandlers/applyCriticalEffectHandler.js": applyCriticalEffectHandler, "./chatActionHandlers/applyDamageActionHandler.js": applyDamageActionHandler, "./chatActionHandlers/applyMultiDefenseActions.js": applyMultiDefenseActions, "./chatActionHandlers/autoDefendActionHandler.js": autoDefendActionHandler, "./chatActionHandlers/autoDefendPendingActionHandler.js": autoDefendPendingActionHandler, "./chatActionHandlers/defendActionHandler.js": defendActionHandler, "./chatActionHandlers/defendTargetActionHandler.js": defendTargetActionHandler, "./chatActionHandlers/resolveCriticalHandler.js": resolveCriticalHandler }),
     .../* @__PURE__ */ Object.assign({}),
     .../* @__PURE__ */ Object.assign({})
   };

@@ -22,6 +22,15 @@
 
     {{#if combatResult.isCritical}}
       <p data-requires-permission="owner"><strong>{{localize "chat.combatResult.baseCriticalValue"}}:</strong> {{combatResult.baseCriticalValue}}</p>
+      <div data-requires-permission="owner" style="margin-top:0.3rem;">
+        <button type="button" class="chat-action-button" style="width:100%;"
+                data-action="animabf-resolve-critical"
+                data-base-crit="{{combatResult.baseCriticalValue}}"
+                data-def-actor="{{defenderId}}"
+                data-def-token="{{defenderTokenId}}">
+          🎯 Resolver Crítico
+        </button>
+      </div>
     {{/if}}
 
     {{#if (gt combatResult.damageFinal 0)}}
