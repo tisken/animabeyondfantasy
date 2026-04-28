@@ -1,0 +1,75 @@
+{{#> "systems/animabf/templates/items/base/base-sheet.hbs"}}
+  <div class="item-sheet-body">
+    <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
+    <div class="item-row">
+      <div class="item-field">
+        <label>Nivel</label>
+        <select name="system.level.value">
+          <option value="1" {{#if (is 'eq' system.level.value 1)}}selected{{/if}}>Nivel 1</option>
+          <option value="2" {{#if (is 'eq' system.level.value 2)}}selected{{/if}}>Nivel 2</option>
+          <option value="3" {{#if (is 'eq' system.level.value 3)}}selected{{/if}}>Nivel 3</option>
+        </select>
+      </div>
+      <div class="item-field"><label>CM Total</label><input type="number" name="system.martialKnowledge.value" value="{{system.martialKnowledge.value}}" /></div>
+      <div class="item-field">
+        <label>Tipo de Acción</label>
+        <select name="system.actionType.value">
+          <option value="attack" {{#if (is 'eq' system.actionType.value 'attack')}}selected{{/if}}>Ataque</option>
+          <option value="defense" {{#if (is 'eq' system.actionType.value 'defense')}}selected{{/if}}>Defensa</option>
+          <option value="counterattack" {{#if (is 'eq' system.actionType.value 'counterattack')}}selected{{/if}}>Contraataque</option>
+          <option value="passive" {{#if (is 'eq' system.actionType.value 'passive')}}selected{{/if}}>Pasivo</option>
+        </select>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-field">
+        <label>Sostenida</label>
+        <input type="checkbox" name="system.isMaintained.value" {{#if system.isMaintained.value}}checked{{/if}} />
+      </div>
+      <div class="item-field">
+        <label>Combinable</label>
+        <input type="checkbox" name="system.isCombinable.value" {{#if system.isCombinable.value}}checked{{/if}} />
+      </div>
+    </div>
+
+    <h4>Coste en Ki (Activación)</h4>
+    <div class="item-row">
+      <div class="item-field"><label>FUE</label><input type="number" name="system.kiCost.strength.value" value="{{system.kiCost.strength.value}}" /></div>
+      <div class="item-field"><label>DES</label><input type="number" name="system.kiCost.dexterity.value" value="{{system.kiCost.dexterity.value}}" /></div>
+      <div class="item-field"><label>AGI</label><input type="number" name="system.kiCost.agility.value" value="{{system.kiCost.agility.value}}" /></div>
+      <div class="item-field"><label>CON</label><input type="number" name="system.kiCost.constitution.value" value="{{system.kiCost.constitution.value}}" /></div>
+      <div class="item-field"><label>POD</label><input type="number" name="system.kiCost.power.value" value="{{system.kiCost.power.value}}" /></div>
+      <div class="item-field"><label>VOL</label><input type="number" name="system.kiCost.willPower.value" value="{{system.kiCost.willPower.value}}" /></div>
+    </div>
+
+    {{#if system.isMaintained.value}}
+    <h4>Mantenimiento (Ki por asalto)</h4>
+    <div class="item-row">
+      <div class="item-field"><label>FUE</label><input type="number" name="system.maintenance.strength.value" value="{{system.maintenance.strength.value}}" /></div>
+      <div class="item-field"><label>DES</label><input type="number" name="system.maintenance.dexterity.value" value="{{system.maintenance.dexterity.value}}" /></div>
+      <div class="item-field"><label>AGI</label><input type="number" name="system.maintenance.agility.value" value="{{system.maintenance.agility.value}}" /></div>
+      <div class="item-field"><label>CON</label><input type="number" name="system.maintenance.constitution.value" value="{{system.maintenance.constitution.value}}" /></div>
+      <div class="item-field"><label>POD</label><input type="number" name="system.maintenance.power.value" value="{{system.maintenance.power.value}}" /></div>
+      <div class="item-field"><label>VOL</label><input type="number" name="system.maintenance.willPower.value" value="{{system.maintenance.willPower.value}}" /></div>
+    </div>
+    {{/if}}
+
+    <h4>Efectos de la Técnica</h4>
+    {{#each system.effects as |effect idx|}}
+    <div class="item-power-block">
+      <div class="item-row">
+        <div class="item-field"><label>Efecto</label><span>{{effect.name}}</span></div>
+        <div class="item-field"><label>Clase</label><span>{{effect.class}}</span></div>
+        <div class="item-field"><label>Valor</label><span>{{effect.value}}</span></div>
+        <div class="item-field"><label>CM</label><span>{{effect.cm}}</span></div>
+      </div>
+      <div class="item-field"><label>Detalle</label><p>{{effect.detail}}</p></div>
+    </div>
+    {{/each}}
+    {{#unless system.effects.length}}
+    <p style="opacity:0.6; font-size:0.8rem;">Sin efectos definidos. Edita la descripción para detallar los efectos de la técnica.</p>
+    {{/unless}}
+
+    <div class="item-field"><label>Descripción</label><textarea name="system.description.value" rows="5">{{system.description.value}}</textarea></div>
+  </div>
+{{/"systems/animabf/templates/items/base/base-sheet.hbs"}}

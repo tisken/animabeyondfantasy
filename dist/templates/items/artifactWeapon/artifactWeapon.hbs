@@ -2,14 +2,6 @@
   <div class="item-sheet-body">
     <div class="item-field"><label>Nombre</label><input type="text" name="name" value="{{item.name}}" /></div>
     <div class="item-row">
-      <div class="item-field">
-        <label>Rango</label>
-        <select name="system.tier.value">
-          <option value="minor" {{#if (is 'eq' system.tier.value 'minor')}}selected{{/if}}>Menor</option>
-          <option value="major" {{#if (is 'eq' system.tier.value 'major')}}selected{{/if}}>Mayor</option>
-          <option value="legendary" {{#if (is 'eq' system.tier.value 'legendary')}}selected{{/if}}>Legendario</option>
-        </select>
-      </div>
       <div class="item-field"><label>Nivel de Poder</label><input type="number" name="system.powerLevel.value" value="{{system.powerLevel.value}}" /></div>
       <div class="item-field"><label>Calidad</label><input type="number" name="system.quality.value" value="{{system.quality.value}}" /></div>
     </div>

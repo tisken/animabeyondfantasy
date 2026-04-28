@@ -408,7 +408,8 @@
       "magicItemData",
       "nemesisSkillData",
       "artifactWeapon",
-      "artifactArmor"
+      "artifactArmor",
+      "kiTechniqueData"
     ],
     "advantage": {
       "category": { "value": "common" },
@@ -517,7 +518,6 @@
       "maintenance": { "value": 0 }
     },
     "artifactWeapon": {
-      "tier": { "value": "minor" },
       "powerLevel": { "value": 0 },
       "artifactLevel": { "value": 0 },
       "fabula": { "grade1": 0, "grade2": 0, "grade3": 0 },
@@ -543,7 +543,6 @@
       "source": { "value": "" }
     },
     "artifactArmor": {
-      "tier": { "value": "minor" },
       "powerLevel": { "value": 0 },
       "artifactLevel": { "value": 0 },
       "fabula": { "grade1": 0, "grade2": 0, "grade3": 0 },
@@ -572,6 +571,31 @@
       "special": { "value": "" },
       "description": { "value": "" },
       "source": { "value": "" }
+    },
+    "kiTechniqueData": {
+      "level": { "value": 1 },
+      "martialKnowledge": { "value": 0 },
+      "kiCost": {
+        "strength": { "value": 0 },
+        "dexterity": { "value": 0 },
+        "agility": { "value": 0 },
+        "constitution": { "value": 0 },
+        "power": { "value": 0 },
+        "willPower": { "value": 0 }
+      },
+      "maintenance": {
+        "strength": { "value": 0 },
+        "dexterity": { "value": 0 },
+        "agility": { "value": 0 },
+        "constitution": { "value": 0 },
+        "power": { "value": 0 },
+        "willPower": { "value": 0 }
+      },
+      "isMaintained": { "value": false },
+      "isCombinable": { "value": false },
+      "actionType": { "value": "attack" },
+      "effects": [],
+      "description": { "value": "" }
     },
     "ammo": {
       "amount": { "value": 0 },
