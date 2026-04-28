@@ -1,5 +1,4 @@
 // Critical hit resolution system - Anima Beyond Fantasy rules
-import { openModDialog } from '../utils/dialogs/openSimpleInputDialog';
 import ABFFoundryRoll from '../rolls/ABFFoundryRoll';
 
 const CRITICAL_LOCATIONS = [
@@ -41,96 +40,56 @@ function getCriticalSeverity(critLevel, location) {
 
   if (critLevel <= 0) {
     return {
-      level: 'Ninguno',
-      painPenalty: 0,
-      physicalPenalty: 0,
-      painRecoveryPerTurn: 0,
-      physicalRecoveryPerWeek: 0,
-      needsLocation: false,
-      limbDestroyed: false,
-      unconscious: false,
-      death: false,
+      level: 'Ninguno', painPenalty: 0, physicalPenalty: 0,
+      needsLocation: false, limbDestroyed: false, unconscious: false, death: false,
       description: 'RF superada. Sin efecto de crítico.'
     };
   }
 
   if (critLevel <= 50) {
     return {
-      level: 'Menor (1-50)',
-      painPenalty: critLevel,
-      physicalPenalty: 0,
-      painRecoveryPerTurn: 5,
-      physicalRecoveryPerWeek: 0,
-      needsLocation: false,
-      limbDestroyed: false,
-      unconscious: false,
-      death: false,
+      level: 'Menor (1-50)', painPenalty: critLevel, physicalPenalty: 0,
+      needsLocation: false, limbDestroyed: false, unconscious: false, death: false,
       description: `Penalizador de -${critLevel} a toda acción por dolor. Se recupera a 5 puntos por asalto.`
     };
   }
 
   const pain = Math.ceil(critLevel / 2);
   const physical = critLevel - pain;
+  const unconscious = zone === 'head';
 
   if (critLevel <= 100) {
-    const unconscious = zone === 'head';
     return {
-      level: 'Mayor (51-100)',
-      painPenalty: pain,
-      physicalPenalty: physical,
-      painRecoveryPerTurn: 5,
-      physicalRecoveryPerWeek: 5,
-      needsLocation: true,
-      limbDestroyed: false,
-      unconscious,
-      death: false,
-      description: `Penalizador total: -${critLevel}. Dolor: -${pain} (recupera 5/asalto). Daño físico: -${physical} (recupera 5/semana).${unconscious ? ' ¡Impacto en cabeza: INCONSCIENTE!' : ''}`
+      level: 'Mayor (51-100)', painPenalty: pain, physicalPenalty: physical,
+      needsLocation: true, limbDestroyed: false, unconscious, death: false,
+      description: `Dolor: -${pain} (5/asalto). Físico: -${physical} (5/semana).${unconscious ? ' ¡INCONSCIENTE!' : ''}`
     };
   }
 
-  if (critLevel <= 150) {
-    const limbDest = isLimb(zone);
-    const death = isVital(zone, location);
-    return {
-      level: 'Grave (101-150)',
-      painPenalty: pain,
-      physicalPenalty: physical,
-      painRecoveryPerTurn: 5,
-      physicalRecoveryPerWeek: 5,
-      needsLocation: true,
-      limbDestroyed: limbDest,
-      unconscious: zone === 'head',
-      death,
-      description: `Penalizador total: -${critLevel}. Dolor: -${pain} (recupera 5/asalto). Daño físico: -${physical} (recupera 5/semana).${limbDest ? ' ¡Miembro DESTROZADO/AMPUTADO!' : ''}${death ? ' ¡Zona vital: MUERTE!' : ''}`
-    };
-  }
-
-  // 151+
   const limbDest = isLimb(zone);
   const death = isVital(zone, location);
+
+  if (critLevel <= 150) {
+    return {
+      level: 'Grave (101-150)', painPenalty: pain, physicalPenalty: physical,
+      needsLocation: true, limbDestroyed: limbDest, unconscious: unconscious || false, death,
+      description: `Dolor: -${pain} (5/asalto). Físico: -${physical} (5/semana).${limbDest ? ' ¡Miembro DESTROZADO!' : ''}${death ? ' ¡MUERTE!' : ''}`
+    };
+  }
+
   return {
-    level: 'Devastador (151+)',
-    painPenalty: pain,
-    physicalPenalty: physical,
-    painRecoveryPerTurn: 5,
-    physicalRecoveryPerWeek: 5,
-    needsLocation: true,
-    limbDestroyed: limbDest,
-    unconscious: true,
-    death,
-    description: `Penalizador total: -${critLevel}. Dolor: -${pain} (recupera 5/asalto). Daño físico: -${physical} (recupera 5/semana). INCONSCIENTE. Muere en CON minutos sin atención médica.${limbDest ? ' ¡Miembro DESTROZADO!' : ''}${death ? ' ¡MUERTE INSTANTÁNEA!' : ''}`
+    level: 'Devastador (151+)', painPenalty: pain, physicalPenalty: physical,
+    needsLocation: true, limbDestroyed: limbDest, unconscious: true, death,
+    description: `Dolor: -${pain} (5/asalto). Físico: -${physical} (5/semana). INCONSCIENTE. Muere en CON minutos sin atención.${limbDest ? ' ¡Miembro DESTROZADO!' : ''}${death ? ' ¡MUERTE!' : ''}`
   };
 }
 
 /**
  * Full critical resolution flow.
- * @param {object} opts
- * @param {number} opts.baseCriticalValue - damage that triggered the crit
- * @param {Actor|null} opts.defenderActor
- * @param {string} opts.defenderTokenId
+ * baseCriticalValue already includes critBonus + critDamageBonus from the attack dialog.
  */
 export async function resolveCritical({ baseCriticalValue, defenderActor, defenderTokenId }) {
-  // 1. Attacker rolls 1d100 (NO open roll) + damage = raw critical level
+  // 1. Attacker rolls 1d100 (NO open roll) + damage (which already includes crit bonuses)
   const critRoll = new ABFFoundryRoll('1d100', {});
   await critRoll.roll();
 
@@ -141,11 +100,7 @@ export async function resolveCritical({ baseCriticalValue, defenderActor, defend
     rawCritLevel = 200 + Math.floor((rawCritLevel - 200) / 2);
   }
 
-  // 2. Ask for modifier
-  const critMod = await openModDialog() ?? 0;
-  const adjustedCritLevel = rawCritLevel + critMod;
-
-  // 3. Defender rolls RF
+  // 2. Defender rolls RF
   let rfValue = 0;
   if (defenderActor) {
     rfValue = defenderActor.system?.characteristics?.secondaries?.resistances?.physical?.final?.value ?? 0;
@@ -155,10 +110,10 @@ export async function resolveCritical({ baseCriticalValue, defenderActor, defend
   await rfRoll.roll();
   const rfTotal = rfRoll.total + rfValue;
 
-  // 4. Final critical level = adjusted - RF
-  const finalCritLevel = Math.max(0, adjustedCritLevel - rfTotal);
+  // 3. Final critical level
+  const finalCritLevel = Math.max(0, rawCritLevel - rfTotal);
 
-  // 5. Location (only if > 50)
+  // 4. Location (only if > 50)
   let location = { location: 'N/A', zone: 'general' };
   let locRollTotal = 0;
   if (finalCritLevel > 50) {
@@ -168,100 +123,67 @@ export async function resolveCritical({ baseCriticalValue, defenderActor, defend
     location = getLocation(locRollTotal);
   }
 
-  // 6. Severity
+  // 5. Severity
   const severity = getCriticalSeverity(finalCritLevel, location);
 
-  // 7. Chat message
+  // 6. Chat message
   const speaker = defenderActor
     ? ChatMessage.getSpeaker({ actor: defenderActor })
     : ChatMessage.getSpeaker();
 
-  let locationHtml = '';
-  if (severity.needsLocation) {
-    locationHtml = `<p><strong>Localización (${locRollTotal}):</strong> 📍 ${location.location}</p>`;
-  }
+  const overflowNote = (critRoll.total + baseCriticalValue) > 200
+    ? ` → ${rawCritLevel} (exceso sobre 200 reducido a mitad)` : '';
+
+  const totalPenalty = severity.painPenalty + severity.physicalPenalty;
 
   let alertsHtml = '';
   if (severity.death) alertsHtml += '<p style="color:#c00; font-weight:bold;">💀 ¡MUERTE!</p>';
   else if (severity.unconscious) alertsHtml += '<p style="color:#c60; font-weight:bold;">💫 ¡INCONSCIENTE!</p>';
   if (severity.limbDestroyed) alertsHtml += '<p style="color:#c00; font-weight:bold;">🦴 ¡Miembro destrozado/amputado!</p>';
 
-  const totalPenalty = severity.painPenalty + severity.physicalPenalty;
-
   const content = `
     <div class="animabf-chat-message" style="padding: 0.5rem;">
       <h3 style="margin:0 0 0.5rem; border-bottom:1px solid #ccc; padding-bottom:4px;">⚔️ Resolución de Crítico</h3>
-      <p><strong>Tirada de crítico:</strong> ${critRoll.total} (d100) + ${baseCriticalValue} (daño) = ${critRoll.total + baseCriticalValue}${rawCritLevel !== critRoll.total + baseCriticalValue ? ` → ${rawCritLevel} (exceso sobre 200 reducido a mitad)` : ''}${critMod !== 0 ? ` ${critMod >= 0 ? '+' : ''}${critMod} mod = ${adjustedCritLevel}` : ''}</p>
+      <p><strong>Nivel de crítico:</strong> ${critRoll.total} (d100) + ${baseCriticalValue} (daño+bonos) = ${critRoll.total + baseCriticalValue}${overflowNote}</p>
       <p><strong>Tirada de RF:</strong> ${rfRoll.total} (d100) + ${rfValue} (RF) = <strong>${rfTotal}</strong></p>
-      <p><strong>Nivel de crítico:</strong> ${adjustedCritLevel} - ${rfTotal} = <strong>${finalCritLevel}</strong></p>
+      <p><strong>Resultado:</strong> ${rawCritLevel} - ${rfTotal} = <strong>${finalCritLevel}</strong></p>
       <hr style="margin: 0.4rem 0;">
       <p><strong>Severidad:</strong> ${severity.level}</p>
-      ${locationHtml}
+      ${severity.needsLocation ? `<p><strong>Localización (${locRollTotal}):</strong> 📍 ${location.location}</p>` : ''}
       ${alertsHtml}
       <p>${severity.description}</p>
-      ${finalCritLevel > 0 && severity.painPenalty > 0 ? `
-      <p style="font-size:0.8rem; opacity:0.8;">Dolor: -${severity.painPenalty} (recupera ${severity.painRecoveryPerTurn}/asalto)${severity.physicalPenalty > 0 ? ` | Físico: -${severity.physicalPenalty} (recupera ${severity.physicalRecoveryPerWeek}/semana)` : ''}</p>
-      ` : ''}
       ${totalPenalty > 0 ? `
-      <div style="margin-top:0.5rem; display:flex; gap:0.5rem;">
-        <button type="button" class="chat-action-button" style="flex:1;"
+      <div style="margin-top:0.5rem;">
+        <button type="button" class="chat-action-button" style="width:100%;"
                 data-action="animabf-apply-critical-effect"
                 data-penalty="${totalPenalty}"
-                data-pain="${severity.painPenalty}"
-                data-physical="${severity.physicalPenalty}"
                 data-location="${location.location}"
                 data-zone="${location.zone}"
                 data-def-actor="${defenderActor?.id ?? ''}"
                 data-def-token="${defenderTokenId ?? ''}">
-          Aplicar Penalizador (-${totalPenalty})
+          Aplicar Penalizador Físico (-${totalPenalty})
         </button>
       </div>` : ''}
     </div>
   `;
 
   await ChatMessage.create({ user: game.user.id, content, speaker });
-
   return { finalCritLevel, location, severity };
 }
 
 /**
- * Apply critical effect as ActiveEffect on the actor.
+ * Apply critical penalty to actor's physicalActions.special modifier.
  */
-export async function applyCriticalEffect({ penalty, pain, physical, location, zone, actorId }) {
+export async function applyCriticalEffect({ penalty, location, actorId }) {
   const actor = actorId ? game.actors.get(actorId) : null;
   if (!actor) return;
 
-  const effectName = `Crítico: ${location} (-${penalty})`;
-  const changes = [
-    {
-      key: 'system.general.modifiers.allActions.special.value',
-      mode: CONST.ACTIVE_EFFECT_MODES.ADD,
-      value: String(-penalty),
-      priority: 20
-    }
-  ];
+  const current = actor.system?.general?.modifiers?.physicalActions?.special?.value ?? 0;
+  const newValue = current - Number(penalty);
 
-  const effectData = {
-    name: effectName,
-    icon: 'icons/svg/blood.svg',
-    disabled: false,
-    origin: null,
-    transfer: false,
-    changes,
-    flags: {
-      animabf: {
-        criticalEffect: true,
-        totalPenalty: Number(penalty),
-        painPenalty: Number(pain) || Number(penalty),
-        physicalPenalty: Number(physical) || 0,
-        location,
-        zone,
-        painRecoveryPerTurn: 5,
-        physicalRecoveryPerWeek: 5
-      }
-    }
-  };
+  await actor.update({
+    'system.general.modifiers.physicalActions.special.value': newValue
+  });
 
-  await actor.createEmbeddedDocuments('ActiveEffect', [effectData]);
-  ui.notifications.info(`Aplicado: ${effectName} a ${actor.name}`);
+  ui.notifications.info(`Crítico en ${location}: Modificador físico ${current} → ${newValue} (${actor.name})`);
 }

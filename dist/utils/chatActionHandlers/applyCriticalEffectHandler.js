@@ -1,15 +1,10 @@
 import { applyCriticalEffect } from "../../module/combat/resolveCritical.js";
 async function handler(message, html, dataset) {
-  const penalty = Number(dataset.penalty) || 0;
-  const location = dataset.location || "";
-  const zone = dataset.zone || "";
-  const actorId = dataset.defActor || "";
-  dataset.defToken || "";
   await applyCriticalEffect({
-    penalty,
-    location,
-    zone,
-    actorId
+    penalty: Number(dataset.penalty) || 0,
+    location: dataset.location || "",
+    zone: dataset.zone || "",
+    actorId: dataset.defActor || ""
   });
 }
 handler.action = "animabf-apply-critical-effect";
