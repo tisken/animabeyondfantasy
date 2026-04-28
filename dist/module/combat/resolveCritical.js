@@ -157,12 +157,12 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
 async function applyCriticalEffect({ penalty, location, actorId }) {
   const actor = actorId ? game.actors.get(actorId) : null;
   if (!actor) return;
-  const current = actor.system?.general?.modifiers?.allActions?.base?.value ?? 0;
+  const current = actor.system?.general?.modifiers?.physicalActions?.base?.value ?? 0;
   const newValue = current - Number(penalty);
   await actor.update({
-    "system.general.modifiers.allActions.base.value": newValue
+    "system.general.modifiers.physicalActions.base.value": newValue
   });
-  ui.notifications.info(`Crítico en ${location}: Mod. toda acción ${current} → ${newValue} (${actor.name})`);
+  ui.notifications.info(`Crítico en ${location}: Mod. físico ${current} → ${newValue} (${actor.name})`);
 }
 export {
   applyCriticalEffect,

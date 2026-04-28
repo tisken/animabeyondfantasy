@@ -2,7 +2,7 @@
   "id": "animabf",
   "title": "Anima Beyond Fantasy",
   "description": "Unofficial Anima Beyond Fantasy system for Foundry VTT",
-  "version": "2.3.0-test.22",
+  "version": "2.3.0-test.23",
   "compatibility": { "minimum": "13", "verified": "14.359" },
   "url": "https://github.com/tisken/animabeyondfantasy",
   "manifest": "https://raw.githubusercontent.com/tisken/animabeyondfantasy/main/dist/system.json",
