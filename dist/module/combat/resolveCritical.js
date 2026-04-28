@@ -123,32 +123,33 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
   const overflowNote = critRoll.total + baseCriticalValue > 200 ? ` → ${rawCritLevel} (exceso sobre 200 reducido a mitad)` : "";
   const totalPenalty = severity.painPenalty + severity.physicalPenalty;
   let alertsHtml = "";
-  if (severity.death) alertsHtml += '<p style="color:#c00; font-weight:bold;">💀 ¡MUERTE!</p>';
-  else if (severity.unconscious) alertsHtml += '<p style="color:#c60; font-weight:bold;">💫 ¡INCONSCIENTE!</p>';
-  if (severity.limbDestroyed) alertsHtml += '<p style="color:#c00; font-weight:bold;">🦴 ¡Miembro destrozado/amputado!</p>';
+  if (severity.death) alertsHtml += '<p class="critical-alert" style="color:#c00; font-weight:bold;">MUERTE</p>';
+  else if (severity.unconscious) alertsHtml += '<p class="critical-alert" style="color:#c60; font-weight:bold;">INCONSCIENTE</p>';
+  if (severity.limbDestroyed) alertsHtml += '<p class="critical-alert" style="color:#c00; font-weight:bold;">Miembro destrozado/amputado</p>';
   const content = `
-    <div class="animabf-chat-message" style="padding: 0.5rem;">
-      <h3 style="margin:0 0 0.5rem; border-bottom:1px solid #ccc; padding-bottom:4px;">⚔️ Resolución de Crítico</h3>
-      <p><strong>Nivel de crítico:</strong> ${critRoll.total} (d100) + ${baseCriticalValue} (daño+bonos) = ${critRoll.total + baseCriticalValue}${overflowNote}</p>
-      <p><strong>Tirada de RF:</strong> ${rfRoll.total} (d100) + ${rfValue} (RF) = <strong>${rfTotal}</strong></p>
-      <p><strong>Resultado:</strong> ${rawCritLevel} - ${rfTotal} = <strong>${finalCritLevel}</strong></p>
-      <hr style="margin: 0.4rem 0;">
-      <p><strong>Severidad:</strong> ${severity.level}</p>
-      ${severity.needsLocation ? `<p><strong>Localización (${locRollTotal}):</strong> 📍 ${location.location}</p>` : ""}
-      ${alertsHtml}
-      <p>${severity.description}</p>
-      ${totalPenalty > 0 ? `
-      <div style="margin-top:0.5rem;">
-        <button type="button" class="chat-action-button" style="width:100%;"
-                data-action="animabf-apply-critical-effect"
-                data-penalty="${totalPenalty}"
-                data-location="${location.location}"
-                data-zone="${location.zone}"
-                data-def-actor="${defenderActor?.id ?? ""}"
-                data-def-token="${defenderTokenId ?? ""}">
-          Aplicar Penalizador Físico (-${totalPenalty})
-        </button>
-      </div>` : ""}
+    <div class="animabf-chat-message combat-result-message">
+      <div class="group">
+        <div class="group-header"><div class="group-header-title">Crítico</div></div>
+        <div class="group-body">
+          <p><strong>Nivel de crítico:</strong> ${critRoll.total} (d100) + ${baseCriticalValue} (daño+bonos) = ${critRoll.total + baseCriticalValue}${overflowNote}</p>
+          <p><strong>Tirada de RF:</strong> ${rfRoll.total} (d100) + ${rfValue} (RF) = <strong>${rfTotal}</strong></p>
+          <p><strong>Resultado:</strong> ${rawCritLevel} - ${rfTotal} = <strong>${finalCritLevel}</strong></p>
+          <p><strong>Severidad:</strong> ${severity.level}</p>
+          ${severity.needsLocation ? `<p><strong>Localización (${locRollTotal}):</strong> ${location.location}</p>` : ""}
+          ${alertsHtml}
+          <p>${severity.description}</p>
+          ${totalPenalty > 0 ? `
+          <button type="button" class="chat-action-button" style="width:100%; margin-top:0.3rem;"
+                  data-action="animabf-apply-critical-effect"
+                  data-penalty="${totalPenalty}"
+                  data-location="${location.location}"
+                  data-zone="${location.zone}"
+                  data-def-actor="${defenderActor?.id ?? ""}"
+                  data-def-token="${defenderTokenId ?? ""}">
+            Aplicar Penalizador (-${totalPenalty})
+          </button>` : ""}
+        </div>
+      </div>
     </div>
   `;
   await ChatMessage.create({ user: game.user.id, content, speaker });
