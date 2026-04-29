@@ -56,25 +56,24 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
   }
   const totalPenalty = finalCritLevel;
   let effectLine = "";
-  let extraLines = "";
+  let locSuffix = "";
   if (finalCritLevel <= 0) {
     effectLine = "Sin efecto.";
   } else if (finalCritLevel <= 50) {
-    effectLine = `Negativo: -${finalCritLevel} (dolor)`;
+    effectLine = `-${finalCritLevel} (dolor)`;
   } else {
     const pain = Math.ceil(finalCritLevel / 2);
     const physical = finalCritLevel - pain;
-    effectLine = `Negativo: -${pain} (dolor) -${physical} (daño físico)`;
-    if (isLimb(location.zone)) {
-      extraLines += finalCritLevel > 100 ? `<p><strong>Miembro destrozado/amputado</strong></p>` : "";
+    effectLine = `-${pain} (dolor) -${physical} (carencia)`;
+    if (isLimb(location.zone) && finalCritLevel > 100) {
+      locSuffix += " (Miembro destrozado)";
     }
     if (isVital(location.zone, location.location) && finalCritLevel > 100) {
-      extraLines += `<p><strong>MUERTE</strong></p>`;
-    } else if (location.zone === "head" || finalCritLevel > 150) {
-      extraLines += `<p><strong>INCONSCIENTE</strong></p>`;
-    }
-    if (finalCritLevel > 150 && !isVital(location.zone, location.location)) {
-      extraLines += `<p>Muere en CON minutos sin atención médica</p>`;
+      locSuffix += " (MUERTE)";
+    } else if (location.zone === "head" && finalCritLevel > 50) {
+      locSuffix += " (Inconsciente)";
+    } else if (finalCritLevel > 150) {
+      locSuffix += " (Inconsciente, muere en CON min.)";
     }
   }
   const speaker = defenderActor ? ChatMessage.getSpeaker({ actor: defenderActor }) : ChatMessage.getSpeaker();
@@ -85,8 +84,7 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
         <div class="group-body">
           <p><strong>Crítico:</strong> ${rawCritLevel} - ${rfTotal} (RF) = <strong>${finalCritLevel}</strong></p>
           <p><strong>Efecto:</strong> ${effectLine}</p>
-          ${finalCritLevel > 50 && location.location ? `<p><strong>Localización:</strong> ${location.location}</p>` : ""}
-          ${extraLines}
+          ${finalCritLevel > 50 && location.location ? `<p><strong>Loc:</strong> ${location.location}${locSuffix}</p>` : ""}
           ${totalPenalty > 0 ? `
           <button type="button" class="chat-action-button" style="width:100%; margin-top:0.3rem;"
                   data-action="animabf-apply-critical-effect"
