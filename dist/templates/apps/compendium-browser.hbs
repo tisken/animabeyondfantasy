@@ -1,42 +1,70 @@
 <div class="compendium-browser-content">
   {{#if selectedPack}}
     <div class="browser-header">
-      <button type="button" class="browser-back-btn">← Volver</button>
+      <button type="button" class="browser-back-btn"><i class="fas fa-arrow-left"></i> Volver</button>
       <span class="browser-title">{{selectedLabel}}</span>
       <span class="browser-count">({{resultCount}})</span>
     </div>
-    <div class="browser-search">
-      <input type="text" class="browser-search-input" placeholder="Buscar por nombre..." value="{{searchText}}" autofocus />
-    </div>
-    {{#if loading}}
-      <div class="browser-loading">Cargando...</div>
-    {{else}}
-      <div class="browser-results">
-        {{#each results as |item|}}
-          <div class="browser-result-row" data-item-id="{{item.id}}" title="Clic para abrir · Arrastra para añadir al actor">
-            <img class="browser-result-img" src="{{item.img}}" width="24" height="24" />
-            <div class="browser-result-info">
-              <span class="browser-result-name">{{item.name}}</span>
-              {{#if item.subtitle}}
-                <span class="browser-result-subtitle">{{item.subtitle}}</span>
-              {{/if}}
-            </div>
+    <div class="browser-body">
+      <div class="browser-sidebar">
+        <div class="browser-filter-group">
+          <label>Nombre</label>
+          <input type="text" class="browser-search-input" placeholder="Buscar..." value="{{searchText}}" autofocus />
+        </div>
+        {{#if hasLevel}}
+        <div class="browser-filter-group">
+          <label>Nivel</label>
+          <div class="browser-filter-range">
+            <input type="number" class="browser-filter-level-min" placeholder="Min" value="{{filters.levelMin}}" />
+            <span>—</span>
+            <input type="number" class="browser-filter-level-max" placeholder="Max" value="{{filters.levelMax}}" />
           </div>
-        {{/each}}
-        {{#unless hasResults}}
-          <div class="browser-empty">Sin resultados</div>
-        {{/unless}}
+        </div>
+        {{/if}}
+        {{#if selectField}}
+        <div class="browser-filter-group">
+          <label>{{selectLabel}}</label>
+          <select class="browser-filter-select">
+            <option value="">— Todas —</option>
+            {{#each selectOptions as |label key|}}
+              <option value="{{key}}">{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+        {{/if}}
       </div>
-    {{/if}}
+      <div class="browser-main">
+        {{#if loading}}
+          <div class="browser-loading">Cargando...</div>
+        {{else}}
+          <div class="browser-results">
+            {{#each results as |item|}}
+              <div class="browser-result-row" data-item-id="{{item.id}}" title="Clic para abrir · Arrastra para añadir">
+                <img class="browser-result-img" src="{{item.img}}" width="28" height="28" />
+                <div class="browser-result-info">
+                  <span class="browser-result-name">{{item.name}}</span>
+                  {{#if item.subtitle}}
+                    <span class="browser-result-subtitle">{{item.subtitle}}</span>
+                  {{/if}}
+                </div>
+              </div>
+            {{/each}}
+            {{#unless hasResults}}
+              <div class="browser-empty">Sin resultados</div>
+            {{/unless}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
   {{else}}
     <div class="browser-header">
       <span class="browser-title">Compendios de Anima</span>
     </div>
     <div class="browser-pack-list">
-      {{#each folders as |folder|}}
+      {{#each folders as |packs folderName|}}
         <div class="browser-folder">
-          <div class="browser-folder-header"><i class="fas fa-folder-open"></i> {{folder.label}}</div>
-          {{#each folder.packs as |pack key|}}
+          <div class="browser-folder-header"><i class="fas fa-folder-open"></i> {{folderName}}</div>
+          {{#each packs as |pack key|}}
             <button type="button" class="browser-pack-btn" data-pack="{{key}}">
               <span class="pack-label">{{pack.label}}</span>
               <span class="pack-count">{{pack.count}}</span>

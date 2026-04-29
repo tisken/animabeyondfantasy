@@ -3623,17 +3623,58 @@ img {
   opacity: 0.6;
   font-size: 0.8rem;
 }
-.compendium-browser-content .browser-search {
-  padding: 0.4rem 0.5rem;
+.compendium-browser-content .browser-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
-.compendium-browser-content .browser-search .browser-search-input {
+.compendium-browser-content .browser-sidebar {
+  width: 180px;
+  min-width: 150px;
+  border-right: 1px solid var(--color-border-light-tertiary, #ccc);
+  padding: 0.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.compendium-browser-content .browser-sidebar .browser-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.compendium-browser-content .browser-sidebar .browser-filter-group label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.compendium-browser-content .browser-sidebar .browser-filter-group input, .compendium-browser-content .browser-sidebar .browser-filter-group select {
   width: 100%;
-  padding: 4px 8px;
+  padding: 3px 6px;
+  font-size: 0.8rem;
+}
+.compendium-browser-content .browser-sidebar .browser-filter-range {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.compendium-browser-content .browser-sidebar .browser-filter-range input {
+  width: 50%;
+}
+.compendium-browser-content .browser-sidebar .browser-filter-range span {
+  opacity: 0.5;
+}
+.compendium-browser-content .browser-main {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 .compendium-browser-content .browser-pack-list {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.5rem;
   padding: 0.5rem;
   overflow-y: auto;
   flex: 1;

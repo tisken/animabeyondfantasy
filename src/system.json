@@ -2,7 +2,7 @@
   "id": "animabf",
   "title": "Anima Beyond Fantasy",
   "description": "Unofficial Anima Beyond Fantasy system for Foundry VTT",
-  "version": "2.3.0-test.31",
+  "version": "2.3.0-test.32",
   "compatibility": { "minimum": "13", "verified": "14.359" },
   "url": "https://github.com/tisken/animabeyondfantasy",
   "manifest": "https://raw.githubusercontent.com/tisken/animabeyondfantasy/main/dist/system.json",
@@ -21,24 +21,48 @@
   "styles": ["animabf.css"],
   "socket": true,
   "packs": [
-    { "name": "advantages", "label": "Ventajas", "system": "animabf", "path": "./packs/advantages", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "disadvantages", "label": "Desventajas", "system": "animabf", "path": "./packs/disadvantages", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "categories", "label": "Categorías", "system": "animabf", "path": "./packs/categories", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "races", "label": "Razas", "system": "animabf", "path": "./packs/races", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "weapons", "label": "Armas", "system": "animabf", "path": "./packs/weapons", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "armors", "label": "Armaduras", "system": "animabf", "path": "./packs/armors", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "effects", "label": "Efectos", "system": "animabf", "path": "./packs/effects", "type": "Item", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "npcs", "label": "NPCs Core Exxet", "system": "animabf", "path": "./packs/npcs", "type": "Actor", "private": false, "flags": {}, "folder": "Base" },
-    { "name": "martial_arts", "label": "Artes Marciales", "system": "animabf", "path": "./packs/martial_arts", "type": "Item", "private": false, "flags": {}, "folder": "Ki" },
-    { "name": "ki_skills", "label": "Habilidades de Ki", "system": "animabf", "path": "./packs/ki_skills", "type": "Item", "private": false, "flags": {}, "folder": "Ki" },
-    { "name": "nemesis_skills", "label": "Habilidades de Némesis", "system": "animabf", "path": "./packs/nemesis_skills", "type": "Item", "private": false, "flags": {}, "folder": "Ki" },
-    { "name": "magic", "label": "Conjuros", "system": "animabf", "path": "./packs/magic", "type": "Item", "private": false, "flags": {}, "folder": "Magia" },
-    { "name": "metamagic", "label": "Metamagia", "system": "animabf", "path": "./packs/metamagic", "type": "Item", "private": false, "flags": {}, "folder": "Magia" },
-    { "name": "summons", "label": "Invocaciones", "system": "animabf", "path": "./packs/summons", "type": "Item", "private": false, "flags": {}, "folder": "Magia" },
-    { "name": "magic_items", "label": "Objetos Mágicos", "system": "animabf", "path": "./packs/magic_items", "type": "Item", "private": false, "flags": {}, "folder": "Magia" },
-    { "name": "psychic", "label": "Poderes Psíquicos", "system": "animabf", "path": "./packs/psychic_powers", "type": "Item", "private": false, "flags": {}, "folder": "Psíquica" },
-    { "name": "mental_patterns", "label": "Patrones Mentales", "system": "animabf", "path": "./packs/mental_patterns", "type": "Item", "private": false, "flags": {}, "folder": "Psíquica" },
+    { "name": "advantages", "label": "Ventajas", "system": "animabf", "path": "./packs/advantages", "type": "Item", "private": false, "flags": {} },
+    { "name": "disadvantages", "label": "Desventajas", "system": "animabf", "path": "./packs/disadvantages", "type": "Item", "private": false, "flags": {} },
+    { "name": "categories", "label": "Categorías", "system": "animabf", "path": "./packs/categories", "type": "Item", "private": false, "flags": {} },
+    { "name": "races", "label": "Razas", "system": "animabf", "path": "./packs/races", "type": "Item", "private": false, "flags": {} },
+    { "name": "weapons", "label": "Armas", "system": "animabf", "path": "./packs/weapons", "type": "Item", "private": false, "flags": {} },
+    { "name": "armors", "label": "Armaduras", "system": "animabf", "path": "./packs/armors", "type": "Item", "private": false, "flags": {} },
+    { "name": "effects", "label": "Efectos", "system": "animabf", "path": "./packs/effects", "type": "Item", "private": false, "flags": {} },
+    { "name": "npcs", "label": "NPCs Core Exxet", "system": "animabf", "path": "./packs/npcs", "type": "Actor", "private": false, "flags": {} },
+    { "name": "martial_arts", "label": "Artes Marciales", "system": "animabf", "path": "./packs/martial_arts", "type": "Item", "private": false, "flags": {} },
+    { "name": "ki_skills", "label": "Habilidades de Ki", "system": "animabf", "path": "./packs/ki_skills", "type": "Item", "private": false, "flags": {} },
+    { "name": "nemesis_skills", "label": "Habilidades de Némesis", "system": "animabf", "path": "./packs/nemesis_skills", "type": "Item", "private": false, "flags": {} },
+    { "name": "magic", "label": "Conjuros", "system": "animabf", "path": "./packs/magic", "type": "Item", "private": false, "flags": {} },
+    { "name": "metamagic", "label": "Metamagia", "system": "animabf", "path": "./packs/metamagic", "type": "Item", "private": false, "flags": {} },
+    { "name": "summons", "label": "Invocaciones", "system": "animabf", "path": "./packs/summons", "type": "Item", "private": false, "flags": {} },
+    { "name": "magic_items", "label": "Objetos Mágicos", "system": "animabf", "path": "./packs/magic_items", "type": "Item", "private": false, "flags": {} },
+    { "name": "psychic", "label": "Poderes Psíquicos", "system": "animabf", "path": "./packs/psychic_powers", "type": "Item", "private": false, "flags": {} },
+    { "name": "mental_patterns", "label": "Patrones Mentales", "system": "animabf", "path": "./packs/mental_patterns", "type": "Item", "private": false, "flags": {} },
     { "name": "macros", "label": "Macros", "type": "Macro", "path": "./packs/macros", "system": "animabf", "private": false, "flags": {} }
+  ],
+  "packFolders": [
+    {
+      "name": "Core Anima",
+      "folders": [
+        {
+          "name": "Base",
+          "packs": ["advantages", "disadvantages", "categories", "races", "weapons", "armors", "effects", "npcs"]
+        },
+        {
+          "name": "Ki",
+          "packs": ["martial_arts", "ki_skills", "nemesis_skills"]
+        },
+        {
+          "name": "Magia",
+          "packs": ["magic", "metamagic", "summons", "magic_items"]
+        },
+        {
+          "name": "Psíquica",
+          "packs": ["psychic", "mental_patterns"]
+        }
+      ],
+      "packs": ["macros"]
+    }
   ],
   "languages": [
     { "lang": "es", "name": "Español", "path": "lang/es.json" },
