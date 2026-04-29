@@ -11,40 +11,44 @@ class ABFCompendiumBrowser extends Application {
     });
   }
   static PACK_CONFIG = {
-    advantages: { label: "Ventajas", type: "advantage" },
-    disadvantages: { label: "Desventajas", type: "disadvantage" },
-    martial_arts: { label: "Artes Marciales", type: "martialArtData" },
-    ki_skills: { label: "Hab. Ki", type: "kiSkillData" },
-    nemesis_skills: { label: "Hab. Némesis", type: "nemesisSkillData" },
-    metamagic: { label: "Metamagia", type: "metamagicData" },
-    summons: { label: "Invocaciones", type: "summonData" },
-    categories: { label: "Categorías", type: "category" },
-    races: { label: "Razas", type: "raceData" },
-    mental_patterns: { label: "Patrones Mentales", type: "mentalPattern" },
-    magic_items: { label: "Objetos Mágicos", type: "magicItemData" },
-    weapons: { label: "Armas", type: "weapon" },
-    armors: { label: "Armaduras", type: "armor" },
-    magic: { label: "Conjuros", type: "spell" },
-    psychic: { label: "Poderes Psíquicos", type: "psychicPower" },
-    effects: { label: "Efectos", type: "effect" },
-    npcs: { label: "NPCs", type: null }
+    advantages: { label: "Ventajas", type: "advantage", folder: "Base" },
+    disadvantages: { label: "Desventajas", type: "disadvantage", folder: "Base" },
+    categories: { label: "Categorías", type: "category", folder: "Base" },
+    races: { label: "Razas", type: "raceData", folder: "Base" },
+    weapons: { label: "Armas", type: "weapon", folder: "Base" },
+    armors: { label: "Armaduras", type: "armor", folder: "Base" },
+    effects: { label: "Efectos", type: "effect", folder: "Base" },
+    npcs: { label: "NPCs", type: null, folder: "Base" },
+    martial_arts: { label: "Artes Marciales", type: "martialArtData", folder: "Ki" },
+    ki_skills: { label: "Habilidades de Ki", type: "kiSkillData", folder: "Ki" },
+    nemesis_skills: { label: "Hab. de Némesis", type: "nemesisSkillData", folder: "Ki" },
+    magic: { label: "Conjuros", type: "spell", folder: "Magia" },
+    metamagic: { label: "Metamagia", type: "metamagicData", folder: "Magia" },
+    summons: { label: "Invocaciones", type: "summonData", folder: "Magia" },
+    magic_items: { label: "Objetos Mágicos", type: "magicItemData", folder: "Magia" },
+    psychic: { label: "Poderes Psíquicos", type: "psychicPower", folder: "Psíquica" },
+    mental_patterns: { label: "Patrones Mentales", type: "mentalPattern", folder: "Psíquica" }
   };
   _searchText = "";
   _selectedPack = "";
   _results = [];
   _loading = false;
   async getData() {
-    const packs = {};
+    const folders = {};
     for (const [key, cfg] of Object.entries(ABFCompendiumBrowser.PACK_CONFIG)) {
       const pack = game.packs.get(`animabf.${key}`);
-      if (pack) {
-        packs[key] = { ...cfg, count: (await pack.getIndex()).size };
-      }
+      if (!pack) continue;
+      const folder = cfg.folder;
+      folders[folder] ??= { label: folder, packs: {} };
+      folders[folder].packs[key] = { ...cfg, count: (await pack.getIndex()).size };
     }
+    const allPacks = {};
+    for (const f of Object.values(folders)) Object.assign(allPacks, f.packs);
     return {
-      packs,
+      folders,
+      packs: allPacks,
       selectedPack: this._selectedPack,
-      selectedLabel: packs[this._selectedPack]?.label ?? "",
+      selectedLabel: allPacks[this._selectedPack]?.label ?? "",
       searchText: this._searchText,
       results: this._results,
       loading: this._loading,
