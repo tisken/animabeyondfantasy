@@ -33,6 +33,7 @@ import { FormulaEvaluator } from './utils/formulaEvaluator.js';
 import { registerHandlebarsPartials } from './utils/handlebarsPartials.js';
 
 import { macroCreators, macroExecutors } from './utils/macroCreatorRegistry.js';
+import ABFCompendiumBrowser from './module/apps/ABFCompendiumBrowser.js';
 
 /* ------------------------------------ */
 /* Initialize system */
@@ -121,6 +122,8 @@ Hooks.once('ready', async () => {
   game.animabf ??= {};
   game.animabf.api ??= {};
   Object.assign(game.animabf.api, { ABFAttackData });
+
+  game.animabf.compendiumBrowser = new ABFCompendiumBrowser();
 
   game.animabf.macros ??= {};
 
@@ -444,6 +447,19 @@ Hooks.on('hotbarDrop', async (_bar, data, slot) => {
 // });
 
 // Add any additional hooks if necessary
+
+Hooks.on('getSceneControlButtons', controls => {
+  const tokenControls = controls.find(c => c.name === 'token') ?? controls[0];
+  if (tokenControls) {
+    tokenControls.tools.push({
+      name: 'compendium-browser',
+      title: 'Buscador de Compendios',
+      icon: 'fas fa-book-open',
+      button: true,
+      onClick: () => game.animabf?.compendiumBrowser?.render(true)
+    });
+  }
+});
 
 // This function allow us to use xRoot in templates to extract the root object in Handlebars template
 // So, instead to do ../../../ etc... to obtain rootFolder, use xRoot instead

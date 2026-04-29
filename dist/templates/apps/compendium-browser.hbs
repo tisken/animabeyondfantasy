@@ -1,0 +1,44 @@
+<div class="compendium-browser-content">
+  {{#if selectedPack}}
+    <div class="browser-header">
+      <button type="button" class="browser-back-btn">← Volver</button>
+      <span class="browser-title">{{selectedLabel}}</span>
+      <span class="browser-count">({{resultCount}})</span>
+    </div>
+    <div class="browser-search">
+      <input type="text" class="browser-search-input" placeholder="Buscar por nombre..." value="{{searchText}}" autofocus />
+    </div>
+    {{#if loading}}
+      <div class="browser-loading">Cargando...</div>
+    {{else}}
+      <div class="browser-results">
+        {{#each results as |item|}}
+          <div class="browser-result-row" data-item-id="{{item.id}}" title="Clic para abrir · Arrastra para añadir al actor">
+            <img class="browser-result-img" src="{{item.img}}" width="24" height="24" />
+            <div class="browser-result-info">
+              <span class="browser-result-name">{{item.name}}</span>
+              {{#if item.subtitle}}
+                <span class="browser-result-subtitle">{{item.subtitle}}</span>
+              {{/if}}
+            </div>
+          </div>
+        {{/each}}
+        {{#unless hasResults}}
+          <div class="browser-empty">Sin resultados</div>
+        {{/unless}}
+      </div>
+    {{/if}}
+  {{else}}
+    <div class="browser-header">
+      <span class="browser-title">Compendios de Anima</span>
+    </div>
+    <div class="browser-pack-list">
+      {{#each packs as |pack key|}}
+        <button type="button" class="browser-pack-btn" data-pack="{{key}}">
+          <span class="pack-label">{{pack.label}}</span>
+          <span class="pack-count">{{pack.count}}</span>
+        </button>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

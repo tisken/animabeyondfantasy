@@ -28,6 +28,7 @@ import { resolveTokenName } from "./utils/tokenName.js";
 import { FormulaEvaluator } from "./utils/formulaEvaluator.js";
 import { registerHandlebarsPartials } from "./utils/handlebarsPartials.js";
 import { macroExecutors, macroCreators } from "./utils/macroCreatorRegistry.js";
+import ABFCompendiumBrowser from "./module/apps/ABFCompendiumBrowser.js";
 Hooks.once("init", async () => {
   Logger.log("Initializing system");
   registerSystemOnGame();
@@ -80,6 +81,7 @@ Hooks.once("ready", async () => {
   game.animabf ??= {};
   game.animabf.api ??= {};
   Object.assign(game.animabf.api, { ABFAttackData });
+  game.animabf.compendiumBrowser = new ABFCompendiumBrowser();
   game.animabf.macros ??= {};
   game.animabf.macros.execute = async ({ id, actorUuid, itemUuid }) => {
     const exec = macroExecutors[id];
@@ -298,6 +300,18 @@ Hooks.on("hotbarDrop", async (_bar, data, slot) => {
   if (typeof creator !== "function") return;
   const handled = await creator({ actor, item, slot });
   if (handled) return false;
+});
+Hooks.on("getSceneControlButtons", (controls) => {
+  const tokenControls = controls.find((c) => c.name === "token") ?? controls[0];
+  if (tokenControls) {
+    tokenControls.tools.push({
+      name: "compendium-browser",
+      title: "Buscador de Compendios",
+      icon: "fas fa-book-open",
+      button: true,
+      onClick: () => game.animabf?.compendiumBrowser?.render(true)
+    });
+  }
 });
 Handlebars.JavaScriptCompiler.prototype.nameLookup = function(parent, name) {
   if (name.indexOf("xRoot") === 0) {
