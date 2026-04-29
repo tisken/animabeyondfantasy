@@ -10,41 +10,38 @@ class ABFCompendiumBrowser extends Application {
       classes: ["animabf", "compendium-browser"]
     });
   }
-  static FOLDERS = {
-    Base: ["advantages", "disadvantages", "categories", "races", "weapons", "armors", "effects", "npcs"],
-    Ki: ["martial_arts", "ki_skills", "nemesis_skills"],
-    Magia: ["magic", "metamagic", "summons", "magic_items"],
-    Psíquica: ["psychic", "mental_patterns"]
+  // Folder assignment for known system packs
+  static FOLDER_MAP = {
+    "animabf.advantages": "Base",
+    "animabf.disadvantages": "Base",
+    "animabf.categories": "Base",
+    "animabf.races": "Base",
+    "animabf.weapons": "Base",
+    "animabf.armors": "Base",
+    "animabf.effects": "Base",
+    "animabf.npcs": "Base",
+    "animabf.martial_arts": "Ki",
+    "animabf.ki_skills": "Ki",
+    "animabf.nemesis_skills": "Ki",
+    "animabf.magic": "Magia",
+    "animabf.metamagic": "Magia",
+    "animabf.summons": "Magia",
+    "animabf.magic_items": "Magia",
+    "animabf.psychic": "Psíquica",
+    "animabf.mental_patterns": "Psíquica"
   };
-  static PACK_LABELS = {
-    advantages: "Ventajas",
-    disadvantages: "Desventajas",
-    categories: "Categorías",
-    races: "Razas",
-    weapons: "Armas",
-    armors: "Armaduras",
-    effects: "Efectos",
-    npcs: "NPCs",
-    martial_arts: "Artes Marciales",
-    ki_skills: "Hab. de Ki",
-    nemesis_skills: "Hab. de Némesis",
-    magic: "Conjuros",
-    metamagic: "Metamagia",
-    summons: "Invocaciones",
-    magic_items: "Objetos Mágicos",
-    psychic: "Poderes Psíquicos",
-    mental_patterns: "Patrones Mentales"
-  };
-  // Which packs support which filter fields
+  // Filter config per pack name (last segment)
   static FILTER_FIELDS = {
-    magic: { level: "level", via: "via" },
-    psychic: { level: "level", discipline: "discipline" },
-    npcs: { level: "_npcLevel", category: "_npcCategory" },
-    advantages: { category: "category" },
-    disadvantages: { category: "category" },
-    ki_skills: { level: "level" },
-    martial_arts: { grade: "grade" }
+    magic: { level: true, select: "via", selectLabel: "Vía" },
+    psychic: { level: true, select: "discipline", selectLabel: "Disciplina" },
+    npcs: { level: true, select: "_category", selectLabel: "Categoría" },
+    advantages: { select: "category", selectLabel: "Categoría" },
+    disadvantages: { select: "category", selectLabel: "Categoría" },
+    ki_skills: { level: true },
+    martial_arts: { select: "grade", selectLabel: "Grado" }
   };
+  // Actor packs always get level + category filters
+  static ACTOR_FILTERS = { level: true, select: "_category", selectLabel: "Categoría" };
   _searchText = "";
   _selectedPack = "";
   _results = [];
@@ -52,33 +49,44 @@ class ABFCompendiumBrowser extends Application {
   _loading = false;
   _filters = { levelMin: "", levelMax: "", select1: "" };
   _filterOptions = {};
+  _getPackKey(collection) {
+    return collection.split(".").pop();
+  }
+  _getFilterConfig(collection, pack) {
+    const key = this._getPackKey(collection);
+    if (ABFCompendiumBrowser.FILTER_FIELDS[key]) return ABFCompendiumBrowser.FILTER_FIELDS[key];
+    if (pack.documentName === "Actor") return ABFCompendiumBrowser.ACTOR_FILTERS;
+    return {};
+  }
   async getData() {
     const folders = {};
-    for (const [folder, keys] of Object.entries(ABFCompendiumBrowser.FOLDERS)) {
-      const packs = {};
-      for (const key of keys) {
-        const pack = game.packs.get(`animabf.${key}`);
-        if (!pack) continue;
-        packs[key] = { label: ABFCompendiumBrowser.PACK_LABELS[key], count: (await pack.getIndex()).size };
-      }
-      if (Object.keys(packs).length) folders[folder] = packs;
+    const packEntries = {};
+    for (const pack of game.packs) {
+      if (pack.metadata.system !== "animabf") continue;
+      const collection = pack.collection;
+      if (pack.documentName === "Macro") continue;
+      const folder = ABFCompendiumBrowser.FOLDER_MAP[collection] ?? (pack.metadata.packageName !== "animabf" ? pack.metadata.packageName : "Otros");
+      folders[folder] ??= {};
+      folders[folder][collection] = {
+        label: pack.metadata.label,
+        count: (await pack.getIndex()).size
+      };
+      packEntries[collection] = folders[folder][collection];
     }
-    const ff = ABFCompendiumBrowser.FILTER_FIELDS[this._selectedPack] ?? {};
-    const hasLevel = !!ff.level;
-    const selectField = ff.via || ff.discipline || ff.category || ff.grade || null;
-    const selectLabel = ff.via ? "Vía" : ff.discipline ? "Disciplina" : ff.category ? "Categoría" : ff.grade ? "Grado" : "";
+    const selPack = this._selectedPack ? game.packs.get(this._selectedPack) : null;
+    const ff = selPack ? this._getFilterConfig(this._selectedPack, selPack) : {};
     return {
       folders,
       selectedPack: this._selectedPack,
-      selectedLabel: ABFCompendiumBrowser.PACK_LABELS[this._selectedPack] ?? "",
+      selectedLabel: packEntries[this._selectedPack]?.label ?? "",
       searchText: this._searchText,
       results: this._results,
       loading: this._loading,
       hasResults: this._results.length > 0,
       resultCount: this._results.length,
-      hasLevel,
-      selectField,
-      selectLabel,
+      hasLevel: !!ff.level,
+      selectLabel: ff.selectLabel || "",
+      hasSelect: !!ff.select,
       selectOptions: this._filterOptions,
       filters: this._filters
     };
@@ -122,7 +130,7 @@ class ABFCompendiumBrowser extends Application {
     });
     html.find(".browser-result-row").click(async (ev) => {
       const id = ev.currentTarget.dataset.itemId;
-      const pack = game.packs.get(`animabf.${this._selectedPack}`);
+      const pack = game.packs.get(this._selectedPack);
       if (!pack) return;
       const doc = await pack.getDocument(id);
       if (doc?.sheet) doc.sheet.render(true);
@@ -132,51 +140,53 @@ class ABFCompendiumBrowser extends Application {
       el.addEventListener("dragstart", (ev) => {
         const id = el.dataset.itemId;
         if (!id) return;
-        const pack = game.packs.get(`animabf.${this._selectedPack}`);
+        const pack = game.packs.get(this._selectedPack);
         const docType = pack?.documentName ?? "Item";
         ev.dataTransfer.setData("text/plain", JSON.stringify({
           type: docType,
-          uuid: `Compendium.animabf.${this._selectedPack}.${docType}.${id}`
+          uuid: `Compendium.${this._selectedPack}.${docType}.${id}`
         }));
       });
     });
   }
   async _loadPack() {
-    const pack = game.packs.get(`animabf.${this._selectedPack}`);
+    const pack = game.packs.get(this._selectedPack);
     if (!pack) return;
     this._loading = true;
     this.render();
     const docs = await pack.getDocuments();
-    const ff = ABFCompendiumBrowser.FILTER_FIELDS[this._selectedPack] ?? {};
-    const isNpc = this._selectedPack === "npcs";
+    const isActor = pack.documentName === "Actor";
+    const ff = this._getFilterConfig(this._selectedPack, pack);
     this._allDocs = docs.map((d) => {
       const s = d.system ?? {};
       let level = null;
       let selectVal = "";
-      if (isNpc) {
+      if (isActor) {
         const levels = s.general?.levels ?? [];
         level = levels.reduce((sum, l) => sum + (l.system?.level ?? 0), 0);
         selectVal = levels.map((l) => l.name).filter(Boolean).join(", ");
       } else {
-        if (ff.level) level = s[ff.level]?.value ?? null;
-        const sKey = ff.via || ff.discipline || ff.category || ff.grade;
-        if (sKey) selectVal = s[sKey]?.value ?? "";
+        if (ff.level && s.level?.value != null) level = Number(s.level.value);
+        if (ff.select && ff.select !== "_category" && s[ff.select]?.value) {
+          selectVal = String(s[ff.select].value);
+        }
       }
       return {
         id: d.id,
         name: d.name,
         img: d.img,
-        level: level != null ? Number(level) : null,
-        selectVal: String(selectVal),
-        subtitle: this._getSubtitle(d, isNpc)
+        level,
+        selectVal,
+        subtitle: this._getSubtitle(d, isActor)
       };
     });
-    const selectField = ff.via || ff.discipline || ff.category || ff.grade;
-    if (selectField || isNpc) {
+    if (ff.select) {
       const vals = /* @__PURE__ */ new Set();
       for (const d of this._allDocs) {
-        const v = d.selectVal.trim();
-        if (v) vals.add(v);
+        for (const v of d.selectVal.split(",")) {
+          const t = v.trim();
+          if (t) vals.add(t);
+        }
       }
       this._filterOptions = [...vals].sort().reduce((o, v) => {
         o[v] = v;
@@ -200,8 +210,8 @@ class ABFCompendiumBrowser extends Application {
     }).sort((a, b) => a.name.localeCompare(b.name));
     this.render();
   }
-  _getSubtitle(doc, isNpc) {
-    if (isNpc) {
+  _getSubtitle(doc, isActor) {
+    if (isActor) {
       const levels = doc.system?.general?.levels ?? [];
       const total = levels.reduce((s2, l) => s2 + (l.system?.level ?? 0), 0);
       const cats = levels.map((l) => l.name).filter(Boolean).join(", ");

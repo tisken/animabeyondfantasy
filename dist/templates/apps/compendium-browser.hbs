@@ -21,7 +21,7 @@
           </div>
         </div>
         {{/if}}
-        {{#if selectField}}
+        {{#if hasSelect}}
         <div class="browser-filter-group">
           <label>{{selectLabel}}</label>
           <select class="browser-filter-select">
@@ -64,8 +64,8 @@
       {{#each folders as |packs folderName|}}
         <div class="browser-folder">
           <div class="browser-folder-header"><i class="fas fa-folder-open"></i> {{folderName}}</div>
-          {{#each packs as |pack key|}}
-            <button type="button" class="browser-pack-btn" data-pack="{{key}}">
+          {{#each packs as |pack collection|}}
+            <button type="button" class="browser-pack-btn" data-pack="{{collection}}">
               <span class="pack-label">{{pack.label}}</span>
               <span class="pack-count">{{pack.count}}</span>
             </button>
