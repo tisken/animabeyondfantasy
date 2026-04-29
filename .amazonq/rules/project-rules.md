@@ -114,3 +114,38 @@ Foundry cachea el manifest y no actualiza si la versión no cambia.
 - game.system.template está deprecated en v13, usar game.system.documentTypes
 - Los imports de xlsx se resuelven via node_modules/ dentro del zip
 - El build de Vite con preserveModules mantiene rutas relativas
+
+## Lecciones aprendidas
+
+### NO registrar tipos nuevos en ITEM_CONFIGURATIONS
+Los tipos nuevos (category, martialArtData, etc.) NO deben ir en ITEM_CONFIGURATIONS
+porque cleanFieldPath intenta acceder a actor.itemTypes[type] que no existe.
+Solo necesitan hasSheet detection en ABFItemSheet.js (array newTypes).
+
+### Chat action handlers
+Patrón correcto: `export default async function nombre(message, _html, ds) {}` + `export const action = 'id';`
+Se auto-descubren via import.meta.glob en chatActionHandlers.js.
+NO usar handler.action = 'id' como propiedad estática.
+
+### Zip obligatorio para Foundry
+Foundry instala desde zip. El zip debe incluir node_modules/xlsx/xlsx.js.
+Sin el zip, Foundry da 404 en xlsx y el sistema no carga.
+El GitHub archive URL NO funciona (mete subcarpeta).
+
+### No tocar isInternal
+Cambiar isInternal de true a false rompe actores existentes.
+Para datos nuevos: crear tipos NUEVOS con nombres diferentes (ej: martialArtData en vez de martialArt).
+
+### Campos editables vs calculados
+En los modifiers del actor: .base es editable, .special es calculado, .final es el resultado.
+Para aplicar penalizadores programáticamente, usar .base.
+
+### Estilo de chat messages
+Usar clases: animabf-chat-message combat-result-message + group + group-header + group-body.
+No usar emojis. No usar estilos inline excesivos. Seguir el patrón de combat-result.hbs.
+
+### Templates de items
+Path: templates/items/{type}/{type}.hbs
+Usar base-sheet.hbs como wrapper.
+Clases: item-sheet-body, item-field, item-row, h4 para secciones.
+No usar partials del sistema (vertical-titled-input) para tipos nuevos — HTML directo es más simple.

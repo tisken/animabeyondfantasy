@@ -1,3 +1,4 @@
+import { openModDialog } from "../utils/dialogs/openSimpleInputDialog.js";
 import ABFFoundryRoll from "../rolls/ABFFoundryRoll.js";
 const CRITICAL_LOCATIONS = [
   { min: 1, max: 10, location: "Costillas", zone: "torso" },
@@ -29,72 +30,6 @@ function isLimb(zone) {
 function isVital(zone, location) {
   return zone === "head" || location === "Corazón";
 }
-function getCriticalSeverity(critLevel, location) {
-  const zone = location.zone;
-  if (critLevel <= 0) {
-    return {
-      level: "Ninguno",
-      painPenalty: 0,
-      physicalPenalty: 0,
-      needsLocation: false,
-      limbDestroyed: false,
-      unconscious: false,
-      death: false,
-      description: "RF superada. Sin efecto de crítico."
-    };
-  }
-  if (critLevel <= 50) {
-    return {
-      level: "Menor (1-50)",
-      painPenalty: critLevel,
-      physicalPenalty: 0,
-      needsLocation: false,
-      limbDestroyed: false,
-      unconscious: false,
-      death: false,
-      description: `Penalizador de -${critLevel} a toda acción por dolor. Se recupera a 5 puntos por asalto.`
-    };
-  }
-  const pain = Math.ceil(critLevel / 2);
-  const physical = critLevel - pain;
-  const unconscious = zone === "head";
-  if (critLevel <= 100) {
-    return {
-      level: "Mayor (51-100)",
-      painPenalty: pain,
-      physicalPenalty: physical,
-      needsLocation: true,
-      limbDestroyed: false,
-      unconscious,
-      death: false,
-      description: `Dolor: -${pain} (5/asalto). Físico: -${physical} (5/semana).${unconscious ? " ¡INCONSCIENTE!" : ""}`
-    };
-  }
-  const limbDest = isLimb(zone);
-  const death = isVital(zone, location);
-  if (critLevel <= 150) {
-    return {
-      level: "Grave (101-150)",
-      painPenalty: pain,
-      physicalPenalty: physical,
-      needsLocation: true,
-      limbDestroyed: limbDest,
-      unconscious: unconscious || false,
-      death,
-      description: `Dolor: -${pain} (5/asalto). Físico: -${physical} (5/semana).${limbDest ? " ¡Miembro DESTROZADO!" : ""}${death ? " ¡MUERTE!" : ""}`
-    };
-  }
-  return {
-    level: "Devastador (151+)",
-    painPenalty: pain,
-    physicalPenalty: physical,
-    needsLocation: true,
-    limbDestroyed: limbDest,
-    unconscious: true,
-    death,
-    description: `Dolor: -${pain} (5/asalto). Físico: -${physical} (5/semana). INCONSCIENTE. Muere en CON minutos sin atención.${limbDest ? " ¡Miembro DESTROZADO!" : ""}${death ? " ¡MUERTE!" : ""}`
-  };
-}
 async function resolveCritical({ baseCriticalValue, defenderActor, defenderTokenId }) {
   const critRoll = new ABFFoundryRoll("1d100", {});
   await critRoll.roll();
@@ -102,15 +37,16 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
   if (rawCritLevel > 200) {
     rawCritLevel = 200 + Math.floor((rawCritLevel - 200) / 2);
   }
-  let rfValue = 0;
+  const rfMod = await openModDialog() ?? 0;
+  let rfBase = 0;
   if (defenderActor) {
-    rfValue = defenderActor.system?.characteristics?.secondaries?.resistances?.physical?.final?.value ?? 0;
+    rfBase = defenderActor.system?.characteristics?.secondaries?.resistances?.physical?.final?.value ?? 0;
   }
   const rfRoll = new ABFFoundryRoll("1d100", defenderActor?.system ?? {});
   await rfRoll.roll();
-  const rfTotal = rfRoll.total + rfValue;
+  const rfTotal = rfRoll.total + rfBase + rfMod;
   const finalCritLevel = Math.max(0, rawCritLevel - rfTotal);
-  let location = { location: "N/A", zone: "general" };
+  let location = { location: "", zone: "general" };
   let locRollTotal = 0;
   if (finalCritLevel > 50) {
     const locRoll = new ABFFoundryRoll("1d100", {});
@@ -118,31 +54,44 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
     locRollTotal = locRoll.total;
     location = getLocation(locRollTotal);
   }
-  const severity = getCriticalSeverity(finalCritLevel, location);
+  const totalPenalty = finalCritLevel;
+  let effectLine = "";
+  let extraLines = "";
+  if (finalCritLevel <= 0) {
+    effectLine = "Sin efecto.";
+  } else if (finalCritLevel <= 50) {
+    effectLine = `Negativo: -${finalCritLevel} (dolor)`;
+  } else {
+    const pain = Math.ceil(finalCritLevel / 2);
+    const physical = finalCritLevel - pain;
+    effectLine = `Negativo: -${pain} (dolor) -${physical} (daño físico)`;
+    if (isLimb(location.zone)) {
+      extraLines += finalCritLevel > 100 ? `<p><strong>Miembro destrozado/amputado</strong></p>` : "";
+    }
+    if (isVital(location.zone, location.location) && finalCritLevel > 100) {
+      extraLines += `<p><strong>MUERTE</strong></p>`;
+    } else if (location.zone === "head" || finalCritLevel > 150) {
+      extraLines += `<p><strong>INCONSCIENTE</strong></p>`;
+    }
+    if (finalCritLevel > 150 && !isVital(location.zone, location.location)) {
+      extraLines += `<p>Muere en CON minutos sin atención médica</p>`;
+    }
+  }
   const speaker = defenderActor ? ChatMessage.getSpeaker({ actor: defenderActor }) : ChatMessage.getSpeaker();
-  const overflowNote = critRoll.total + baseCriticalValue > 200 ? ` → ${rawCritLevel} (exceso sobre 200 reducido a mitad)` : "";
-  const totalPenalty = severity.painPenalty + severity.physicalPenalty;
-  let alertsHtml = "";
-  if (severity.death) alertsHtml += '<p class="critical-alert" style="color:#c00; font-weight:bold;">MUERTE</p>';
-  else if (severity.unconscious) alertsHtml += '<p class="critical-alert" style="color:#c60; font-weight:bold;">INCONSCIENTE</p>';
-  if (severity.limbDestroyed) alertsHtml += '<p class="critical-alert" style="color:#c00; font-weight:bold;">Miembro destrozado/amputado</p>';
   const content = `
     <div class="animabf-chat-message combat-result-message">
       <div class="group">
         <div class="group-header"><div class="group-header-title">Crítico</div></div>
         <div class="group-body">
-          <p><strong>Nivel de crítico:</strong> ${critRoll.total} (d100) + ${baseCriticalValue} (daño+bonos) = ${critRoll.total + baseCriticalValue}${overflowNote}</p>
-          <p><strong>Tirada de RF:</strong> ${rfRoll.total} (d100) + ${rfValue} (RF) = <strong>${rfTotal}</strong></p>
-          <p><strong>Resultado:</strong> ${rawCritLevel} - ${rfTotal} = <strong>${finalCritLevel}</strong></p>
-          <p><strong>Severidad:</strong> ${severity.level}</p>
-          ${severity.needsLocation ? `<p><strong>Localización (${locRollTotal}):</strong> ${location.location}</p>` : ""}
-          ${alertsHtml}
-          <p>${severity.description}</p>
+          <p><strong>Crítico:</strong> ${rawCritLevel} - ${rfTotal} (RF) = <strong>${finalCritLevel}</strong></p>
+          <p><strong>Efecto:</strong> ${effectLine}</p>
+          ${finalCritLevel > 50 && location.location ? `<p><strong>Localización:</strong> ${location.location}</p>` : ""}
+          ${extraLines}
           ${totalPenalty > 0 ? `
           <button type="button" class="chat-action-button" style="width:100%; margin-top:0.3rem;"
                   data-action="animabf-apply-critical-effect"
                   data-penalty="${totalPenalty}"
-                  data-location="${location.location}"
+                  data-location="${location.location || "General"}"
                   data-zone="${location.zone}"
                   data-def-actor="${defenderActor?.id ?? ""}"
                   data-def-token="${defenderTokenId ?? ""}">
@@ -153,7 +102,7 @@ async function resolveCritical({ baseCriticalValue, defenderActor, defenderToken
     </div>
   `;
   await ChatMessage.create({ user: game.user.id, content, speaker });
-  return { finalCritLevel, location, severity };
+  return { finalCritLevel, location };
 }
 async function applyCriticalEffect({ penalty, location, actorId }) {
   const actor = actorId ? game.actors.get(actorId) : null;
