@@ -1,0 +1,28 @@
+{
+  "name": "Buscador de Compendios",
+  "type": "script",
+  "command": "game.animabf?.compendiumBrowser?.render(true);",
+  "img": "icons/svg/book.svg",
+  "author": "i22cqqk4LNN9HuHn",
+  "scope": "global",
+  "folder": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.345",
+    "systemId": "animabf",
+    "systemVersion": "2.3.0-test.30",
+    "createdTime": 1772600000000,
+    "modifiedTime": 1772600000000,
+    "lastModifiedBy": "i22cqqk4LNN9HuHn"
+  },
+  "_id": "qR7xKm2vNpYtW8bA",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "i22cqqk4LNN9HuHn": 3
+  },
+  "_key": "!macros!qR7xKm2vNpYtW8bA"
+}

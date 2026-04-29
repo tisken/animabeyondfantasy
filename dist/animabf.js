@@ -302,16 +302,18 @@ Hooks.on("hotbarDrop", async (_bar, data, slot) => {
   if (handled) return false;
 });
 Hooks.on("getSceneControlButtons", (controls) => {
-  const tokenControls = controls.find((c) => c.name === "token") ?? controls[0];
-  if (tokenControls) {
-    tokenControls.tools.push({
-      name: "compendium-browser",
-      title: "Buscador de Compendios",
-      icon: "fas fa-book-open",
-      button: true,
-      onClick: () => game.animabf?.compendiumBrowser?.render(true)
-    });
-  }
+  const arr = Array.isArray(controls) ? controls : null;
+  const tokenControls = arr ? arr.find((c) => c.name === "token") ?? arr[0] : controls.token ?? controls[Object.keys(controls)[0]];
+  if (!tokenControls) return;
+  const tool = {
+    name: "compendium-browser",
+    title: "Buscador de Compendios",
+    icon: "fas fa-book-open",
+    button: true,
+    onClick: () => game.animabf?.compendiumBrowser?.render(true)
+  };
+  if (Array.isArray(tokenControls.tools)) tokenControls.tools.push(tool);
+  else if (tokenControls.tools && typeof tokenControls.tools === "object") tokenControls.tools[tool.name] = tool;
 });
 Handlebars.JavaScriptCompiler.prototype.nameLookup = function(parent, name) {
   if (name.indexOf("xRoot") === 0) {
